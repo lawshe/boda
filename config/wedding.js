@@ -1,35 +1,35 @@
 module.exports = {
-  date: '01/01/2019',
+  date: '',
   venue: {
-    name: 'The Driskill',
+    name: '',
     address: {
-      street: '604 Brazos St',
-      city: 'Austin',
-      state: 'Texas'
+      street: '',
+      city: '',
+      state: ''
     }
   },
   couple: [
     {
       name: {
-        first: 'Lisa',
-        last: 'Johnson'
+        first: '',
+        last: ''
       }
     },
     {
       name: {
-        first: 'Michael',
-        last: 'Jones'
+        first: '',
+        last: ''
       }
     }
   ],
   registry: [
     {
-      name: 'Honeymoon Wishes',
-      link: 'https://www.honeymoonwishes.com/'
+      name: '',
+      link: ''
     },
     {
-      name: 'Amazon',
-      link: 'https://www.amazon.com/wedding/home'
+      name: '',
+      link: ''
     }
   ]
 };
