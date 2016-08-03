@@ -1,0 +1,25 @@
+/*rsvp*/
+
+.label{
+  padding-left: 10px;
+}
+
+.rsvpPanel{
+  border: 1px solid $black;
+  margin: 0 auto 50px;
+  max-width: 550px;
+  padding: 30px 50px;;
+  text-align: left;
+}
+.panelHeader{
+  letter-spacing: 10px;
+  text-align: left;
+}
+
+.person{
+  margin-bottom: 30px;
+}
+
+.attending{
+  margin-top: 20px;
+}

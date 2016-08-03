@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'GreatVibes';
+    src: url('../../../static/vendor/great-vibes/GreatVibes-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DeutschGothic';
+    src: url('../../../static/vendor/rothenburgdecorative_regular_macroman/rothenbg-webfont.eot');
+    src: url('../../../static/vendor/rothenburgdecorative_regular_macroman/rothenbg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../../static/vendor/rothenburgdecorative_regular_macroman/rothenbg-webfont.woff') format('woff'),
+         url('../../../static/vendor/rothenburgdecorative_regular_macroman/rothenbg-webfont.ttf') format('truetype'),
+         url('../../../static/vendor/rothenburgdecorative_regular_macroman/rothenbg-webfont.svg#webfontregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+.gothic{
+  font-family: 'DeutschGothic', sans-serif;
+}
+.cursive{
+  font-family: 'GreatVibes', sans-serif;
+}
+
+
+/*@font-face {
+    font-family: 'leafy_gladeregular';
+    src: url('../../../static/vendor/leafyglade_regular_macroman/leafyglade_regular_macroman/Leafy-Glade-webfont.eot');
+    src: url('../../../static/vendor/leafyglade_regular_macroman/leafyglade_regular_macroman/Leafy-Glade-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../../static/vendor/leafyglade_regular_macroman/leafyglade_regular_macroman/Leafy-Glade-webfont.woff') format('woff'),
+         url('../../../static/vendor/leafyglade_regular_macroman/leafyglade_regular_macroman/Leafy-Glade-webfont.ttf') format('truetype'),
+         url('../../../static/vendor/leafyglade_regular_macroman/leafyglade_regular_macroman/Leafy-Glade-webfont.svg#leafy_gladeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'leafy_shade';
+    src: url('../../../static/vendor/leafyglade_regular_macroman/leafyshade_regular_macroman/Leafy_Shade-webfont.eot');
+    src: url('../../../static/vendor/leafyglade_regular_macroman/leafyshade_regular_macroman/Leafy_Shade-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../../static/vendor/leafyglade_regular_macroman/leafyshade_regular_macroman/Leafy_Shade-webfont.woff') format('woff'),
+         url('../../../static/vendor/leafyglade_regular_macroman/leafyshade_regular_macroman/Leafy_Shade-webfont.ttf') format('truetype'),
+         url('../../../static/vendor/leafyglade_regular_macroman/leafyshade_regular_macroman/Leafy_Shade-webfont.svg#leafyshaderegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}*/
+/*.Leafy{
+  font-family: 'leafy_gladeregular', sans-serif;
+}
+.LeafyShade{
+  font-family: 'leafy_shade', sans-serif;
+}*/

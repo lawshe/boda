@@ -1,0 +1,133 @@
+html {
+  font-size: 100%;
+  min-height: 100%;
+}
+
+body {
+  background-color: $white !important;
+  color: $black;
+  font-family: garamond, sans-serif;
+  height: 100%;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+.layoutContainer{
+  height: 100%;
+  padding-bottom: calc($footerHeight * 1.2);
+  min-height: 100vh;
+  position: relative;
+}
+
+/* links */
+  a {
+    color: $blue;
+  	-webkit-transition: all 250ms ease;
+  	transition: all 250ms ease;
+
+    &:hover {
+      color: $greenBright;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+  .button{
+    background-color: $blue;
+    color: $white;
+  	-webkit-transition: all 250ms ease;
+  	transition: all 250ms ease;
+  }
+
+/* text */
+  h1 {
+    font-size: 3rem;
+    color: $green;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  h5 {
+    font-size: 0.83rem;
+  }
+  h6 {
+    font-size: 0.75rem;
+  }
+  p {
+    line-height: 1.5;
+    margin: 0 0 1rem;
+  }
+
+  .tCenter {
+    text-align: center;
+  }
+  .shadowed{
+    text-shadow: 0 1px 1px #141413;
+  }
+
+/* images */
+  img{
+    max-width: 100%;
+  }
+
+/* list */
+.list {
+  li{
+    list-style: none;
+    padding: 0;
+  }
+}
+
+/* margin and alignment */
+  .center {
+    margin: 0 auto;
+  }
+  .verticalContainer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: table;
+    text-align: center;
+  }
+  .verticallyAligned{
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+/* panel */
+  .panel{
+    background-color: #fefefa!important;
+  }
+  .panelHeader{
+    composes: GreatVibes from 'styles/type';
+    composes: shadowed;
+    background-color: $green!important;
+    color: $white!important;
+    font-size: large;
+    font-weight: bold;
+    letter-spacing: 10px;
+  }
+
+/* 404 */
+  .fourOhFour{
+    composes: tCenter;
+  }
+
+@media print {
+
+  * {
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #000 !important;
+    text-shadow: none !important;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}

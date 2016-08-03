@@ -1,0 +1,60 @@
+/*layout*/
+
+.header, .date {
+  composes: shadowed from 'styles/app';
+}
+
+.headerImg{
+  width: 300px;
+}
+
+.pageHeader{
+  composes: tCenter from 'styles/app';
+  border: 0px;
+  img{
+    margin-top: -40px;
+    max-width: 600px;
+  }
+}
+
+.date{
+  font-size: 50px;
+  composes: shadowed from 'styles/app';
+  margin-top: 10px;
+}
+
+.location{
+  font-size: 40px;
+  composes: shadowed from 'styles/app';
+  margin-top: 10px;
+}
+
+/* footer */
+  .footer {
+    composes: tCenter from 'styles/app';
+
+    background-color: $green;
+    bottom: 0;
+    font-size: 0.6em;
+    height: $footerHeight;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    color: #7DA44C;
+  }
+
+/*menu*/
+  .menu{
+    list-style: none;
+    li{
+      display: inline-block;
+      padding: 10px;
+      margin: 5px;
+    }
+  }
+  .menuLink{
+    display: block;
+    padding: 10px;
+    composes: cursive from 'styles/type';
+    text-decoration: none;
+  }
