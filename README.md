@@ -14,6 +14,30 @@ A wedding website to manage RSVPs and provide event information.
 *   [webpack](https://github.com/webpack/webpack)
 
 
+## Installation
+``` bash
+$ git clone https://github.com/lawshe/boda.git
+$ cd boda
+$ npm i
+```
+
+**Run RethinkDB**
+``` bash
+$ cd boda
+$ rethinkdb
+```
+
+**Create config**
+
+Use /config/wedding.js.ex to create /config/wedding.js
+
+**Start**
+``` bash
+$ cd boda
+$ npm run build
+$ npm start
+```
+
 ## Data
 Via config file, /config/wedding.js, and RethinkDB.
 
