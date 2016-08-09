@@ -5,7 +5,12 @@ module.exports = {
     address: {
       street: '604 Brazos St',
       city: 'Austin',
-      state: 'Texas'
+      state: 'Texas',
+      zip: '78701'
+    },
+    coordinates: {
+      latitude: '30.268162',
+      longitude: '-97.7417'
     }
   },
   couple: [

@@ -2,5 +2,6 @@ node_modules
 rethinkdb_data
 npm-debug.log
 config/wedding.js
+config/keys.js
 .DS_STORE*
 .build

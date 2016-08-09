@@ -66,6 +66,7 @@
     "react-addons-update": "^15.2.1",
     "react-bootstrap": "^0.29.5",
     "react-dom": "15.0.1",
+    "react-google-maps": "^4.11.0",
     "react-redux": "4.4.5",
     "react-router": "2.4.0",
     "react-router-redux": "^4.0.4",

@@ -2,6 +2,8 @@ import React from 'react';
 
 import wedding from '../../../../../config/wedding.js';
 
+import Map from './map';
+
 import PageHeader from '../../_partials/page-header';
 import PrettyDate from '../../_partials/pretty-date.js';
 
@@ -21,7 +23,7 @@ const numberOfDaysUntil = () => {
   return Math.round(Math.abs((today.getTime() - weddingDate.getTime()) / (oneDay)));
 };
 
-export default () => {
+export default (props) => {
   const today = new Date();
   const bigDay = new Date(wedding.date);
 
@@ -36,12 +38,13 @@ export default () => {
   return (
     <div className="page-details">
       <PageHeader page="Details" />
-      <h2><PrettyDate /></h2>
-      <p>{countdown}</p>
-      <h3>{wedding.venue.address.city}, {wedding.venue.address.state}</h3>
-      <h4>{wedding.venue.name}</h4>
+      <h2><i className="fa fa-bell-o" ariaHidden="true"></i> Day of</h2>
+      <h3><PrettyDate /></h3>
+      <h3>{wedding.venue.name}</h3>
       <p>{wedding.venue.address.street}</p>
-
+      <p>{wedding.venue.address.city}, {wedding.venue.address.state}</p>
+      <p>{countdown}</p>
+      <Map />
     </div>
   );
 };

@@ -27,9 +27,11 @@ $ cd boda
 $ rethinkdb
 ```
 
-**Create config**
+**Create configs**
 
 Use /config/wedding.js.ex to create /config/wedding.js
+
+Get [Google Maps JavaScript API key](https://developers.google.com/maps/documentation/javascript/get-api-key) and use /config/keys.js.ex to create /config/keys.js
 
 **Start**
 ``` bash
@@ -76,6 +78,7 @@ Via config file, /config/wedding.js, and RethinkDB.
      * Add user auth
 *   CSV Export
 *   Add Invitation Page
+     * Unique short name
 
 ## License
 (MIT)
