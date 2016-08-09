@@ -1,7 +1,8 @@
 import React from 'react';
 import { subscribe } from 'horizon-react';
-import { Row, Col, Table } from 'react-bootstrap';
+import { Row, Col, Table, Well } from 'react-bootstrap';
 
+import PageHeader from '../layout/page-header';
 import InvitationItem from './InvitationItem';
 
 /**
@@ -18,32 +19,36 @@ const mapDataToProps = {
 };
 
 const InvitationList = (props) => (
-  <Row>
-    <h2>All Invitations</h2>
-    <Col md={12}>
-      <Table>
-        <thead>
-          <tr>
-            <th>Returned RSVP?</th>
-            <th>Guests</th>
-            <th>Plus Allowed</th>
-            <th>Plus Bringing</th>
-            <th>&nbsp;</th>
-          </tr>
-        </thead>
-        <tbody>
-        {props.invitations.map(
-          invitation => (
-            <InvitationItem
-              key={invitation.id}
-              invitation={invitation}
-            />
-          )
-        )}
-        </tbody>
-      </Table>
-    </Col>
-  </Row>
+  <div>
+    <PageHeader title="Add Invitation" />
+    <Row>
+      <Col md={12}>
+        <Well>
+          <Table>
+            <thead>
+              <tr>
+                <th>Returned RSVP?</th>
+                <th>Guests</th>
+                <th>Plus Allowed</th>
+                <th>Plus Bringing</th>
+                <th>&nbsp;</th>
+              </tr>
+            </thead>
+            <tbody>
+            {props.invitations.map(
+              invitation => (
+                <InvitationItem
+                  key={invitation.id}
+                  invitation={invitation}
+                />
+              )
+            )}
+            </tbody>
+          </Table>
+        </Well>
+      </Col>
+    </Row>
+  </div>
 );
 
 export default subscribe({
