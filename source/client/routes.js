@@ -17,7 +17,7 @@ import Registry from './components/visitor/registry/Registry';
 
 // Admin
 import InvitationList from './components/admin/invitations/InvitationList';
-import InvitationAdd from './components/admin/invitations/InvitationAdd';
+import InvitationAdd from './components/admin/invitations/add/InvitationAdd';
 
 // Sync routing history with redux store
 const history = syncHistoryWithStore(browserHistory, store);
