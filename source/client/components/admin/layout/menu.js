@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, History } from 'react-router';
+import { Navbar, Nav } from 'react-bootstrap';
 
-import local from './_styles';
+import wedding from '../../../../../config/wedding.js';
 
 /**
   *
@@ -12,9 +13,25 @@ import local from './_styles';
   * @return {ReactComponent}
   */
 
-export default () => (
-  <ul className={`${local.menu}`}>
-    <li><Link className={`${local.menuLink}`} to="/admin/invitations">All</Link></li>
-    <li><Link className={`${local.menuLink}`} to="/admin/invitations/add">Add</Link></li>
-  </ul>
-);
+export default () => {
+  const coupleOneInitial = wedding.couple[0].name.first.charAt(0);
+  const coupleTwoInitial = wedding.couple[1].name.first.charAt(0);
+  const coupleInitials = `${coupleOneInitial} & ${coupleTwoInitial}`;
+
+  return (
+    <Navbar>
+      <Navbar.Header>
+        <Navbar.Brand>
+          <a href="#">{coupleInitials}</a>
+        </Navbar.Brand>
+        <Navbar.Toggle />
+      </Navbar.Header>
+      <Navbar.Collapse>
+        <Nav>
+          <li><Link to="/admin/invitations"> All Invitations</Link></li>
+          <li><Link to="/admin/invitations/add">Add Invitation</Link></li>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+  );
+};
