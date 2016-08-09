@@ -31,10 +31,13 @@ body {
     }
   }
   .button{
-    background-color: $blue;
+    background-color: $btnSubmit;
     color: $white;
   	-webkit-transition: all 250ms ease;
   	transition: all 250ms ease;
+  }
+  .buttonAction{
+    background-color: $btnAction;
   }
 
 /* text */
@@ -44,6 +47,7 @@ body {
   }
   h2 {
     font-size: 2.5rem;
+    color: $green;
   }
   h3 {
     font-size: 2rem;
@@ -75,12 +79,12 @@ body {
   }
 
 /* list */
-.list {
-  li{
-    list-style: none;
-    padding: 0;
+  .list {
+    li{
+      list-style: none;
+      padding: 0;
+    }
   }
-}
 
 /* margin and alignment */
   .center {
@@ -96,6 +100,9 @@ body {
   .verticallyAligned{
     display: table-cell;
     vertical-align: middle;
+  }
+  .marginBtmLg{
+    margin-bottom: $marginLg;
   }
 
 /* panel */
