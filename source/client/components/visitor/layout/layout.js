@@ -3,8 +3,8 @@ import { Grid } from 'react-bootstrap';
 
 import glob from 'styles/app';
 
-import MainHeader from './main-header';
 import Footer from './footer';
+import Menu from './menu';
 
 /**
   *
@@ -17,7 +17,7 @@ import Footer from './footer';
 
 export default (props) => (
   <div className={`${glob.layoutContainer}`}>
-    <MainHeader />
+    <Menu />
     <Grid>
       {props.children}
     </Grid>
