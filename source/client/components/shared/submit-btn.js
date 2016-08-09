@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import { connect } from 'react-redux';
 
 import glob from 'styles/app';
 
@@ -8,17 +7,15 @@ import glob from 'styles/app';
   *
   * RSVP form submit button
   *
-  * @param none
+  * @param {String} displayText - text to display in button
   *
   * @return {ReactComponent}
   */
 
 
-const SubmitBtn = () =>
+const SubmitBtn = (props) =>
   <Button type="submit" className={`${glob.button}`} bsSize="large">
-    Send RSVP
+    {props.displayText}
   </Button>;
 
-const mapStateToProps = ({ rsvp }) => ({ rsvp });
-
-export default connect(mapStateToProps)(SubmitBtn);
+export default SubmitBtn;
