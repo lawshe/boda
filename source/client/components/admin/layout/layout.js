@@ -14,9 +14,8 @@ import Menu from './menu';
 
 export default (props) => (
   <div>
+    <Menu />
     <Grid>
-      <h1>Admin</h1>
-      <Menu />
       {props.children}
     </Grid>
   </div>
