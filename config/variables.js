@@ -3,8 +3,8 @@ const green = '#00994e';
 
 module.exports = {
   $black: '#001a0d',
-  $gray: '#b2bab6',
-  $grayDark: '#686a69',
+  $gray: '#9ea4a0',
+  $grayDark: '#636865',
   $grayLight: '#e7eae9',
   $green: '#006634',
   $greenBright: green,
@@ -16,6 +16,7 @@ module.exports = {
   $footerHeight: '200px',
   $linkTransition: 'all 250ms ease',
   $linkTransitionSpeed: '250ms',
+  $mapHeight: '300px',
   $marginMd: '20px',
   $marginLg: '20px',
   $btnSubmit: blue,
