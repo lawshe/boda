@@ -36,5 +36,13 @@ module.exports = {
       name: 'Amazon',
       link: 'https://www.amazon.com/wedding/home'
     }
+  ],
+  timeline: [
+    {
+      time: {
+        start: '4:30 PM'
+      },
+      eventName: 'Ceremony'
+    }
   ]
 };
