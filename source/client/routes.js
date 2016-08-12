@@ -14,6 +14,7 @@ import RsvpSearch from './components/visitor/rsvp-search/RsvpSearch';
 import About from './components/visitor/about/About';
 import Details from './components/visitor/details/Details';
 import Registry from './components/visitor/registry/Registry';
+import CityGuide from './components/visitor/city-guide/CityGuide';
 
 // Admin
 import InvitationList from './components/admin/invitations/InvitationList';
@@ -31,7 +32,8 @@ export default (
       <Route path="rsvp" component={RsvpSearch} store={store} />
       <Route path="rsvp/:shortName" component={Rsvp} store={store} />
       <Route path="about" component={About} store={store} />
-      <Route path="details" component={Details} />
+      <Route path="the-wedding" component={Details} />
+      <Route path="city-guide" component={CityGuide} />
       <Route path="registry" component={Registry} />
     </Route>
     <Route path="/admin" component={AdminLayout}>
