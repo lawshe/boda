@@ -3,7 +3,7 @@ import { Row, Col } from 'react-bootstrap';
 
 import wedding from '../../../../../config/wedding.js';
 
-import Map from './map';
+import Map from '../../_partials/map/map';
 
 import PageHeader from '../../_partials/page-header';
 import PrettyDate from '../../_partials/pretty-date';
