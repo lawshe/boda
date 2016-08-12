@@ -9,7 +9,8 @@ import {
   UPDATE_GUEST_EMAIL,
   ADD_GUEST,
   UPDATE_SHORT_NAME,
-  UPDATE_PLUS_ALLOWED
+  UPDATE_PLUS_ALLOWED,
+  UPDATE_VENUE_MARKERS
 } from '../actions/actionTypes';
 
 module.exports = {
@@ -80,6 +81,12 @@ module.exports = {
     return {
       type: UPDATE_PLUS_ALLOWED,
       allowed
+    };
+  },
+  updateVenueMarkers(markers) {
+    return {
+      type: UPDATE_VENUE_MARKERS,
+      markers
     };
   }
 };
