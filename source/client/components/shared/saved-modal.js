@@ -24,7 +24,7 @@ export default (props) => (
     </Modal.Body>
 
     <Modal.Footer>
-      <Button onClick={props.closeModal}>Close</Button>
+      <Button onClick={props.closeSavedModal}>Close</Button>
     </Modal.Footer>
   </Modal>
 );
