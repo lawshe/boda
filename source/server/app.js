@@ -4,8 +4,11 @@ import horizon from '@horizon/server';
 import devProps from '../../config/webpack/devProps';
 import config from '../../config/page';
 import weddingConfig from '../../config/wedding';
+import apiKeys from '../../config/keys';
 
 const app = express();
+
+const googleMapsApi = apiKeys.googleMaps;
 
 app.use('/static', express.static(path.join(process.cwd(), '.build')));
 
@@ -27,6 +30,9 @@ app.use('/', (req, res) => {
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="${styles}" />
         <link rel="icon" href="${images}/favicon.ico">
+        <script type="text/javascript"
+          src="https://maps.googleapis.com/maps/api/js?key=${googleMapsApi}&libraries=geometry,places,visualization">
+        </script>
       </head>
       <body>
         <div id='root' style='min-height:100%;height:100%;'></div>
