@@ -1,6 +1,7 @@
 import React from 'react';
 
 import wedding from '../../../../../config/wedding.js';
+import PageHeader from '../../_partials/page-header';
 
 /**
   *
@@ -17,7 +18,7 @@ const registryLinks = wedding.registry.map(
 
 export default () => (
   <div>
-    <h1>Registry</h1>
+    <PageHeader page="Registry" />
     {registryLinks}
   </div>
 );
