@@ -41,13 +41,15 @@ body {
   }
 
 /* text */
+  h1, h2, h3, h4, h5, p{
+    text-align: center;
+  }
   h1 {
     font-size: 3rem;
-    color: $green;
   }
   h2 {
     font-size: 2.5rem;
-    color: $green;
+    color: $black;
   }
   h3 {
     font-size: 2rem;
@@ -70,7 +72,7 @@ body {
     text-align: center;
   }
   .shadowed{
-    text-shadow: 0 1px 1px #141413;
+    text-shadow: 0 1px 1px $gray;
   }
 
 /* images */
@@ -103,6 +105,17 @@ body {
   }
   .marginBtmLg{
     margin-bottom: $marginLg;
+  }
+
+/* menu */
+  .mainMenu{
+    background-color: $white!important;
+    border-color: $grayLight!important;
+    a{
+      &:hover{
+        color: $blue!important;
+      }
+    }
   }
 
 /* panel */
