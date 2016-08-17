@@ -5,6 +5,8 @@ import { Row, Col, Form, FormGroup, Button } from 'react-bootstrap';
 
 import { updateRsvpQuery, updateRsvpResult } from '../../../actions/actionCreators';
 
+import PageHeader from '../../_partials/page-header';
+
 import glob from 'styles/app';
 
 /**
@@ -56,18 +58,18 @@ class Rsvp extends React.Component {
     : '';
 
     const inviteFound = this.props.rsvpSearch.result
-    ? <Button bsSize="large" className={`${glob.button}`} href={`/rsvp/${this.props.rsvpSearch.result.shortName}`}>RSVP</Button>
+    ? <Button bsSize="large" className={`${glob.button}`} href={`/rsvp/${this.props.rsvpSearch.result.shortName}`}>Go to RSVP</Button>
     : <div>{queryMessage}</div>;
 
     return (
       <div>
         <Row>
           <Col xs={12}>
-            <h2>Find Invitation</h2>
+            <PageHeader page="Find Invitation" />
           </Col>
         </Row>
         <Row>
-          <Col xs={12} sm={6}>
+          <Col xs={12}>
             <Form>
               <FormGroup>
                 <input placeholder="Email" type="email" id="rsvp-query" value={query} onChange={this.handleChange.bind(this)}/>
@@ -75,7 +77,7 @@ class Rsvp extends React.Component {
               </FormGroup>
             </Form>
           </Col>
-          <Col xs={12} sm={6}>
+          <Col xs={12}>
             {inviteFound}
           </Col>
         </Row>
