@@ -43,6 +43,15 @@ module.exports = {
         start: '4:30 PM'
       },
       eventName: 'Ceremony'
+    },
+    {
+      time: {
+        start: '6:00 PM'
+      },
+      eventName: 'Dinner'
     }
-  ]
+  ],
+  ceremony: {
+    time: '4:30 PM'
+  }
 };
