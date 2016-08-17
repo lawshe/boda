@@ -6,7 +6,7 @@ html {
 body {
   background-color: $white !important;
   color: $black;
-  font-family: garamond, sans-serif;
+  font-family: garamond, serif;
   height: 100%;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
@@ -45,14 +45,18 @@ body {
     text-align: center;
   }
   h1 {
-    font-size: 3rem;
+    font-family: 'fontleroybrownregular', sans-serif;
+    font-size: 4rem;
+    color: $black;
   }
   h2 {
-    font-size: 2.5rem;
-    color: $black;
+    font-family: 'fontleroybrownregular', sans-serif;
+    font-size: 3.5rem;
+    color: $blackLight;
   }
   h3 {
     font-size: 2rem;
+    color: $blackLightest;
   }
   h4 {
     font-size: 1rem;
@@ -73,6 +77,9 @@ body {
   }
   .shadowed{
     text-shadow: 0 1px 1px $gray;
+  }
+  .withoutLineHeight{
+    line-height: 0;
   }
 
 /* images */
@@ -116,6 +123,11 @@ body {
         color: $blue!important;
       }
     }
+  }
+
+/* page */
+  .pageDetails{
+    text-align: center;
   }
 
 /* panel */
