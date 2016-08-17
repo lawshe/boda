@@ -30,7 +30,6 @@ export default () => {
       <Navbar.Collapse>
         <Nav>
           <li><Link to="/rsvp">RSVP</Link></li>
-          <li><Link to="/about">About Us</Link></li>
           <li><Link to="/the-wedding">The Wedding</Link></li>
           <li><Link to="/registry">Registry</Link></li>
           <li><Link to="/city-guide">City Guide</Link></li>
