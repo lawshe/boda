@@ -33,14 +33,16 @@
   .footer {
     composes: tCenter from 'styles/app';
 
-    background-color: $green;
+    background-color: $whiteDark;
     bottom: 0;
     font-size: 0.6em;
     height: $footerHeight;
     left: 0;
     position: absolute;
     width: 100%;
-    color: #7DA44C;
+    h3{
+      color: $gray;
+    }
   }
 
 /*menu*/
