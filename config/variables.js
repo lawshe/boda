@@ -1,15 +1,25 @@
-const blue = '#004B99';
-const green = '#00994e';
+const black =         '#4a4a4a';
+const blackLight =    '#636363';
+const blue =          '#004B99';
+const gray =          '#707070';
+const grayLight =     '#b0b0b0';
+const grayLightest =  '#cacaca';
+const green =         '#006634';
+const greenLight =    '#00994e';
+const white =         '#fcfaf9';
+const whiteDark =     '#f4ece8';
 
 module.exports = {
-  $black: '#001a0d',
-  $gray: '#9ea4a0',
-  $grayDark: '#636865',
-  $grayLight: '#e7eae9',
-  $green: '#006634',
-  $greenBright: green,
+  $black: black,
+  $blackLight: blackLight,
+  $blackLightest: gray,
+  $gray: gray,
+  $grayLight: grayLight,
+  $grayLightest: grayLightest,
+  $green: green,
+  $greenBright: greenLight,
   $greenMuted: '#a3c7b5',
-  $white: '#fbf9f7',
+  $white: white,
   $whiteDark: '#eae0d5',
   $blue: blue,
   $blueLight: '#96c9fc',
@@ -18,7 +28,7 @@ module.exports = {
   $linkTransitionSpeed: '250ms',
   $mapHeight: '300px',
   $marginMd: '20px',
-  $marginLg: '20px',
+  $marginLg: '30px',
   $btnSubmit: blue,
   $btnAction: green
 };
