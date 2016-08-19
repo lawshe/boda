@@ -54,7 +54,7 @@ module.exports = [
     featureType: 'road.arterial',
     elementType: 'geometry',
     stylers: [
-      { color : variables.$gray },
+      { color : variables.$grayLight },
       { visibility: 'simplified' }
     ]
   },
@@ -62,7 +62,7 @@ module.exports = [
     featureType: 'road.arterial',
     elementType: 'labels.text',
     stylers: [
-      { color : variables.$grayDark },
+      { color : variables.$gray },
       { visibility: 'simplified' }
     ]
   },
@@ -70,7 +70,7 @@ module.exports = [
     featureType: 'road.highway',
     elementType: 'geometry',
     stylers: [
-      { color : variables.$gray },
+      { color : variables.$grayLight },
       { visibility: 'simplified' }
     ]
   },
@@ -78,7 +78,7 @@ module.exports = [
     featureType: 'road.highway',
     elementType: 'labels.text',
     stylers: [
-      { color : variables.$grayDark },
+      { color : variables.$gray },
       { visibility: 'simplified' }
     ]
   },
@@ -86,7 +86,7 @@ module.exports = [
     featureType: 'road.local',
     elementType: 'geometry',
     stylers: [
-      { color : variables.$grayLight },
+      { color : variables.$grayLightest },
       { visibility: 'simplified' }
     ]
   },
