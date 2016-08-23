@@ -24,10 +24,8 @@ const history = syncHistoryWithStore(browserHistory, store);
 
 export default (
   <Router history={history}>
-    <Route path="/" component={Home}>
-      <IndexRoute component={Home} />
-    </Route>
     <Route path="/" component={MainLayout}>
+      <IndexRoute component={Home} />
       <Route path="rsvp" component={RsvpSearch} store={store} />
       <Route path="rsvp/:shortName" component={Rsvp} store={store} />
       <Route path="the-wedding" component={Details} />
