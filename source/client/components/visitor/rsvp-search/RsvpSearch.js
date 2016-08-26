@@ -50,6 +50,10 @@ class Rsvp extends React.Component {
     super(props);
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+  }
+
   render() {
     const query = this.props.rsvpSearch.query;
 
@@ -70,14 +74,14 @@ class Rsvp extends React.Component {
         </Row>
         <Row>
           <Col xs={12}>
-            <Form>
-              <FormGroup>
+            <Form onSubmit={this.handleSubmit}>
+              <FormGroup style={{textAlign: 'center'}}>
                 <input placeholder="Email" type="email" id="rsvp-query" value={query} onChange={this.handleChange.bind(this)}/>
                 <label htmlFor="rsvp-query"></label>
               </FormGroup>
             </Form>
           </Col>
-          <Col xs={12}>
+          <Col xs={12} style={{textAlign: 'center'}}>
             {inviteFound}
           </Col>
         </Row>
