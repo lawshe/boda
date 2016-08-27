@@ -10,7 +10,8 @@ import {
   ADD_GUEST,
   UPDATE_SHORT_NAME,
   UPDATE_PLUS_ALLOWED,
-  UPDATE_VENUE_MARKERS
+  UPDATE_VENUE_MARKERS,
+  UPDATE_GUIDE_MARKERS,
 } from '../actions/actionTypes';
 
 module.exports = {
@@ -86,6 +87,12 @@ module.exports = {
   updateVenueMarkers(markers) {
     return {
       type: UPDATE_VENUE_MARKERS,
+      markers
+    };
+  },
+  updateGuideMarkers(markers) {
+    return {
+      type: UPDATE_GUIDE_MARKERS,
       markers
     };
   }
