@@ -92,12 +92,6 @@ export default () => {
       </Row>
       <Row>
         <Col xs={12}>
-          <h3>Listen to Music</h3>
-          {musicList}
-        </Col>
-      </Row>
-      <Row>
-        <Col xs={12}>
           <h3>Grab a Drink</h3>
           {barsList}
         </Col>
