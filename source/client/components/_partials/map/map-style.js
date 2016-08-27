@@ -62,7 +62,7 @@ module.exports = [
     featureType: 'road.arterial',
     elementType: 'labels.text',
     stylers: [
-      { color : variables.$gray },
+      { color : variables.$grayMed },
       { visibility: 'simplified' }
     ]
   },
@@ -78,7 +78,7 @@ module.exports = [
     featureType: 'road.highway',
     elementType: 'labels.text',
     stylers: [
-      { color : variables.$gray },
+      { color : variables.$grayMed },
       { visibility: 'simplified' }
     ]
   },

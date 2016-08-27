@@ -1,12 +1,16 @@
 const black =         '#4a4a4a';
 const blackLight =    '#636363';
-const blue =          '#004B99';
-const gray =          '#707070';
+const blue =          '#073e9b';
+const blueDark =      '#05317D';
+const gray =          '#9e9e9e';
 const grayLight =     '#b0b0b0';
 const grayLightest =  '#cacaca';
+const grayMed =       '#707070';
 const green =         '#006634';
 const greenLight =    '#00994e';
-const white =         '#fcfaf9';
+const pink =          '#9b073e';
+const white =         '#f8f5f3';
+const whiteMed =      '#f6efec';
 const whiteDark =     '#f4ece8';
 
 module.exports = {
@@ -20,9 +24,12 @@ module.exports = {
   $greenBright: greenLight,
   $greenMuted: '#a3c7b5',
   $white: white,
+  $whiteMed: whiteMed,
   $whiteDark: '#eae0d5',
   $blue: blue,
+  $blueDark: blueDark,
   $blueLight: '#96c9fc',
+  $pink: pink,
   $footerHeight: '200px',
   $linkTransition: 'all 250ms ease',
   $linkTransitionSpeed: '250ms',
@@ -30,5 +37,6 @@ module.exports = {
   $marginMd: '20px',
   $marginLg: '30px',
   $btnSubmit: blue,
-  $btnAction: green
+  $btnAction: green,
+  $borderRadius: '5px'
 };

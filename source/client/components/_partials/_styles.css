@@ -1,0 +1,32 @@
+.borderTop{
+  text-align: center;
+  svg{
+    width: 50%;
+  }
+}
+.borderBtm{
+  text-align: center;
+  svg{
+    width: 50%;
+    transform: rotate(180deg);
+  }
+}
+.headerContainer{
+}
+.pageHeader{
+  composes: leroy from 'styles/type';
+  color: $green;
+}
+.euc{
+  display: inline-block;
+  width: 40px;
+  position: relative;
+  top: 30px;
+}
+.eucLeft{
+  -webkit-transform: scaleX(-1);
+     -moz-transform: scaleX(-1);
+      -ms-transform: scaleX(-1);
+       -o-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
