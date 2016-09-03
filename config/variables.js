@@ -2,12 +2,15 @@ const black =         '#4a4a4a';
 const blackLight =    '#636363';
 const blue =          '#073e9b';
 const blueDark =      '#05317D';
+const blueLight =     '#3864af';
+const blueMuted =     '#839ecd';
 const gray =          '#9e9e9e';
 const grayLight =     '#b0b0b0';
 const grayLightest =  '#cacaca';
-const grayMed =       '#707070';
+const grayDark =      '#707070';
 const green =         '#006634';
-const greenLight =    '#00994e';
+const greenLight =    '#32845c';
+const greenMuted =    '#99c1ad';
 const pink =          '#9b073e';
 const white =         '#f8f5f3';
 const whiteMed =      '#f6efec';
@@ -21,14 +24,15 @@ module.exports = {
   $grayLight: grayLight,
   $grayLightest: grayLightest,
   $green: green,
-  $greenBright: greenLight,
-  $greenMuted: '#a3c7b5',
+  $greenLight: greenLight,
+  $greenMuted: greenMuted,
   $white: white,
   $whiteMed: whiteMed,
-  $whiteDark: '#eae0d5',
+  $whiteDark: whiteDark,
   $blue: blue,
   $blueDark: blueDark,
-  $blueLight: '#96c9fc',
+  $blueLight: blueLight,
+  $blueMuted: blueMuted,
   $pink: pink,
   $footerHeight: '200px',
   $linkTransition: 'all 250ms ease',
@@ -38,5 +42,13 @@ module.exports = {
   $marginLg: '30px',
   $btnSubmit: blue,
   $btnAction: green,
-  $borderRadius: '5px'
+  $borderRadius: '5px',
+  $map: {
+    colors: {
+      bar: blueDark,
+      food: green,
+      fun: greenLight,
+      music: blueLight
+    }
+  }
 };
