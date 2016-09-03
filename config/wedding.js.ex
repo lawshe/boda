@@ -37,7 +37,7 @@ module.exports = {
         }
       ]
     },
-    bars: {
+    bar: {
       list : [
         {
           name: 'Yellow Jacket Social Club',
@@ -51,7 +51,8 @@ module.exports = {
             lat: '30.2617913',
             lng: '-97.7269408'
           },
-          website: 'http://www.yellowjacketsocialclub.com/'
+          website: 'http://www.yellowjacketsocialclub.com/',
+          tip: '$2 Coors'
         }
       ]
     },
@@ -90,6 +91,26 @@ module.exports = {
           website: 'http://www.pinballzarcade.com/'
         }
       ]
+    },
+    transportation: {
+      rideshare:{
+        how: {
+          name: 'Fare',
+          website: 'http://www.ridefare.com/'
+        }
+      },
+      bus: {
+        how: {
+          name: 'Capital Metro',
+          website: 'http://www.capmetro.org/'
+        }
+      },
+      taxi: {
+        how: {
+          name: 'Yellow Cab',
+          website: 'http://www.yellowcabaustin.com/'
+        }
+      }
     }
   },
   venue: {
