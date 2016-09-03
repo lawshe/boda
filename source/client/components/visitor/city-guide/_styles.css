@@ -1,0 +1,50 @@
+.thingsToDo{
+  height: $mapHeight;
+  overflow: scroll;
+}
+.placeList{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  li{
+    display: inline-block;
+    margin: 0px auto;
+    padding: 0 0 15px 30px;
+    h4, h5{
+      text-align: center;
+    }
+    h4{
+      margin-top: 0;
+    }
+  }
+}
+.todoCol{
+  padding: 0px;
+}
+.todoListCol{
+  background-color: $whiteDark;
+  padding: 30px 10px;
+  margin: 0px;
+}
+.todo{
+  display: flex;
+  a{
+    /*background-color: $whiteDark;*/
+    border-bottom: 1px solid;
+    /*color: $white;*/
+    display: block;
+    margin: 0 auto;
+    padding: 15px;
+    &:hover{
+      background-color: $blue!important;
+      border-color: $blue!!important;
+      color: $whiteDark!important;
+    }
+  }
+  h3{
+    color: $whiteDark!important;
+    text-align: right;
+    padding-right: 15px;
+  }
+}
