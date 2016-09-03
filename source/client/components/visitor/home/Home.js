@@ -1,14 +1,13 @@
 import React from 'react';
-import { Image } from 'react-bootstrap';
 
 import wedding from '../../../../../config/wedding.js';
 
 import 'static/vendor/font-awesome/css/font-awesome.min.css';
 import glob from 'styles/app';
+import { Row, Col } from 'react-bootstrap';
 import local from './_styles';
-import type from 'styles/type';
-
-import fernImage from '../../../../../static/images/ferns.png';
+import EucThree from '../../svg/euc-3';
+import EucFour from '../../svg/euc-4';
 
 /**
   *
@@ -24,11 +23,18 @@ const Home = () => {
   const coupleTwo = wedding.couple[1].name.first;
 
   return (
-    <div className={`${local.home} ${glob.verticalContainer}`}>
-      <div className={`${glob.verticallyAligned}`}>
-        <h1 className={`${type.gothic}`}>{coupleOne} and {coupleTwo} </h1>
-        <Image className={`${local.ferns}`} alt="ferns" src={fernImage} responsive />
-      </div>
+    <div>
+        <div className={`${glob.verticalContainer}`}>
+          <div className={`${glob.verticallyAligned} ${local.headerContainer}`}>
+            <div className={`${local.euc} ${local.eucTop}`}>
+              <EucThree color="$green" />
+            </div>
+            <h1 className={`${local.header}`}>{coupleOne}<br />& {coupleTwo}</h1>
+            <div className={`${local.euc} ${local.eucBtm}`}>
+              <EucFour color="$green" />
+            </div>
+          </div>
+        </div>
     </div>
   );
 };
