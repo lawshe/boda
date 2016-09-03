@@ -1,46 +1,50 @@
 import wedding from '../../../config/wedding.js';
-import { UPDATE_GUIDE_MARKERS } from '../actions/actionTypes';
-// import { GoogleMap } from 'react-google-maps';
-// console.log('-----wedding',wedding);
-// const cityLat = parseFloat(wedding.venue.coordinates.latitude, 10);
-// const cityLng = parseFloat(wedding.venue.coordinates.longitude, 10);
+import { UPDATE_GUIDE_MARKERS, SHOW_GUIDE_MAP_INFO } from '../actions/actionTypes';
 
 const lat = parseFloat(wedding.city.center.lat, 10);
 const lng = parseFloat(wedding.city.center.lng, 10);
 
-const makeMarker = (place, kind) => {
+const makeMarker = (i, place, kind) => {
   const latitude = parseFloat(place.coordinates.lat, 10);
   const longitude = parseFloat(place.coordinates.lng, 10);
   const content = place.name;
+  const website = place.website;
   return {
+    idx: i,
     position: new google.maps.LatLng(latitude, longitude),
     showInfo: false,
     pin: kind,
     content,
+    website,
     mapQuery: `${place.name} ${place.address.street} ${place.address.city} ${place.address.state} ${place.address.zip}`
   };
 };
 
+
 const getMarkers = () => {
-  const markers = wedding.guide.bars.list.map(
-    (bar) => (makeMarker(bar, 'bar'))
+  const markers = [];
+
+  wedding.guide.bar.list.forEach(
+    (bar, i) => {
+      markers.push(makeMarker(i, bar, 'bar'));
+    }
   );
 
   wedding.guide.music.list.forEach(
-    (venue) => {
-      markers.push(makeMarker(venue, 'venue'));
+    (music, i) => {
+      markers.push(makeMarker(i, music, 'music'));
     }
   );
 
   wedding.guide.food.list.forEach(
-    (place) => {
-      markers.push(makeMarker(place, 'food'));
+    (place, i) => {
+      markers.push(makeMarker(i, place, 'food'));
     }
   );
 
   wedding.guide.fun.list.forEach(
-    (place) => {
-      markers.push(makeMarker(place, 'fun'));
+    (place, i) => {
+      markers.push(makeMarker(i, place, 'fun'));
     }
   );
 
@@ -59,6 +63,10 @@ export default function guideMapReducers(state = initialState, action) {
     case UPDATE_GUIDE_MARKERS: {
       const newGuideMarkerState = Object.assign({}, state, { markers: action.markers });
       return newGuideMarkerState;
+    }
+    case SHOW_GUIDE_MAP_INFO: {
+      const newGuideMarkers = Object.assign({}, state, { markers: action.markers });
+      return newGuideMarkers;
     }
     default:
       return state;
