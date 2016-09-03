@@ -1,7 +1,8 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 
-import type from 'styles/type';
+import local from './_styles';
+import EucOne from '../svg/euc-1';
 
 /**
   *
@@ -12,10 +13,17 @@ import type from 'styles/type';
   * @return {ReactComponent}
   */
 
+const eucLeftJsx = (
+  <div className={`${local.euc} ${local.eucLeft}`}><EucOne color="$green" /></div>
+);
+const eucRightJsx = (
+  <div className={`${local.euc}`}><EucOne color="$green" /></div>
+);
+
 export default (props) => (
-  <Row>
-    <Col xs={12}>
-      <h1 className={`${type.cursive}`}>{props.page}</h1>
+  <Row style={{ width: '100%' }}>
+    <Col xs={12} className={local.headerContainer}>
+      <h1 className={`${local.pageHeader}`}>{eucLeftJsx}{props.page}{eucRightJsx}</h1>
     </Col>
   </Row>
 );
