@@ -1,0 +1,57 @@
+/*Wedding Details*/
+
+.ceremony{
+  composes: leroy from 'styles/type';
+  color: $green;
+  font-size: 5vw;
+}
+
+.timeline{
+  margin: 0 auto;
+  margin-bottom: $marginLg;
+}
+.date{
+  margin: 0;
+}
+.eucContainer{
+  width: 50%;
+  margin: 0 auto;
+  margin-top: -15vw;
+}
+.euc{
+  width: 100%;
+}
+.eucSetBtm{
+  -webkit-transform: scaleY(-1);
+     -moz-transform: scaleY(-1);
+      -ms-transform: scaleY(-1);
+       -o-transform: scaleY(-1);
+          transform: scaleY(-1);
+}
+.eucDate{
+  display: inline-block;
+  position: relative;
+  width: 6%;
+  z-index: 0;
+}
+.eucBorderLeft{
+  margin-right: -2px;
+  -webkit-transform: scaleX(-1);
+     -moz-transform: scaleX(-1);
+      -ms-transform: scaleX(-1);
+       -o-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+.eucBorderRight{
+  margin-left: -2px;
+}
+.eucMap{
+  margin-left: -29px;
+  margin-top: -12px;
+  width: 5vw;
+  -webkit-transform: rotate(-20deg);
+     -moz-transform: rotate(-20deg);
+      -ms-transform: rotate(-20deg);
+       -o-transform: rotate(-20deg);
+          transform: rotate(-20deg);
+}
