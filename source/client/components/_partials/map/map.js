@@ -18,10 +18,10 @@ const mapStateToProps = (state) => ({
 const pinSymbol = (color) => {
   return {
     path: MapPinPath,
-    fillColor: variables[color],
+    fillColor: color,
     fillOpacity: 1,
-    strokeColor: variables.$black,
-    strokeWeight: 0,
+    strokeColor: color,
+    strokeWeight: 4,
     scale: 1
   }
 };
@@ -56,14 +56,26 @@ class PopUpInfoWindow extends React.Component {
   }
 
   renderInfoWindow(ref, marker) {
+    const linkJsx = () => {
+      if(marker.website){
+        return (
+          <div style={{margin: '10px auto'}}>
+            <a href={`${marker.website}`} target="_BLANK">Website</a>
+          </div>
+        );
+      }
+    }
+
     return (
       <InfoWindow
         key={`${ref}_info_window`}
         onCloseclick={this.handleMarkerClose.bind(this, marker)} >
           <div>
             {`${marker.content}`}
-            <br />
-            <a href={`https://www.google.com/maps?q=${marker.mapQuery}`} target="_BLANK">Directions</a>
+            {linkJsx()}
+            <div>
+              <a href={`https://www.google.com/maps?q=${marker.mapQuery}`} target="_BLANK">Directions</a>
+            </div>
           </div>
       </InfoWindow>
     );
@@ -88,13 +100,15 @@ class PopUpInfoWindow extends React.Component {
     const markersJsx = markers.map((marker, index) =>
       {
         const ref = `marker_${index}`;
-        let markerColor = '$blue';
+        let markerColor = variables.$blue;
         if(marker.pin === 'food'){
-          markerColor = '$green';
+          markerColor = variables.$map.colors.food;
         } else if(marker.pin === 'bar'){
-          markerColor = '$blackLight';
+          markerColor = variables.$map.colors.bar;
         } else if(marker.pin === 'fun'){
-          markerColor = '$pink';
+          markerColor = variables.$map.colors.fun;
+        }else if(marker.pin === 'music'){
+          markerColor = variables.$map.colors.music;
         }
 
         return (

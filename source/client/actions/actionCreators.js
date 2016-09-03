@@ -12,6 +12,7 @@ import {
   UPDATE_PLUS_ALLOWED,
   UPDATE_VENUE_MARKERS,
   UPDATE_GUIDE_MARKERS,
+  SHOW_GUIDE_MAP_INFO
 } from '../actions/actionTypes';
 
 module.exports = {
@@ -93,6 +94,12 @@ module.exports = {
   updateGuideMarkers(markers) {
     return {
       type: UPDATE_GUIDE_MARKERS,
+      markers
+    };
+  },
+  showGuideMapInfo(markers) {
+    return {
+      type: SHOW_GUIDE_MAP_INFO,
       markers
     };
   }

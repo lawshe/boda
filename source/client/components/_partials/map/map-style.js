@@ -101,7 +101,7 @@ module.exports = [
     featureType: 'water',
     elementType: 'geometry',
     stylers: [
-      { color: variables.$blueLight }
+      { color: variables.$blueMuted }
     ]
   },
   {
@@ -110,5 +110,5 @@ module.exports = [
     stylers: [
       { color: variables.$blue }
     ]
-  },
+  }
 ];
