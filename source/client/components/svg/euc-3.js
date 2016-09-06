@@ -9,7 +9,7 @@ export default (props) => {
 
   return (
     <div className={props.optionalClass}>
-      <svg version="1.1" x="0px" y="0px" viewBox="0 0 401 237" enable-background="new 0 0 401 237">
+      <svg version="1.1" x="0px" y="0px" viewBox="0 0 401 237" enableBackground="new 0 0 401 237">
         <g>
         	<path fill={color} d="M312.02,58.927c-0.526-0.354-1.053-0.708-1.58-1.062c-0.546-0.367-1.02,0.5-0.506,0.877
         		c0.513,0.378,1.025,0.755,1.539,1.132C312.031,60.285,312.604,59.319,312.02,58.927z"/>
