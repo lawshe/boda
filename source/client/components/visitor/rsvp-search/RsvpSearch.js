@@ -1,11 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router';
+// import { Link } from 'react-router';
 import { subscribe } from 'horizon-react';
 import { Row, Col, Form, FormGroup, Button } from 'react-bootstrap';
+
+import wedding from '../../../../../config/wedding.js';
 
 import { updateRsvpQuery, updateRsvpResult } from '../../../actions/actionCreators';
 
 import PageHeader from '../../_partials/page-header';
+
 
 import glob from 'styles/app';
 
@@ -48,22 +51,46 @@ const mapStateToProps = (state) => ({
 class Rsvp extends React.Component {
   constructor(props) {
     super(props);
+    // this.state({ active: false });
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-  }
 
   render() {
     const query = this.props.rsvpSearch.query;
 
     const queryMessage = query
-    ? 'Invitation not found'
+    ? `Invitation for ` + query + ` not found. Email ${wedding.email} for support.`
     : '';
 
     const inviteFound = this.props.rsvpSearch.result
     ? <Button bsSize="large" className={`${glob.button}`} href={`/rsvp/${this.props.rsvpSearch.result.shortName}`}>Go to RSVP</Button>
     : <div>{queryMessage}</div>;
+
+    const inputJsx = (
+      <span>
+        <label htmlFor="rsvp-query" className={glob.matLabel}>Email</label>
+        <input
+          className={`${glob.matInput}`}
+          type="email"
+          id="rsvp-query"
+          value={query}
+          onBlur={this._handleBlur.bind(this)}
+          onChange={this._handleChange.bind(this)}
+          onFocus={this._handleFocus.bind(this)}
+        />
+      </span>
+    );
+
+    let formGroupClasses = `${glob.matGroup}`;
+    if (this.state && this.state.active) {
+      formGroupClasses = `${glob.matGroup} ${glob.isActive} ${glob.isCompleted}`;
+    }
+
+    const formGroupJsx = (
+      <FormGroup className={formGroupClasses} style={{ textAlign: 'center' }}>
+        {inputJsx}
+      </FormGroup>
+    );
 
     return (
       <div>
@@ -73,15 +100,22 @@ class Rsvp extends React.Component {
           </Col>
         </Row>
         <Row>
-          <Col xs={12}>
-            <Form onSubmit={this.handleSubmit}>
-              <FormGroup style={{textAlign: 'center'}}>
-                <input placeholder="Email" type="email" id="rsvp-query" value={query} onChange={this.handleChange.bind(this)}/>
-                <label htmlFor="rsvp-query"></label>
-              </FormGroup>
+          <Col xs={12} sm={6} smOffset={3}>
+            <Form
+              className={glob.card}
+              onSubmit={this.handleSubmit}
+              style={{ padding: '30px', textAlign: 'center' }}
+            >
+              <Row>
+                <Col xs={12}>
+                  {formGroupJsx}
+                </Col>
+              </Row>
             </Form>
           </Col>
-          <Col xs={12} style={{textAlign: 'center'}}>
+        </Row>
+        <Row style={{ marginTop: '30px' }}>
+          <Col xs={12} style={{ textAlign: 'center' }}>
             {inviteFound}
           </Col>
         </Row>
@@ -89,7 +123,25 @@ class Rsvp extends React.Component {
     );
   }
 
-  handleChange(event) {
+
+  _handleSubmit(e) {
+    e.preventDefault();
+  }
+
+  _handleBlur() {
+    if (this.props.rsvpSearch.query === '') {
+      this.setState({ active: false });
+    }
+  }
+
+  _handleFocus() {
+    this.setState({ active: true });
+  }
+
+  _handleChange(event) {
+    if (event.target.value === '') {
+      this.setState({ active: false });
+    }
     this.props.dispatch(updateRsvpQuery(event.target.value));
   }
 }
