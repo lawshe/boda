@@ -1,22 +1,96 @@
 html {
   font-size: 100%;
-  min-height: 100%;
+  /*min-height: 100%;*/
+  height: 100%;
 }
 
 body {
   background-color: $white !important;
   color: $black;
+  display: flex;
+  flex-direction: column;
   font-family: garamond, serif;
-  height: 100%;
-  min-height: 100vh;
+  /*height: 100%;*/
+  min-height: 100%;
   -webkit-font-smoothing: antialiased;
 }
 .layoutContainer{
-  height: 100%;
-  padding-bottom: calc($footerHeight * 1.2);
+  flex: 1;
   min-height: 100vh;
-  position: relative;
 }
+.card{
+  background-color: $whiteMed;
+  -webkit-border-radius: $borderRadius;
+  -moz-border-radius: $borderRadius;
+  border-radius: $borderRadius;
+  padding: 30px;
+  h2{
+    margin: 0;
+  }
+  h3{
+    color: $blackLight;
+  }
+  label{
+    color: $blackLight;
+  }
+}
+
+/*form*/
+  .matGroup{
+    padding: 0;
+    position: relative;
+  }
+  .matGroup:after, .matGroup:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: $gray;
+    bottom: 0;
+    left: 0;
+    transition: all 0.5s;
+  }
+  .matInput{
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    padding: 8px 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+  .matInput:focus::after {
+    transform: scaleX(1);
+  }
+  .matLabel{
+    color: $gray;
+    display: block;
+    font-size: 16px;
+    transform: translateY(25px);
+    transition: all 0.5s;
+  }
+
+  .matGroup::after {
+    background-color: $blue;
+    transform: scaleX(0);
+  }
+
+  .isActive::after {
+    transform: scaleX(1);
+  }
+
+  .isActive .matLabel {
+    color: $blue;
+  }
+
+  .isCompleted .matLabel {
+    font-size: 12px;
+    transform: translateY(0);
+  }
+
+
 
 /* links */
   a {
@@ -25,7 +99,7 @@ body {
   	transition: all 250ms ease;
 
     &:hover {
-      color: $greenBright;
+      color: $greenLight!important;
       cursor: pointer;
       text-decoration: none;
     }
@@ -43,6 +117,7 @@ body {
 /* text */
   h1, h2, h3, h4, h5, p{
     text-align: center;
+    font-weight: normal;
   }
   h1 {
     font-family: 'fontleroybrownregular', sans-serif;
@@ -53,22 +128,24 @@ body {
     font-family: 'fontleroybrownregular', sans-serif;
     font-size: 3.5rem;
     color: $blackLight;
+    margin-bottom: 0;
   }
   h3 {
-    font-size: 2rem;
+    font-size: 2.1rem;
     color: $blackLightest;
+    margin-top: 0;
   }
   h4 {
-    font-size: 1rem;
+    font-size: 1.4rem;
   }
   h5 {
-    font-size: 0.83rem;
+    font-size: 1.1rem;
   }
   h6 {
-    font-size: 0.75rem;
+    font-size: 1.1rem;
   }
   p {
-    line-height: 1.5;
+    line-height: 1.1;
     margin: 0 0 1rem;
   }
 
@@ -116,11 +193,15 @@ body {
 
 /* menu */
   .mainMenu{
-    background-color: $white!important;
-    border-color: $grayLight!important;
+    background-color: $whiteMed!important;
+    z-index: 1000;
+    .brand-logo{
+      padding: 0 10px!important;
+    }
     a{
+      color: $blue;
       &:hover{
-        color: $blue!important;
+        color: $blueDark!important;
       }
     }
   }
