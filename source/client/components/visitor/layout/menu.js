@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 
 import wedding from '../../../../../config/wedding.js';
 import glob from 'styles/app';
@@ -28,11 +27,11 @@ export default () => {
         <Navbar.Toggle />
       </Navbar.Header>
       <Navbar.Collapse>
-        <Nav>
-          <li><Link to="/rsvp">RSVP</Link></li>
-          <li><Link to="/the-wedding">The Wedding</Link></li>
-          <li><Link to="/registry">Registry</Link></li>
-          <li><Link to="/city-guide">City Guide</Link></li>
+        <Nav style={{ float: 'right' }}>
+          <NavItem href="/rsvp">RSVP</NavItem>
+          <NavItem href="/the-wedding">The Wedding</NavItem>
+          <NavItem href="/registry">Registry</NavItem>
+          <NavItem href="/city-guide">City Guide</NavItem>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
