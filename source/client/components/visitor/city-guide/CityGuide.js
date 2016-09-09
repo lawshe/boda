@@ -54,11 +54,11 @@ class CityGuide extends React.Component {
 
     const makeList = (listType) => {
       return (
-        <ul className={`${local.placeList}`}>
+        <ul className={`${local.todoListCol}`}>
           {wedding.guide[listType].list.map(
             (place, idx) => {
               return (
-                <li key={idx}>
+                <li key={idx} className={glob.verticallyAligned}>
                   <h4>
                     <a
                       href={place.website}
@@ -71,12 +71,12 @@ class CityGuide extends React.Component {
                       {place.name}
                     </a>
                   </h4>
-                  <h5>
+                  <h5>{place.address.street}</h5>
+                  <p>
                     <a href="#" style={{border : '0px', color : variables.$map.colors[listType]}} onClick={this.handlePlaceNameClick.bind(this)} id={`${listType}-${idx}`}>
                       View on Map
                     </a>
-                  </h5>
-                  <h5>{place.address.street}</h5>
+                  </p>
                   <p><i>{place.tip}</i></p>
                 </li>
               );
@@ -95,67 +95,71 @@ class CityGuide extends React.Component {
       <div className={glob.pageDetails}>
         <PageHeader page="City Guide" />
 
-        <h2>Accommodations</h2>
-        <h3>{wedding.accommodations.name}</h3>
-        <h4>{accommodationsAddress}</h4>
+        <div className="section">
+          <h2>Accommodations</h2>
+          <Row>
+            <Col sm={10} smOffset={1} md={6} mdOffset={3}>
+              <div className={`${glob.card}`}>
+                <h3>{wedding.accommodations.name}</h3>
+                <h4>{accommodationsAddress}</h4>
+              </div>
+            </Col>
+          </Row>
+        </div>
 
-        <h2>Things to Do</h2>
-        <Row id="map">
-          <Col xs={8} xsOffset={2} sm={8}>
-            <Map type="guide" />
-          </Col>
-        </Row>
-        <Row className={`${local.todo}`} style={{backgroundColor: variables.$map.colors.music}}>
-          <Col xs={12} md={5} className={`${local.todoCol}`}>
-            <div className={`${glob.verticalContainer}`} >
-              <h3 className={`${glob.verticallyAligned}`}>Listen to Music</h3>
-            </div>
-          </Col>
-          <Col xs={12} md={7} className={`${local.todoCol} ${local.todoListCol}`}>
-            {musicList}
-          </Col>
-        </Row>
-        <Row  className={`${local.todo}`} style={{backgroundColor: variables.$map.colors.bar}}>
-          <Col xs={12} md={5} className={`${local.todoCol}`}>
-            <div className={`${glob.verticalContainer}`} >
-              <h3 className={`${glob.verticallyAligned}`}>Grab a Drink</h3>
-            </div>
-          </Col>
-          <Col xs={12} md={7} className={`${local.todoCol} ${local.todoListCol}`}>
-            {barList}
-          </Col>
-        </Row>
-        <Row className={`${local.todo}`} style={{backgroundColor: variables.$map.colors.food}}>
-          <Col xs={12} md={5} className={`${local.todoCol}`}>
-            <div className={`${glob.verticalContainer}`} >
-              <h3 className={`${glob.verticallyAligned}`}>Eat Well</h3>
-            </div>
-          </Col>
-          <Col xs={12} md={7} className={`${local.todoCol} ${local.todoListCol}`}>
-            {foodList}
-          </Col>
-        </Row>
-        <Row className={`${local.todo}`} style={{backgroundColor: variables.$map.colors.fun}}>
-          <Col xs={12} md={5} className={`${local.todoCol}`}>
-            <div className={`${glob.verticalContainer}`} >
-              <h3 className={`${glob.verticallyAligned}`}>Entertainment</h3>
-            </div>
-          </Col>
-          <Col xs={12} md={7} className={`${local.todoCol} ${local.todoListCol}`}>
-            {funList}
-          </Col>
-        </Row>
+        <div className="section">
+          <h2>Transportation</h2>
+          <Row>
+            <Col sm={12} md={6} mdOffset={3}>
+              <div className={`${glob.card}`} style={{margin: '0 0 30px 0'}}>
+                <Row>
+                  <Col sm={12} md={4}>
+                    <h3>Ride Sharing</h3>
+                    <h4>{wedding.guide.transportation.rideshare.how.name}</h4>
+                    <p><a href={wedding.guide.transportation.rideshare.how.website}>website</a></p>
+                  </Col>
+                  <Col sm={12} md={4}>
+                    <h3>Public</h3>
+                    <h4>{wedding.guide.transportation.bus.how.name}</h4>
+                    <p><a href={wedding.guide.transportation.bus.how.website}>website</a></p>
+                  </Col>
+                  <Col sm={12} md={4}>
+                    <h3>Cab</h3>
+                    <h4>{wedding.guide.transportation.taxi.how.name}</h4>
+                    <p><a href={wedding.guide.transportation.taxi.how.website}>website</a></p>
+                  </Col>
+                </Row>
+              </div>
+            </Col>
+          </Row>
+        </div>
 
-        <h2>Transportation</h2>
-        <h3>Ride Sharing</h3>
-        <h4>{wedding.guide.transportation.rideshare.how.name}</h4>
-        <p><a href={wedding.guide.transportation.rideshare.how.website}>website</a></p>
-        <h3>Public</h3>
-        <h4>{wedding.guide.transportation.bus.how.name}</h4>
-        <p><a href={wedding.guide.transportation.bus.how.website}>website</a></p>
-        <h3>Cab</h3>
-        <h4>{wedding.guide.transportation.taxi.how.name}</h4>
-        <p><a href={wedding.guide.transportation.taxi.how.website}>website</a></p>
+        <div className="section">
+          <h2>Things to Do</h2>
+          <Row id="map">
+            <Col xs={10} xsOffset={1} sm={8} smOffset={2}>
+              <Map type="guide" />
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={12} md={3} className={`${local.todoCol}`}>
+              <h3 className={`${local.todoListHeader}`} style={{backgroundColor: variables.$map.colors.music}}>Music</h3>
+              {musicList}
+            </Col>
+            <Col sm={12} md={3} className={`${local.todoCol}`}>
+              <h3 className={`${local.todoListHeader}`} style={{backgroundColor: variables.$map.colors.bar}}>Drinks</h3>
+              {barList}
+            </Col>
+            <Col sm={12} md={3} className={`${local.todoCol}`}>
+              <h3 className={`${local.todoListHeader}`} style={{backgroundColor: variables.$map.colors.food}}>Food</h3>
+              {foodList}
+            </Col>
+            <Col sm={12} md={3} className={`${local.todoCol}`}>
+              <h3 className={`${local.todoListHeader}`} style={{backgroundColor: variables.$map.colors.fun}}>Misc.</h3>
+              {funList}
+            </Col>
+          </Row>
+        </div>
       </div>
     );
   }
