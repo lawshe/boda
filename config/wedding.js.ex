@@ -18,6 +18,7 @@ module.exports = {
     }
   },
   date: '01/01/2019',
+  email: '',
   guide: {
     music: {
       list: [
