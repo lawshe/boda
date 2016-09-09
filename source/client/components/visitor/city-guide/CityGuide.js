@@ -58,7 +58,7 @@ class CityGuide extends React.Component {
           {wedding.guide[listType].list.map(
             (place, idx) => {
               return (
-                <li key={idx} className={glob.verticallyAligned}>
+                <li key={idx}>
                   <h4>
                     <a
                       href={place.website}
