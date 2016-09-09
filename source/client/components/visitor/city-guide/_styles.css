@@ -2,49 +2,67 @@
   height: $mapHeight;
   overflow: scroll;
 }
-.placeList{
+.todoCol{
+  padding: 0px!important;
+}
+.todoListHeader{
+  color: $white;
+  padding: 30px;
+}
+.todoListCol{
   list-style: none;
   margin: 0;
-  padding: 0;
-  text-align: left;
+  padding: 0 30px;
+  text-align: center;
   li{
-    display: inline-block;
+    display: block;
+    float: none;
     margin: 0px auto;
-    padding: 0 0 15px 30px;
+    padding: 0px;
     h4, h5{
       text-align: center;
     }
     h4{
-      margin-top: 0;
+      margin: 15px 0 0 0;
+      a{
+        padding: 15px;
+        &:hover{
+          background-color: $blue!important;
+          border-color: $blue!!important;
+          color: $whiteMed!important;
+        }
+      }
+    }
+    h5{
+      margin: 15px 0 0 0;
+    }
+    p{
+      margin-bottom: 15px;
+      a{
+        padding: 15px 15px 0px 15px;
+      }
+    }
+    a{
+      border-bottom: 1px solid;
+      display: block;
+      margin: 0px auto;
+      width: 100%;
     }
   }
-}
-.todoCol{
-  padding: 0px;
-}
-.todoListCol{
-  background-color: $whiteDark;
-  padding: 30px 10px;
-  margin: 0px;
 }
 .todo{
   display: flex;
-  a{
-    /*background-color: $whiteDark;*/
-    border-bottom: 1px solid;
-    /*color: $white;*/
-    display: block;
-    margin: 0 auto;
-    padding: 15px;
-    &:hover{
-      background-color: $blue!important;
-      border-color: $blue!!important;
-      color: $whiteDark!important;
-    }
-  }
+  margin: 0;
+
   h3{
-    color: $whiteDark!important;
+    color: $whiteMed!important;
     text-align: right;
     padding-right: 15px;
+  }
+}
+
+@media (max-width : 1024px){
+  .todoListHeader{
+    margin-top: 30px;
   }
 }
