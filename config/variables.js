@@ -13,8 +13,8 @@ const greenLight =    '#32845c';
 const greenMuted =    '#99c1ad';
 const pink =          '#9b073e';
 const white =         '#f8f5f3';
-const whiteMed =      '#f6efec';
-const whiteDark =     '#f4ece8';
+const whiteMed =      '#efe8e3';
+const whiteDark =     '#e6dbd3';
 
 module.exports = {
   $black: black,
