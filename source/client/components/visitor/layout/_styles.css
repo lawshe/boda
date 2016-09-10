@@ -17,10 +17,20 @@
   }
 }
 
+.home{
+  min-height: 100vh;
+  margin-top: -50px;
+  z-index: 0;
+}
+
 .date{
   font-size: 50px;
   composes: shadowed from 'styles/app';
   margin-top: 10px;
+}
+
+.initials{
+  composes: leroy from 'styles/type';
 }
 
 .location{
@@ -33,15 +43,15 @@
   .footer {
     composes: tCenter from 'styles/app';
 
-    background-color: $whiteDark;
-    bottom: 0;
+    background-color: $blackLight;
+    /*bottom: 0;*/
     font-size: 0.6em;
     height: $footerHeight;
-    left: 0;
-    position: absolute;
+    /*left: 0;*/
+    /*position: absolute;*/
     width: 100%;
     h3{
-      color: $gray;
+      color: $white;
     }
   }
 

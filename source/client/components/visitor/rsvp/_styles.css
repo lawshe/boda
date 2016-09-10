@@ -4,20 +4,23 @@
   padding-left: 10px;
 }
 
-.rsvpPanel{
-  border: 1px solid $black;
-  margin: 0 auto 50px;
-  max-width: 550px;
-  padding: 30px 50px;;
-  text-align: left;
-}
-.panelHeader{
-  letter-spacing: 10px;
-  text-align: left;
+.rsvpForm{
+  text-align: center;
 }
 
 .person{
   margin-bottom: 30px;
+}
+
+.name{
+}
+
+.radioRow{
+  background-color: $white;
+  border: 5px solid $whiteMed;
+  -webkit-border-radius: $borderRadius;
+  -moz-border-radius: $borderRadius;
+  border-radius: $borderRadius;
 }
 
 .attending{
