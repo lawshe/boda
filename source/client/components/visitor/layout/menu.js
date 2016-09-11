@@ -29,7 +29,7 @@ export default () => {
       </Navbar.Header>
       <Navbar.Collapse>
         <Nav style={{ float: 'right' }}>
-          <NavItem href="/rsvp">RSVP!</NavItem>
+          <NavItem href="/rsvp">RSVP</NavItem>
           <NavItem href="/the-wedding">The Wedding</NavItem>
           <NavItem href="/registry">Registry</NavItem>
           <NavItem href="/city-guide">City Guide</NavItem>
