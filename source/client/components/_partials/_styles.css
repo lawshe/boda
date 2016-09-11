@@ -11,8 +11,6 @@
     transform: rotate(180deg);
   }
 }
-.headerContainer{
-}
 .pageHeader{
   composes: leroy from 'styles/type';
   color: $green;
