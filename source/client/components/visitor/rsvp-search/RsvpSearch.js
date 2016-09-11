@@ -94,13 +94,9 @@ class Rsvp extends React.Component {
 
     return (
       <div>
+        <PageHeader page="Find Invitation" />
         <Row>
-          <Col xs={12}>
-            <PageHeader page="Find Invitation" />
-          </Col>
-        </Row>
-        <Row>
-          <Col xs={12} sm={6} smOffset={3}>
+          <Col xs={8} xsOffset={2} sm={6} smOffset={3}>
             <Form
               className={glob.card}
               onSubmit={this.handleSubmit}
