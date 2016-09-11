@@ -27,9 +27,6 @@ body {
   h2{
     margin: 0;
   }
-  h3{
-    color: $blackLight;
-  }
   label{
     color: $blackLight;
   }
@@ -140,10 +137,8 @@ body {
     margin: 15px 0 5px 0;
   }
   h3 {
-    color: $blackLight;
+    color: $black;
     font-family: georgia, serif;
-    /*font-family: 'GreatVibes', sans-serif;*/
-    /*font-family: 'fontleroybrownregular', sans-serif;*/
     font-size: 1.5rem;
     margin-top: 0;
   }
@@ -153,14 +148,16 @@ body {
     font-size: 1.3rem;
   }
   h5 {
-    color: $blackLight;
+    color: $black;
     font-family: georgia, serif;
     font-size: 1.1rem;
   }
   h6 {
+    color: $blackLight;
     font-size: 1.1rem;
   }
   p {
+    color: $blackLight;
     line-height: 1.1;
     margin: 0 0 1rem;
   }
