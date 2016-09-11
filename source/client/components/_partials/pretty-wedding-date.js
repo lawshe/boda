@@ -16,8 +16,7 @@ export default () => {
   const weddingDay = weddingDate.getDate();
   const weddingMonth = parseInt(weddingDate.getMonth() + 1, 10);
   const weddingYear = weddingDate.getFullYear().toString().slice(-2);
-  const prettyDate = `${weddingMonth}·${weddingDay}·${weddingYear}`;
   return (
-    <span>{prettyDate}</span>
+    <span>{weddingMonth}&middot;{weddingDay}&middot;{weddingYear}</span>
   );
 };
