@@ -3,7 +3,7 @@ import { subscribe } from 'horizon-react';
 import { createDoc } from 'horizon-react/lib/utils';
 import { Row, Col, Form, ListGroup, ListGroupItem, Button, Well } from 'react-bootstrap';
 
-import PageHeader from '../../layout/page-header';
+import PageHeader from '../../../_partials/page-header';
 
 import {
   updateGuestName,
@@ -52,7 +52,7 @@ class AddInvitation extends React.Component {
     const { newInvitation } = this.props;
     return (
       <div>
-        <PageHeader title="Add Invitation" />
+        <PageHeader page="Add Invitation" />
         <SavedModal
           title="Saved"
           message={savedMessage}

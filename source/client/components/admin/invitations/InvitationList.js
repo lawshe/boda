@@ -2,7 +2,7 @@ import React from 'react';
 import { subscribe } from 'horizon-react';
 import { Row, Col, Table, Well } from 'react-bootstrap';
 
-import PageHeader from '../layout/page-header';
+import PageHeader from '../../_partials/page-header';
 import InvitationItem from './InvitationItem';
 
 /**
@@ -20,7 +20,7 @@ const mapDataToProps = {
 
 const InvitationList = (props) => (
   <div>
-    <PageHeader title="Add Invitation" />
+    <PageHeader page="Add Invitation" />
     <Row>
       <Col md={12}>
         <Well>

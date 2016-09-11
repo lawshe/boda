@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link, History } from 'react-router';
-import { Navbar, Nav } from 'react-bootstrap';
+// import { Link, History } from 'react-router';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 
 import wedding from '../../../../../config/wedding.js';
 
@@ -28,8 +28,8 @@ export default () => {
       </Navbar.Header>
       <Navbar.Collapse>
         <Nav>
-          <li><Link to="/admin/invitations"> All Invitations</Link></li>
-          <li><Link to="/admin/invitations/add">Add Invitation</Link></li>
+          <NavItem href="/admin/invitations">All Invitations</NavItem>
+          <NavItem href="/admin/invitations/add">Add Invitation</NavItem>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
