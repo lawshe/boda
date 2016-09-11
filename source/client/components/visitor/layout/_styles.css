@@ -70,3 +70,25 @@
     composes: cursive from 'styles/type';
     text-decoration: none;
   }
+  #navToggle{
+    border-color: $blackLight;
+  	-webkit-transition: $linkTransition;
+  	transition: $linkTransition;
+    span{
+      background-color: $blackLight;
+    }
+    &:hover{
+      background-color: $blueDark;
+      border-color: $blueDark;
+      color: $whiteDark;
+      -webkit-transition: $linkTransition;
+      transition: $linkTransition;
+      span{
+        background-color: $whiteDark;
+      }
+    }
+  }
+
+  /*#navToggle  span{
+    background-color: $blue!important;
+  }*/
