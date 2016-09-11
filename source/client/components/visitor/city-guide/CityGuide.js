@@ -139,35 +139,33 @@ class CityGuide extends React.Component {
         <div className="section">
           <h2>Transportation</h2>
           <Row>
-            <Col xs={6} xsOffset={3} sm={8} smOffset={2} lg={6} lgOffset={3}>
-              <div style={{margin: '0 0 15px 0'}}>
-                <Row style={{margin: '0 0 15px 0'}}>
-                  <Col xs={12} sm={4}>
-                    <div className={`${glob.card} ${local.transportation}`}>
-                      <h3>{wedding.guide.transportation.bus.how.name}</h3>
-                      <p style={{marginBottom: '0px'}}>
-                        <a href={wedding.guide.transportation.bus.how.website} target="_BLANK">website</a>
-                      </p>
-                    </div>
-                  </Col>
-                  <Col xs={12} sm={4}>
-                    <div className={`${glob.card} ${local.transportation}`}>
-                      <h3>{wedding.guide.transportation.rideshare.how.name}</h3>
-                      <p style={{marginBottom: '0px'}}>
-                        <a href={wedding.guide.transportation.rideshare.how.website}  target="_BLANK">website</a>
-                      </p>
-                    </div>
-                  </Col>
-                  <Col xs={12} sm={4}>
-                    <div className={`${glob.card} ${local.transportation}`}>
-                      <h3>{wedding.guide.transportation.taxi.how.name}</h3>
-                      <p style={{marginBottom: '0px'}}>
-                        <a href={wedding.guide.transportation.taxi.how.website} target="_BLANK">website</a>
-                      </p>
-                    </div>
-                  </Col>
-                </Row>
-              </div>
+            <Col smOffset={2} lg={6} lgOffset={3}>
+              <Row style={{margin: '0 0 15px 0'}}>
+                <Col xs={12} sm={4}>
+                  <div className={`${glob.card} ${local.transportation}`}>
+                    <h3>{wedding.guide.transportation.bus.how.name}</h3>
+                    <p style={{marginBottom: '0px'}}>
+                      <a href={wedding.guide.transportation.bus.how.website} target="_BLANK">website</a>
+                    </p>
+                  </div>
+                </Col>
+                <Col xs={12} sm={4}>
+                  <div className={`${glob.card} ${local.transportation}`}>
+                    <h3>{wedding.guide.transportation.rideshare.how.name}</h3>
+                    <p style={{marginBottom: '0px'}}>
+                      <a href={wedding.guide.transportation.rideshare.how.website}  target="_BLANK">website</a>
+                    </p>
+                  </div>
+                </Col>
+                <Col xs={12} sm={4}>
+                  <div className={`${glob.card} ${local.transportation}`}>
+                    <h3>{wedding.guide.transportation.taxi.how.name}</h3>
+                    <p style={{marginBottom: '0px'}}>
+                      <a href={wedding.guide.transportation.taxi.how.website} target="_BLANK">website</a>
+                    </p>
+                  </div>
+                </Col>
+              </Row>
             </Col>
           </Row>
         </div>
