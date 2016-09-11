@@ -101,7 +101,7 @@ class CityGuide extends React.Component {
             <Col sm={10} smOffset={1} md={6} mdOffset={3}>
               <div className={`${glob.card}`}>
                 <h3>{wedding.accommodations.name}</h3>
-                <h4>{accommodationsAddress}</h4>
+                <h4 style={{marginBottom: '0px'}}>{accommodationsAddress}</h4>
               </div>
             </Col>
           </Row>
