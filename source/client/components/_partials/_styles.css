@@ -16,7 +16,7 @@
 .pageHeader{
   composes: leroy from 'styles/type';
   color: $green;
-  margin-bottom: 30px;
+  margin: 0 auto 30px auto;
 }
 .euc{
   display: inline-block;
