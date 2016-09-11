@@ -27,6 +27,7 @@ app.use('/', (req, res) => {
     <html>
       <head>
         <title>${htmlTitle}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="${styles}" />
         <link rel="icon" href="${images}favicon.ico">
