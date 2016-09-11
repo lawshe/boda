@@ -26,7 +26,7 @@ export default () => {
     <div className={glob.pageDetails}>
       <PageHeader page="The Wedding" />
 
-      <Row>
+      <Row style={{marginBottom: '30px'}}>
         <Col xs={12}>
           <div className={`${local.eucSet}`}>
             <div className={`${local.eucDate} ${local.eucBorderLeft}`}>
@@ -72,7 +72,7 @@ export default () => {
 
       <Row style={{ marginBottom: '30px' }}>
         <Col xs={12} sm={6} md={4} mdOffset={2} className={local.location}>
-          <h4>Ceremony & Reception to Follow at:</h4>
+          <h4>Ceremony & Reception<br />to Follow at:</h4>
           <h2>{wedding.venue.name}</h2>
           <h3><VenueAddress /></h3>
         </Col>
