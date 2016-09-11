@@ -11,18 +11,21 @@
 .person{
   margin-bottom: 30px;
 }
+/*
+.person:not(:first-child){
+  .name{
+    margin: 30px 0 0 0;
+  }
+}*/
 
-.name{
-}
-
-.radioRow{
-  background-color: $white;
-  border: 5px solid $whiteMed;
-  -webkit-border-radius: $borderRadius;
-  -moz-border-radius: $borderRadius;
-  border-radius: $borderRadius;
-}
 
 .attending{
   margin-top: 20px;
+}
+
+
+@media (max-width : 768px){
+  .name{
+    text-align: left;
+  }
 }
