@@ -21,7 +21,7 @@ const eucRightJsx = (
 );
 
 export default (props) => (
-  <Row style={{ width: '100%' }}>
+  <Row>
     <Col xs={12} className={local.headerContainer}>
       <h1 className={`${local.pageHeader}`}>{eucLeftJsx}{props.page}{eucRightJsx}</h1>
     </Col>
