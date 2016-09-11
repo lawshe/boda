@@ -38,6 +38,7 @@
 }
 .eucDate{
   display: inline-block;
+  max-width: 100px;
   position: relative;
   width: 16%;
   z-index: 0;
