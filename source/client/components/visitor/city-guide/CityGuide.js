@@ -78,7 +78,7 @@ class CityGuide extends React.Component {
           {wedding.guide[listType].list.map(
             (place, idx) => {
               return (
-                <li className={glob.card} key={idx}>
+                <li className={glob.card} style={{paddingTop: '0px'}} key={idx}>
                   <h4>
                     <a
                       href={place.website}
@@ -127,7 +127,7 @@ class CityGuide extends React.Component {
         <div className="section">
           <h2>Accommodations</h2>
           <Row>
-            <Col sm={10} smOffset={1} md={6} mdOffset={3}>
+            <Col xs={8} xsOffset={2} lg={6} lgOffset={3}>
               <div className={`${glob.card}`} style={{margin: '0 0 30px 0'}}>
                 <h3>{wedding.accommodations.name}</h3>
                 <h4 style={{marginBottom: '0px'}}>{accommodationsAddress}</h4>
@@ -139,23 +139,29 @@ class CityGuide extends React.Component {
         <div className="section">
           <h2>Transportation</h2>
           <Row>
-            <Col sm={12} md={6} mdOffset={3}>
-              <div className={`${glob.card}`} style={{margin: '0 0 30px 0'}}>
-                <Row>
-                  <Col sm={12} md={4}>
-                    <h3>Ride Sharing</h3>
-                    <h4>{wedding.guide.transportation.rideshare.how.name}</h4>
-                    <p><a href={wedding.guide.transportation.rideshare.how.website}>website</a></p>
+            <Col xs={6} xsOffset={3} sm={8} smOffset={2} lg={6} lgOffset={3}>
+              <div style={{margin: '0 0 15px 0'}}>
+                <Row style={{margin: '0 0 15px 0'}}>
+                  <Col xs={12} sm={4}>
+                    <div className={`${glob.card} ${local.transportation}`}>
+                      <h3>Ride Sharing</h3>
+                      <h4>{wedding.guide.transportation.rideshare.how.name}</h4>
+                      <p style={{marginBottom: '0px'}}><a href={wedding.guide.transportation.rideshare.how.website}>website</a></p>
+                    </div>
                   </Col>
-                  <Col sm={12} md={4}>
-                    <h3>Public</h3>
-                    <h4>{wedding.guide.transportation.bus.how.name}</h4>
-                    <p><a href={wedding.guide.transportation.bus.how.website}>website</a></p>
+                  <Col xs={12} sm={4} >
+                    <div className={`${glob.card} ${local.transportation}`}>
+                      <h3>Public</h3>
+                      <h4>{wedding.guide.transportation.bus.how.name}</h4>
+                      <p style={{marginBottom: '0px'}}><a href={wedding.guide.transportation.bus.how.website}>website</a></p>
+                    </div>
                   </Col>
-                  <Col sm={12} md={4}>
-                    <h3>Cab</h3>
-                    <h4>{wedding.guide.transportation.taxi.how.name}</h4>
-                    <p><a href={wedding.guide.transportation.taxi.how.website}>website</a></p>
+                  <Col xs={12} sm={4}>
+                    <div className={`${glob.card} ${local.transportation}`}>
+                      <h3>Cab</h3>
+                      <h4>{wedding.guide.transportation.taxi.how.name}</h4>
+                      <p style={{marginBottom: '0px'}}><a href={wedding.guide.transportation.taxi.how.website}>website</a></p>
+                    </div>
                   </Col>
                 </Row>
               </div>

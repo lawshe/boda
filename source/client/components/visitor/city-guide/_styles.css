@@ -1,3 +1,6 @@
+.transportation{
+  margin: 15px auto;
+}
 .thingsToDo{
   height: $mapHeight;
   overflow: scroll;
@@ -5,6 +8,7 @@
 .todoListHeader{
   h3{
     color: $white;
+    margin: 15px 0 0 0;
   }
 }
 .todoCatList{
@@ -78,6 +82,8 @@
     flex-direction: column;
   }
   .todoListHeader{
-    margin-top: 30px;
+    h3{
+      margin: 0px;
+    }
   }
 }
