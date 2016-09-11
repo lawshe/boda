@@ -209,7 +209,7 @@ body {
 
 /* menu */
   .mainMenu{
-    background-color: $whiteMed!important;
+    background-color: $white!important;
     z-index: 1000;
     /*.brand-logo{
       padding: 0 10px!important;
