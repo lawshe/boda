@@ -28,7 +28,7 @@ export default () => {
         <Navbar.Toggle id={local.navToggle} />
       </Navbar.Header>
       <Navbar.Collapse>
-        <Nav style={{ float: 'right' }}>
+        <Nav id={local.navList}>
           <NavItem href="/rsvp">RSVP</NavItem>
           <NavItem href="/the-wedding">The Wedding</NavItem>
           <NavItem href="/registry">Registry</NavItem>

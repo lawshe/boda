@@ -70,6 +70,9 @@
     composes: cursive from 'styles/type';
     text-decoration: none;
   }
+  #navList{
+    float: right;
+  }
   #navToggle{
     border-color: $blackLight;
   	-webkit-transition: $linkTransition;
@@ -92,3 +95,9 @@
   /*#navToggle  span{
     background-color: $blue!important;
   }*/
+
+@media(max-width: 768px){
+  #navList{
+    float: left;
+  }
+}
