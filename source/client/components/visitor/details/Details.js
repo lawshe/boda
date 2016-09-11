@@ -71,12 +71,12 @@ export default () => {
       </div>
 
       <Row style={{ marginBottom: '30px' }}>
-        <Col xs={6} md={4}>
-          <h4 className="text-right">Ceremony & Reception to Follow at:</h4>
-          <h2 className="text-right">{wedding.venue.name}</h2>
-          <h3 className="text-right"><VenueAddress /></h3>
+        <Col xs={12} sm={6} md={4} mdOffset={2} className={local.location}>
+          <h4>Ceremony & Reception to Follow at:</h4>
+          <h2>{wedding.venue.name}</h2>
+          <h3><VenueAddress /></h3>
         </Col>
-        <Col xs={6} md={4}>
+        <Col xs={8} xsOffset={2} sm={6} smOffset={0} md={4}>
           <Map type="venue" />
         </Col>
       </Row>
