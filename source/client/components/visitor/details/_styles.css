@@ -11,6 +11,7 @@
   margin-bottom: $marginLg;
 }
 .date{
+  font-family: georgia, serif;
   margin: 0;
 }
 .eucContainer{
