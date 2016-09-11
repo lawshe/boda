@@ -3,6 +3,7 @@ import { Navbar, Nav, NavItem } from 'react-bootstrap';
 
 import wedding from '../../../../../config/wedding.js';
 import glob from 'styles/app';
+import local from './_styles';
 
 /**
   *
@@ -24,7 +25,7 @@ export default () => {
         <Navbar.Brand>
           <a href="/">{coupleInitials}</a>
         </Navbar.Brand>
-        <Navbar.Toggle />
+        <Navbar.Toggle id={local.navToggle} />
       </Navbar.Header>
       <Navbar.Collapse>
         <Nav style={{ float: 'right' }}>
