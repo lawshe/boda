@@ -23,13 +23,13 @@ export default () => {
     <Navbar className={`${glob.mainMenu}`}>
       <Navbar.Header>
         <Navbar.Brand>
-          <a href="/">{coupleInitials}</a>
+          <a href="/" className={local.initials}>{coupleInitials}</a>
         </Navbar.Brand>
         <Navbar.Toggle id={local.navToggle} />
       </Navbar.Header>
       <Navbar.Collapse>
         <Nav style={{ float: 'right' }}>
-          <NavItem href="/rsvp">RSVP</NavItem>
+          <NavItem href="/rsvp">RSVP!</NavItem>
           <NavItem href="/the-wedding">The Wedding</NavItem>
           <NavItem href="/registry">Registry</NavItem>
           <NavItem href="/city-guide">City Guide</NavItem>
