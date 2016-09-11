@@ -1,15 +1,17 @@
 import React from 'react';
-import { Row, Col, Form } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
+
+import wedding from '../../../../../config/wedding.js';
 
 import glob from 'styles/app';
-import type from 'styles/type';
 import local from './_styles';
 
 import PerGuestRsvp from './per-guest-rsvp';
 import PlusGuests from './plus-guests';
-import SubmitBtn from './submit-btn';
 
+import SubmitBtn from '../../shared/submit-btn';
 import PersonName from '../../_partials/person-name';
+import PrettyDate from '../../_partials/pretty-date';
 
 
 /**
@@ -20,7 +22,6 @@ import PersonName from '../../_partials/person-name';
   *
   * @return {ReactComponent}
   */
-
 
 export default (props) => {
   let { rsvp } = props;
@@ -74,18 +75,26 @@ export default (props) => {
   );
   // END - if form received
 
+  const submitBtnJsx = (
+    <div>
+      <SubmitBtn displayText="Submit RSVP" />
+    </div>
+  );
+
   const RsvpFormForm = () => (
-    <div className={`${local.rsvpPanel}`}>
-      <h2 className={`${local.panelHeader} ${type.gothic}`}>RSVP</h2>
-      <Form onSubmit={props.sendRsvp}>
-        <PerGuestRsvp rsvp={rsvp} changeRsvp={props.changeRsvp} />
-        <PlusGuests rsvp={rsvp} changePlus={props.changePlus} />
-        <Row>
-          <Col sm={12} className={`${glob.tCenter}`}>
-            <SubmitBtn />
-          </Col>
-        </Row>
-      </Form>
+    <div>
+      <h4>Please submit by<br /><PrettyDate date={wedding.rsvp.date} /></h4>
+      <div className={`${glob.card} ${local.rsvpForm}`}>
+        <form onSubmit={props._sendRsvp} style={{margin: '20px auto'}}>
+          <PerGuestRsvp rsvp={rsvp} changeRsvp={props._changeRsvp} />
+          <PlusGuests rsvp={rsvp} changePlus={props._changePlus} />
+          <Row>
+            <Col sm={12} className={`${glob.tCenter}`}>
+              {submitBtnJsx}
+            </Col>
+          </Row>
+        </form>
+      </div>
     </div>
   );
 
