@@ -18,13 +18,13 @@ export default (props) => {
   const rsvps = (props.rsvp.guests).map(
     (guest, i) => (
       <FormGroup className={`${local.person}`} key={i}>
-        <Row>
-          <Col sm={12}>
-            <h3 className={`${type.cursive} ${local.name}`}>{guest.name.first} {guest.name.last}</h3>
+        <Row className={local.radioRow}>
+          <Col xs={12} sm={6}>
+            <h3 className={`${type.cursive} ${local.name}`}>
+              {guest.name.first} {guest.name.last}
+            </h3>
           </Col>
-        </Row>
-        <Row>
-          <Col sm={12}>
+          <Col xs={12} sm={6}>
             <RadioButtons guest={guest} index={i} changeRsvp={props.changeRsvp} />
           </Col>
         </Row>
@@ -33,6 +33,6 @@ export default (props) => {
   );
 
   return (
-    <Row><Col xs={12}>{rsvps}</Col></Row>
+    <Row><Col sm={12}>{rsvps}</Col></Row>
   );
 };
