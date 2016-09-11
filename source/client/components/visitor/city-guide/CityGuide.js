@@ -144,23 +144,26 @@ class CityGuide extends React.Component {
                 <Row style={{margin: '0 0 15px 0'}}>
                   <Col xs={12} sm={4}>
                     <div className={`${glob.card} ${local.transportation}`}>
-                      <h3>Ride Sharing</h3>
-                      <h4>{wedding.guide.transportation.rideshare.how.name}</h4>
-                      <p style={{marginBottom: '0px'}}><a href={wedding.guide.transportation.rideshare.how.website}>website</a></p>
-                    </div>
-                  </Col>
-                  <Col xs={12} sm={4} >
-                    <div className={`${glob.card} ${local.transportation}`}>
-                      <h3>Public</h3>
-                      <h4>{wedding.guide.transportation.bus.how.name}</h4>
-                      <p style={{marginBottom: '0px'}}><a href={wedding.guide.transportation.bus.how.website}>website</a></p>
+                      <h3>{wedding.guide.transportation.bus.how.name}</h3>
+                      <p style={{marginBottom: '0px'}}>
+                        <a href={wedding.guide.transportation.bus.how.website} target="_BLANK">website</a>
+                      </p>
                     </div>
                   </Col>
                   <Col xs={12} sm={4}>
                     <div className={`${glob.card} ${local.transportation}`}>
-                      <h3>Cab</h3>
-                      <h4>{wedding.guide.transportation.taxi.how.name}</h4>
-                      <p style={{marginBottom: '0px'}}><a href={wedding.guide.transportation.taxi.how.website}>website</a></p>
+                      <h3>{wedding.guide.transportation.rideshare.how.name}</h3>
+                      <p style={{marginBottom: '0px'}}>
+                        <a href={wedding.guide.transportation.rideshare.how.website}  target="_BLANK">website</a>
+                      </p>
+                    </div>
+                  </Col>
+                  <Col xs={12} sm={4}>
+                    <div className={`${glob.card} ${local.transportation}`}>
+                      <h3>{wedding.guide.transportation.taxi.how.name}</h3>
+                      <p style={{marginBottom: '0px'}}>
+                        <a href={wedding.guide.transportation.taxi.how.website} target="_BLANK">website</a>
+                      </p>
                     </div>
                   </Col>
                 </Row>
