@@ -1,19 +1,22 @@
 /*home*/
-.headerContainer{
+.header{
+  font-size: 11vh;
+  composes: leroy from 'styles/type';
+  margin: 0;
+  color: $blueDark!important;
   -webkit-transform: rotate(-10deg) skew(-10deg, 0);
      -moz-transform: rotate(-10deg) skew(-10deg, 0);
       -ms-transform: rotate(-10deg) skew(-10deg, 0);
        -o-transform: rotate(-10deg) skew(-10deg, 0);
           transform: rotate(-10deg) skew(-10deg, 0);
 }
-.header{
-  font-size: 15vh;
-  composes: leroy from 'styles/type';
-  margin: 0;
-  color: $blueDark!important;
-}
 .euc{
   width: 25vh;
+  -webkit-transform: rotate(-10deg);
+     -moz-transform: rotate(-10deg);
+      -ms-transform: rotate(-10deg);
+       -o-transform: rotate(-10deg);
+          transform: rotate(-10deg);
 }
 .eucTop{
   margin: 0 auto;
