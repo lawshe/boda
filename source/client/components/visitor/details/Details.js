@@ -8,7 +8,7 @@ import local from './_styles';
 import Map from '../../_partials/map/map';
 
 import PageHeader from '../../_partials/page-header';
-import PrettyDate from '../../_partials/pretty-date';
+import WeddingDate from '../../_partials/pretty-wedding-date';
 import EucFour from '../../svg/euc-4';
 import VenueAddress from '../../_partials/venue-address';
 
@@ -37,7 +37,7 @@ export default () => {
             </div>
           </div>
           <h2 className={`${local.date}`}>
-            <PrettyDate />
+            <WeddingDate />
           </h2>
           <div className={`${local.eucSet} ${local.eucSetBtm}`}>
             <div className={`${local.eucDate} ${local.eucBorderLeft}`}>
