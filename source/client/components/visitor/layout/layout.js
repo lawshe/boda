@@ -18,7 +18,7 @@ import Menu from './menu';
 export default (props) => (
   <div className={`${glob.layoutContainer}`}>
     <Menu />
-    <Grid style={{minHeight : '100vh', padding: '0 30px 30px 30px'}}>
+    <Grid style={{minHeight : '100vh', padding: '0 0 30px 0'}}>
       {props.children}
     </Grid>
     <Footer />
