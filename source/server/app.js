@@ -29,7 +29,7 @@ app.use('/', (req, res) => {
         <title>${htmlTitle}</title>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="${styles}" />
-        <link rel="icon" href="${images}/favicon.ico">
+        <link rel="icon" href="${images}favicon.ico">
         <script type="text/javascript"
           src="https://maps.googleapis.com/maps/api/js?key=${googleMapsApi}&libraries=geometry,places,visualization">
         </script>
