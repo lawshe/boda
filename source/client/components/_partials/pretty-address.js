@@ -1,3 +1,4 @@
+import React from 'react';
 /**
   *
   * Partial - pretty address
@@ -8,6 +9,5 @@
   */
 
 export default function (address) {
-  const fullAddress = `${address.street} ${address.city}, ${address.state} ${address.zip}`;
-  return fullAddress;
+  return <span>{address.street}<br />{address.city}, {address.state} {address.zip}</span>;
 }
