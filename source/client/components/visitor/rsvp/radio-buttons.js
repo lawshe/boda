@@ -17,13 +17,17 @@ class RsvpRadioButtons extends React.Component {
     return (
       <ul className={`${radio.ul}`} >
         <li className={`${radio.li}`}>
-          <input className={`${radio.input}`} type="radio" id={yesId} value="yes" name={radioName} onChange={this.handleChange.bind(this)} inline checked={checkedYes} />
-          <label className={`${local.label} ${radio.label}`} htmlFor={yesId}>accepts with pleasure</label>
+          <input className={`${radio.input}`} type="radio" id={yesId} value="yes" name={radioName} onChange={this.handleChange.bind(this)} checked={checkedYes} />
+          <label className={`${local.label} ${radio.label}`} htmlFor={yesId}>
+            accepts with pleasure
+          </label>
           <div className={`${radio.check}`}><div className="inside"></div></div>
         </li>
         <li className={`${radio.li}`}>
-          <input className={`${radio.input}`} type="radio" id={noId} value="no" name={radioName} onChange={this.handleChange.bind(this)} inline checked={checkedNo} />
-          <label className={`${local.label} ${radio.label}`} htmlFor={noId}>declines with regrets</label>
+          <input className={`${radio.input}`} type="radio" id={noId} value="no" name={radioName} onChange={this.handleChange.bind(this)} checked={checkedNo} />
+          <label className={`${local.label} ${radio.label}`} htmlFor={noId}>
+            declines with regrets
+          </label>
           <div className={`${radio.check}`}><div className="inside"></div></div>
         </li>
       </ul>
