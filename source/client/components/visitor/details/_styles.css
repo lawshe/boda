@@ -7,8 +7,11 @@
 }
 
 .timeline{
-  margin: 0 auto;
-  margin-bottom: $marginLg;
+  .event:last-child{
+    p{
+      margin-bottom: 0px;
+    }
+  }
 }
 .date{
   font-family: georgia, serif;

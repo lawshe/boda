@@ -61,25 +61,33 @@ export default () => {
         </Col>
       </Row>
 
-      <div className={local.timeline}>
+      <div className={glob.section}>
         <h2>Timeline</h2>
-        {wedding.timeline.map((timelineEvent, index) => {
-          const ref = `timeline_${index}`;
+        <Row>
+          <Col xs={8} xsOffset={1} sm={6} smOffset={3} md={4} mdOffset={4}>
+            <div className={`${glob.card} ${local.timeline}`}>
+              {wedding.timeline.map((timelineEvent, index) => {
+                const ref = `timeline_${index}`;
 
-          return (
-            <Row key={ref}>
-              <Col xs={5} style={{ textAlign: 'right' }}>
-                {timelineEvent.time.start}
-              </Col>
-              <Col xs={2} style={{ overflow: 'hidden' }}>
-                ................................................
-              </Col>
-              <Col xs={5} style={{ textAlign: 'left' }}>
-                {timelineEvent.eventName}
-              </Col>
-            </Row>
-          );
-        })}
+                return (
+                  <Row className={local.event} key={ref}>
+                    <Col xs={5}>
+                      <p style={{ textAlign: 'right' }}>{timelineEvent.time.start}</p>
+                    </Col>
+                    <Col xs={2}>
+                      <p style={{ overflow: 'hidden' }}>
+                        &middot;&middot;&middot;&middot;&middot;&middot;&middot;
+                      </p>
+                    </Col>
+                    <Col xs={5}>
+                      <p style={{ textAlign: 'left' }}>{timelineEvent.eventName}</p>
+                    </Col>
+                  </Row>
+                );
+              })}
+            </div>
+          </Col>
+        </Row>
       </div>
     </div>
   );
