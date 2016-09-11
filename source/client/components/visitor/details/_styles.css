@@ -31,7 +31,7 @@
 .eucDate{
   display: inline-block;
   position: relative;
-  width: 6%;
+  width: 16%;
   z-index: 0;
 }
 .eucBorderLeft{
