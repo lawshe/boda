@@ -4,6 +4,7 @@ import { subscribe } from 'horizon-react';
 import wedding from '../../../../../config/wedding.js';
 import variables from '../../../../../config/variables.js';
 import glob from 'styles/app';
+// import type from 'styles/type';
 import local from './_styles';
 import { Row, Col } from 'react-bootstrap';
 import PageHeader from '../../_partials/page-header';
@@ -53,12 +54,31 @@ class CityGuide extends React.Component {
     const accommodationsAddress = prettyAddress(wedding.accommodations.address);
 
     const makeList = (listType) => {
+      console.log('listType',listType);
+      let prettyListType = listType;
+      if(listType === 'bar'){
+        prettyListType = 'Drink';
+      } else if(listType === 'music'){
+        prettyListType = 'Music';
+      } else if(listType === 'food'){
+        prettyListType = 'Eat';
+      } else if(listType === 'fun'){
+        prettyListType = 'Misc';
+      }
       return (
         <ul className={`${local.todoListCol}`}>
+          <li
+            className={`${glob.card} ${local.todoListHeader}`}
+            style={{backgroundColor: variables.$map.colors[listType]}}
+          >
+            <h3>
+              {prettyListType}
+            </h3>
+          </li>
           {wedding.guide[listType].list.map(
             (place, idx) => {
               return (
-                <li key={idx}>
+                <li className={glob.card} key={idx}>
                   <h4>
                     <a
                       href={place.website}
@@ -91,6 +111,15 @@ class CityGuide extends React.Component {
     const foodList = makeList('food');
     const funList = makeList('fun');
 
+    const fullList = (
+      <ul className={local.todoCatList}>
+        <li className={local.todoCat}>{barList}</li>
+        <li className={local.todoCat}>{musicList}</li>
+        <li className={local.todoCat}>{foodList}</li>
+        <li className={local.todoCat}>{funList}</li>
+      </ul>
+    );
+
     return (
       <div className={glob.pageDetails}>
         <PageHeader page="City Guide" />
@@ -99,7 +128,7 @@ class CityGuide extends React.Component {
           <h2>Accommodations</h2>
           <Row>
             <Col sm={10} smOffset={1} md={6} mdOffset={3}>
-              <div className={`${glob.card}`}>
+              <div className={`${glob.card}`} style={{margin: '0 0 30px 0'}}>
                 <h3>{wedding.accommodations.name}</h3>
                 <h4 style={{marginBottom: '0px'}}>{accommodationsAddress}</h4>
               </div>
@@ -142,21 +171,8 @@ class CityGuide extends React.Component {
             </Col>
           </Row>
           <Row>
-            <Col sm={12} md={3} className={`${local.todoCol}`}>
-              <h3 className={`${local.todoListHeader}`} style={{backgroundColor: variables.$map.colors.music}}>Music</h3>
-              {musicList}
-            </Col>
-            <Col sm={12} md={3} className={`${local.todoCol}`}>
-              <h3 className={`${local.todoListHeader}`} style={{backgroundColor: variables.$map.colors.bar}}>Drinks</h3>
-              {barList}
-            </Col>
-            <Col sm={12} md={3} className={`${local.todoCol}`}>
-              <h3 className={`${local.todoListHeader}`} style={{backgroundColor: variables.$map.colors.food}}>Food</h3>
-              {foodList}
-            </Col>
-            <Col sm={12} md={3} className={`${local.todoCol}`}>
-              <h3 className={`${local.todoListHeader}`} style={{backgroundColor: variables.$map.colors.fun}}>Misc.</h3>
-              {funList}
+            <Col xs={12}>
+              {fullList}
             </Col>
           </Row>
         </div>

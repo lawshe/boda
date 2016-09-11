@@ -2,23 +2,32 @@
   height: $mapHeight;
   overflow: scroll;
 }
-.todoCol{
-  padding: 0px!important;
-}
 .todoListHeader{
-  color: $white;
-  padding: 30px;
+  h3{
+    color: $white;
+  }
 }
-.todoListCol{
+.todoCatList{
   list-style: none;
   margin: 0;
-  padding: 0 30px;
-  text-align: center;
+  padding: 0;
+  text-align: left;
+}
+.todoCat{
+  display: inline-block;
+}
+.todoListCol{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
   li{
-    display: block;
+    display: inline-block;
     float: none;
-    margin: 0px auto;
-    padding: 0px;
+    margin: 15px 15px 15px 0px;
+    padding: 15px;
     h4, h5{
       text-align: center;
     }
@@ -62,6 +71,12 @@
 }
 
 @media (max-width : 1024px){
+  .todoCatList{
+    text-align: center;
+  }
+  .todoListCol{
+    flex-direction: column;
+  }
   .todoListHeader{
     margin-top: 30px;
   }
