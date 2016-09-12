@@ -29,12 +29,12 @@ let countdown = '';
 if (today.toDateString() === bigDay.toDateString()) {
   countdown = 'TODAY IS THE DAY!';
 } else {
-  countdown = `${numberOfDaysUntil()}  Days until the wedding!`;
+  countdown = `Just ${numberOfDaysUntil()} More Days!`;
 }
 
 
 export default () => (
   <div className={`${local.footer} ${glob.verticalContainer}`}>
-    <h3 className={`${glob.verticallyAligned}`}><i className="fa fa-heart" /> {countdown}</h3>
+    <h3 className={`${glob.verticallyAligned}`}>{countdown}</h3>
   </div>
 );
