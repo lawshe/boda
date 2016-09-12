@@ -17,9 +17,10 @@
   }
 }
 
-.home{
+.mainGrid{
   min-height: 100vh;
-  margin-top: -50px;
+  padding: 15px 15px 30px 15px;
+  width: auto;
   z-index: 0;
 }
 

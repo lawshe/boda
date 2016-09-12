@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid } from 'react-bootstrap';
 
 import glob from 'styles/app';
+import local from './_styles';
 
 import Footer from './footer';
 import Menu from './menu';
@@ -18,7 +19,7 @@ import Menu from './menu';
 export default (props) => (
   <div className={`${glob.layoutContainer}`}>
     <Menu />
-    <Grid style={{minHeight : '100vh', padding: '15px 15px 30px 15px'}}>
+    <Grid className={`${local.mainGrid}`}>
       {props.children}
     </Grid>
     <Footer />
