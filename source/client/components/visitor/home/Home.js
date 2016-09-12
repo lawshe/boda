@@ -23,7 +23,7 @@ const Home = () => {
   const coupleTwo = wedding.couple[1].name.first;
 
   return (
-    <div>
+    <div className={local.home}>
       <div className={`${glob.verticalContainer}`}>
         <div className={`${glob.verticallyAligned}`}>
           <div className={`${local.euc} ${local.eucTop}`}>
