@@ -177,7 +177,7 @@ class CityGuide extends React.Component {
             </Col>
           </Row>
           <Row>
-            <Col xs={12}>
+            <Col xs={10} xsOffset={1} sm={8} smOffset={2}>
               {fullList}
             </Col>
           </Row>
