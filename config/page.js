@@ -1,4 +1,4 @@
 module.exports = {
-  port: 8181,
+  port: 80,
   token_secret: 'bodabodaboda'
 };
