@@ -134,13 +134,13 @@ body {
   h2 {
     color: $black;
     font-family: 'GreatVibes', sans-serif;
-    font-size: 2.5rem;
+    font-size: 2.7rem;
     margin: 15px 0 5px 0;
   }
   h3 {
-    color: $blackLight;
+    color: $black;
     font-family: georgia, serif;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-top: 0;
   }
   h4 {
