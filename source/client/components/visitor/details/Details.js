@@ -56,7 +56,7 @@ export default () => {
           <h2>{wedding.venue.name}</h2>
           <h3><VenueAddress /></h3>
         </Col>
-        <Col xs={8} xsOffset={2} sm={6} smOffset={0} md={4}>
+        <Col xs={10} xsOffset={1} sm={6} smOffset={0} md={4}>
           <Map type="venue" />
         </Col>
       </Row>
@@ -64,7 +64,7 @@ export default () => {
       <div className={glob.section}>
         <h2>Timeline</h2>
         <Row>
-          <Col xs={8} xsOffset={2} sm={6} smOffset={3} md={4} mdOffset={4}>
+          <Col xs={10} xsOffset={1} sm={6} smOffset={3} md={4} mdOffset={4}>
             <div className={`${glob.card} ${local.timeline}`}>
               {wedding.timeline.map((timelineEvent, index) => {
                 const ref = `timeline_${index}`;
