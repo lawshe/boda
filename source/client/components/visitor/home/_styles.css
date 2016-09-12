@@ -1,4 +1,7 @@
 /*home*/
+.home{
+  margin-top: -50px;
+}
 .header{
   font-size: 11vh;
   composes: leroy from 'styles/type';
