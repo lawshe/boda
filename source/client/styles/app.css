@@ -91,6 +91,7 @@ body {
 /* links */
   a {
     color: $blue;
+    text-decoration: none;
   	-webkit-transition: $linkTransition;
   	transition: $linkTransition;
 

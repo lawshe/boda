@@ -56,13 +56,13 @@ class CityGuide extends React.Component {
     const makeList = (listType) => {
       let prettyListType = listType;
       if(listType === 'bar'){
-        prettyListType = 'Drink';
+        prettyListType = <span>Drink<br/><i className={`fa fa-glass ${local.icon}`}></i></span>;
       } else if(listType === 'music'){
-        prettyListType = 'Music';
+        prettyListType = <span>Music<br/><i className={`fa fa-music ${local.icon}`}></i></span>;
       } else if(listType === 'food'){
-        prettyListType = 'Eat';
+        prettyListType = <span>Eat<br/><i className={`fa fa-cutlery ${local.icon}`}></i></span>;
       } else if(listType === 'fun'){
-        prettyListType = 'Misc';
+        prettyListType = <span>Misc<br/><i className={`fa fa-bicycle ${local.icon}`}></i></span>;
       }
       return (
         <ul className={`${local.todoListCol}`}>
@@ -138,7 +138,7 @@ class CityGuide extends React.Component {
         <div className="section">
           <h2>Transportation</h2>
           <Row>
-            <Col smOffset={2} lg={6} lgOffset={3}>
+            <Col smOffset={2} sm={8} lg={6} lgOffset={3}>
               <Row style={{margin: '0 0 15px 0'}}>
                 <Col xs={12} sm={4}>
                   <div className={`${glob.card} ${local.transportation}`}>
