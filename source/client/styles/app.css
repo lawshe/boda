@@ -208,18 +208,6 @@ body {
   .mainMenu{
     background-color: $white!important;
     z-index: 1000;
-    /*.brand-logo{
-      padding: 0 10px!important;
-    }
-    a{
-      color: $blue;
-      &:hover{
-        color: $blueDark!important;
-      }
-    }
-    .navbar-toggle{
-      border-color: $blackLight!important;
-    }*/
   }
 
 /* page */
