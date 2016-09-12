@@ -15,7 +15,8 @@
 }
 .date{
   font-family: georgia, serif;
-  margin: 0;
+  line-height: 2rem;
+  margin: -5px 0 0 0;
 }
 
 .location{
@@ -32,6 +33,7 @@
 .euc{
   width: 100%;
 }
+.eucSet{}
 .eucSetBtm{
   -webkit-transform: scaleY(-1);
      -moz-transform: scaleY(-1);
