@@ -54,7 +54,6 @@ class CityGuide extends React.Component {
     const accommodationsAddress = prettyAddress(wedding.accommodations.address);
 
     const makeList = (listType) => {
-      console.log('listType',listType);
       let prettyListType = listType;
       if(listType === 'bar'){
         prettyListType = 'Drink';
