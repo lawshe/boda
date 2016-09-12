@@ -29,3 +29,18 @@
        -o-transform: scaleX(-1);
           transform: scaleX(-1);
 }
+
+
+.mapContainer{
+  height: $mapHeight;
+  border: 1px solid $gray;
+  -webkit-border-radius: $borderRadius;
+  -moz-border-radius: $borderRadius;
+  border-radius: $borderRadius;
+  margin-bottom: 30px;
+  div:nth-child(2){
+    -webkit-border-radius: $borderRadius;
+    -moz-border-radius: $borderRadius;
+    border-radius: $borderRadius;
+  }
+}

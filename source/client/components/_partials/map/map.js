@@ -9,6 +9,7 @@ import variables from '../../../../../config/variables.js';
 import mapStyle from './map-style';
 import MapPinPath from './map-pin-path';
 import prettyAddress from '../../_partials/pretty-address';
+import local from '../_styles';
 
 const mapStateToProps = (state) => ({
   venueMap: state.venueMap,
@@ -26,7 +27,6 @@ const pinSymbol = (color) => {
   }
 };
 
-const mapBorder = `1px solid ${variables.$gray}`;
 
 class PopUpInfoWindow extends React.Component {
   handleMarkerClick(targetMarker) {
@@ -128,12 +128,7 @@ class PopUpInfoWindow extends React.Component {
     return (
       <GoogleMapLoader
         containerElement={
-          <div
-            style={{
-              height: variables.$mapHeight,
-              border: mapBorder,
-              marginBottom: '30px'
-            }} >
+          <div className={local.mapContainer}>
           </div>
         }
         googleMapElement={
