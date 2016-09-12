@@ -131,13 +131,13 @@ body {
     color: $black;
   }
   h2 {
-    color: $blackLight;
+    color: $black;
     font-family: 'GreatVibes', sans-serif;
     font-size: 2.5rem;
     margin: 15px 0 5px 0;
   }
   h3 {
-    color: $black;
+    color: $blackLight;
     font-family: georgia, serif;
     font-size: 1.5rem;
     margin-top: 0;
