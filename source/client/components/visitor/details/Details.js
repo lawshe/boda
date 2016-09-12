@@ -30,10 +30,10 @@ export default () => {
         <Col xs={12}>
           <div className={`${local.eucSet}`}>
             <div className={`${local.eucDate} ${local.eucBorderLeft}`}>
-              <EucFour color="$blackLight" />
+              <EucFour color="$black" />
             </div>
             <div className={`${local.eucDate} ${local.eucBorderRight}`}>
-              <EucFour color="$blackLight" />
+              <EucFour color="$black" />
             </div>
           </div>
           <h2 className={`${local.date}`}>
