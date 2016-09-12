@@ -159,8 +159,12 @@ body {
   }
   p {
     color: $blackLight;
+    font-size: 0.9rem;
     line-height: 1.1;
     margin: 0 0 1rem;
+  }
+  .smallType{
+    font-size: 0.8rem;
   }
 
   .tCenter {

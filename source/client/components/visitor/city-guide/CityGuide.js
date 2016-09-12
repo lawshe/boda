@@ -96,7 +96,7 @@ class CityGuide extends React.Component {
                       View on Map
                     </a>
                   </p>
-                  <p><i>{place.tip}</i></p>
+                  <p className={glob.smallType}><i>{place.tip}</i></p>
                 </li>
               );
             }
