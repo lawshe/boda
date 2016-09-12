@@ -5,7 +5,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import store from './store';
 
 import MainLayout from './components/visitor/layout/layout';
-import HomeLayout from './components/visitor/layout/home-layout'
+// import HomeLayout from './components/visitor/layout/home-layout'
 import AdminLayout from './components/admin/layout/layout';
 
 // Visitor
@@ -25,10 +25,8 @@ const history = syncHistoryWithStore(browserHistory, store);
 
 export default (
   <Router history={history}>
-    <Route path="/" component={HomeLayout}>
-      <IndexRoute component={Home} />
-    </Route>
     <Route path="/" component={MainLayout}>
+      <IndexRoute component={Home} />
       <Route path="rsvp" component={RsvpSearch} store={store} />
       <Route path="rsvp/:shortName" component={Rsvp} store={store} />
       <Route path="the-wedding" component={Details} />
