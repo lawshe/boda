@@ -22,7 +22,7 @@ const eucRightJsx = (
 
 export default (props) => (
   <Row>
-    <Col xs={12}>
+    <Col xs={12} style={{padding: '0'}}>
       <h1 className={`${local.pageHeader}`}>{eucLeftJsx}{props.page}{eucRightJsx}</h1>
     </Col>
   </Row>
