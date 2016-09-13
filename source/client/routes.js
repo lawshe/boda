@@ -27,15 +27,6 @@ export default (
   <Router history={history}>
     <Route path="/" component={MainLayout}>
       <IndexRoute component={Home} />
-      <Route path="rsvp" component={RsvpSearch} store={store} />
-      <Route path="rsvp/:shortName" component={Rsvp} store={store} />
-      <Route path="the-wedding" component={Details} />
-      <Route path="city-guide" component={CityGuide} />
-      <Route path="registry" component={Registry} />
-    </Route>
-    <Route path="/admin" component={AdminLayout}>
-      <Route path="invitations" component={InvitationList} />
-      <Route path="invitations/add" component={InvitationAdd} />
     </Route>
   </Router>
 );

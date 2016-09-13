@@ -18,7 +18,6 @@ import Menu from './menu';
 
 export default (props) => (
   <div className={`${glob.layoutContainer}`}>
-    <Menu />
     <Grid className={`${local.mainGrid}`}>
       {props.children}
     </Grid>
