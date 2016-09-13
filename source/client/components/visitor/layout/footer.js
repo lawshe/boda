@@ -5,6 +5,8 @@ import wedding from '../../../../../config/wedding.js';
 import glob from 'styles/app';
 import local from './_styles';
 
+import WeddingDate from '../../_partials/pretty-wedding-date';
+
 /**
   *
   * The footer for visitor layout
@@ -35,6 +37,8 @@ if (today.toDateString() === bigDay.toDateString()) {
 
 export default () => (
   <div className={`${local.footer} ${glob.verticalContainer}`}>
-    <h3 className={`${glob.verticallyAligned}`}>{countdown}</h3>
+    <div className={`${glob.verticallyAligned}`}>
+      <h3><WeddingDate /></h3><h4 style={{color: '#e6dbd3'}}>{countdown}</h4>
+    </div>
   </div>
 );
