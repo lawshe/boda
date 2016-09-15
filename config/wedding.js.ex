@@ -8,6 +8,9 @@ module.exports = {
       zip: '78704'
     }
   },
+  api: {
+    googleAnalytics: 'UA-trackingId'
+  },
   ceremony: {
     time: '4:30 pm'
   },

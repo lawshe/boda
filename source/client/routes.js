@@ -1,6 +1,9 @@
 import React from 'react';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
+import ReactGA from 'react-ga';
+
+import wedding from '../../config/wedding';
 
 import store from './store';
 
@@ -23,8 +26,18 @@ import InvitationAdd from './components/admin/invitations/add/InvitationAdd';
 // Sync routing history with redux store
 const history = syncHistoryWithStore(browserHistory, store);
 
+const gaTrackingId = wedding.api.googleAnalytics;
+
+// Google Analytics
+ReactGA.initialize(gaTrackingId);
+const logPageView = () => {
+  ReactGA.set({ page: window.location.pathname });
+  ReactGA.pageview(window.location.pathname);
+};
+
+
 export default (
-  <Router history={history}>
+  <Router history={history} onUpdate={logPageView}>
     <Route path="/" component={MainLayout}>
       <IndexRoute component={Home} />
       <Route path="rsvp" component={RsvpSearch} store={store} />
