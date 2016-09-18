@@ -7,16 +7,15 @@
 .rsvpForm{
   text-align: center;
 }
-
+.name{
+  text-align: right;
+}
 .person{
   margin-bottom: 30px;
 }
-/*
-.person:not(:first-child){
-  .name{
-    margin: 30px 0 0 0;
-  }
-}*/
+.person:last-child{
+  margin-bottom: 0px;
+}
 
 
 .attending{
