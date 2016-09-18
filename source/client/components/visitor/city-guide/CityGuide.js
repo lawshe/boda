@@ -140,7 +140,7 @@ class CityGuide extends React.Component {
           <Row>
             <Col smOffset={2} sm={8} lg={6} lgOffset={3}>
               <Row style={{margin: '0 0 15px 0'}}>
-                <Col xs={12} sm={4}>
+                <Col xs={8} xsOffset={2} sm={4} smOffset={0}>
                   <div className={`${glob.card} ${local.transportation}`}>
                     <h3>{wedding.guide.transportation.bus.how.name}</h3>
                     <p style={{marginBottom: '0px'}}>
@@ -148,7 +148,7 @@ class CityGuide extends React.Component {
                     </p>
                   </div>
                 </Col>
-                <Col xs={12} sm={4}>
+                <Col xs={8} xsOffset={2} sm={4} smOffset={0}>
                   <div className={`${glob.card} ${local.transportation}`}>
                     <h3>{wedding.guide.transportation.rideshare.how.name}</h3>
                     <p style={{marginBottom: '0px'}}>
@@ -156,7 +156,7 @@ class CityGuide extends React.Component {
                     </p>
                   </div>
                 </Col>
-                <Col xs={12} sm={4}>
+                <Col xs={8} xsOffset={2} sm={4} smOffset={0}>
                   <div className={`${glob.card} ${local.transportation}`}>
                     <h3>{wedding.guide.transportation.taxi.how.name}</h3>
                     <p style={{marginBottom: '0px'}}>
