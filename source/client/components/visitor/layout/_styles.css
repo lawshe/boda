@@ -44,16 +44,29 @@
   .footer {
     composes: tCenter from 'styles/app';
 
-    background-color: $blackLight;
-    /*bottom: 0;*/
+    background-color: $whiteDark;
     font-size: 0.6em;
     height: $footerHeight;
-    /*left: 0;*/
-    /*position: absolute;*/
     width: 100%;
-    h3{
-      color: $white;
+    p {
+      margin-bottom: 0px;
     }
+  }
+  .footerEuc{
+    display: inline-block;
+    margin: 0 auto;
+    padding: 30px;
+    transform: scaleX(-1) rotate(90deg);
+    width: $footerHeight;
+  }
+  .footerEucTwo{
+    transform: scaleX(-1) rotate(-90deg);
+  }
+  .eucOneContainer{
+    text-align: right;
+  }
+  .eucTwoContainer{
+    text-align: left;
   }
 
 /*menu*/
@@ -70,6 +83,22 @@
     padding: 10px;
     composes: cursive from 'styles/type';
     text-decoration: none;
+  }
+  #mainMenu{
+    float: right
+  }
+  #footerMenu{
+    float: none;
+    text-align: center;
+    li{
+      display: inline-block;
+      a{
+        color: $black;
+        &:hover{
+          background-color: $whiteDark!important;
+        }
+      }
+    }
   }
   #navList{
     float: right;
@@ -93,12 +122,12 @@
     }
   }
 
-  /*#navToggle  span{
-    background-color: $blue!important;
-  }*/
 
 @media(max-width: 768px){
   #navList{
     float: left;
+  }
+  .eucOneContainer, .eucTwoContainer{
+    display: none;
   }
 }
