@@ -81,13 +81,18 @@ export default (props) => {
     </div>
   );
 
+  const plusJsx = attending > 0
+      ? <PlusGuests rsvp={rsvp} _changePlus={props._changePlus} />
+      : '';
+
+
   const RsvpFormForm = () => (
     <div>
       <h4>Please submit by<br /><PrettyDate date={wedding.rsvp.date} /></h4>
       <div className={`${glob.card} ${local.rsvpForm}`}>
         <form onSubmit={props._sendRsvp} style={{margin: '20px auto'}}>
-          <PerGuestRsvp rsvp={rsvp} changeRsvp={props._changeRsvp} />
-          <PlusGuests rsvp={rsvp} changePlus={props._changePlus} />
+          <PerGuestRsvp rsvp={rsvp} _changeRsvp={props._changeRsvp} />
+          {plusJsx}
           <Row>
             <Col sm={12} className={`${glob.tCenter}`}>
               {submitBtnJsx}

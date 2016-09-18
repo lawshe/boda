@@ -25,7 +25,7 @@ export default (props) => {
             </h3>
           </Col>
           <Col xs={12} sm={6}>
-            <RadioButtons guest={guest} index={i} changeRsvp={props.changeRsvp} />
+            <RadioButtons guest={guest} index={i} _changeRsvp={props._changeRsvp} />
           </Col>
         </Row>
       </FormGroup>

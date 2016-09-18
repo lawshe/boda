@@ -62,8 +62,15 @@ class Rsvp extends React.Component {
 
     let RsvpFound;
     if(rsvp.id){
-      console.log("FOUND!! ", rsvp.id);
-      RsvpFound = <RsvpForm rsvp={rsvp} />;
+      // console.log("FOUND!! ", rsvp.id);
+      RsvpFound = (
+        <RsvpForm
+          rsvp={rsvp}
+          _changePlus={this._changePlus.bind(this)}
+          _changeRsvp={this._changeRsvp.bind(this)}
+          _sendRsvp={this._sendRsvp.bind(this)}
+        />
+      );
     } else {
       RsvpFound = <RsvpNotFound />
     }
@@ -91,7 +98,6 @@ class Rsvp extends React.Component {
     this.props.dispatch(updatePlus(event.target.value));
   }
 
-
   _changeRsvp(rsvpBool, index) {
     this.props.dispatch(updateRsvp(rsvpBool, index));
   }
@@ -100,12 +106,12 @@ class Rsvp extends React.Component {
     this.setState({ showSavedModal: false });
   }
 
-  sendRsvp(event) {
+  _sendRsvp(event) {
     event.preventDefault();
     const rsvpData = Object.assign({}, this.props.rsvp, { returned: true });
     const invitations = this.props.horizon('invitations');
     invitations.update(rsvpData).subscribe(
-      (id) => this.showSavedModal(),
+      (id) => this._showSavedModal(),
       (err) => console.error(err)
     );
   }

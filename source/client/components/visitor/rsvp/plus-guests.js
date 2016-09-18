@@ -36,7 +36,7 @@ export default (props) => {
     plusSelect = (
       <FormGroup>
         <ControlLabel>+ guests?</ControlLabel>
-        <FormControl componentClass="select" placeholder="select" onChange={props.changePlus} value={props.rsvp.plus.bringing}>
+        <FormControl componentClass="select" placeholder="select" onChange={props._changePlus} value={props.rsvp.plus.bringing}>
           {plusOptions}
         </FormControl>
       </FormGroup>);
