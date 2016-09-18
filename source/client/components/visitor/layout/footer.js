@@ -1,9 +1,11 @@
 import React from 'react';
-// import { Link } from 'react-router';
-
+import { Row, Col } from 'react-bootstrap';
 import wedding from '../../../../../config/wedding.js';
 import glob from 'styles/app';
 import local from './_styles';
+import WeddingDate from '../../_partials/pretty-wedding-date';
+import NavList from './nav-list';
+import EucThree from '../../svg/euc-3';
 
 /**
   *
@@ -35,6 +37,20 @@ if (today.toDateString() === bigDay.toDateString()) {
 
 export default () => (
   <div className={`${local.footer} ${glob.verticalContainer}`}>
-    <h3 className={`${glob.verticallyAligned}`}>{countdown}</h3>
+    <div className={`${glob.verticallyAligned}`}>
+      <Row>
+        <Col xs={12} sm={4} className={local.eucOneContainer}>
+          <div className={`${local.footerEuc}`}><EucThree /></div>
+        </Col>
+        <Col xs={12} sm={4}>
+          <h3><WeddingDate /></h3>
+          <h4>{countdown}</h4>
+          <p><NavList navId="footerMenu" /></p>
+        </Col>
+        <Col xs={12} sm={4}  className={local.eucTwoContainer}>
+          <div className={`${local.footerEuc} ${local.footerEucTwo}`}><EucThree /></div>
+        </Col>
+      </Row>
+    </div>
   </div>
 );
