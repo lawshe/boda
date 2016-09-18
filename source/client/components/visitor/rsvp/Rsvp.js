@@ -1,13 +1,12 @@
 import React from 'react';
 import { subscribe } from 'horizon-react';
 import { Row, Col } from 'react-bootstrap';
-
 import { setRsvp, updateRsvp, updatePlus } from '../../../actions/actionCreators';
-
 import PageHeader from '../../_partials/page-header';
 import RsvpForm from './form';
 import RsvpNotFound from './not-found';
 import SavedModal from '../../shared/saved-modal';
+
 /**
   *
   * RSVP Page
@@ -34,35 +33,16 @@ const databaseInvite = (props) => {
 class Rsvp extends React.Component {
   constructor(props) {
     super(props);
-  //   // this.state = { rsvp: {}, showSavedModal: false };
     this.state = { showSavedModal: false };
     databaseInvite(props);
   }
-  // constructor(props) {
-    // super(props);
-    // this.invitationsCollection = this.props.horizon('invitations');
-    // this.state = { invitations: [] };
-  // }
-
-  // componentDidMount() {
-  //   this.messageCollection.watch().subscribe((collection) => {
-  //     if (collection) {
-  //       this.setState({ invitations: collection });
-  //     }
-  //   }, (err) => {
-  //     console.log(err);
-  //   });
-  // }
 
   render() {
-    console.log('RSVP this.props',this.props);
-    // console.log('RSVP this.state',this.state.rsvp);
     const savedMessage = 'Thank you for RSVPing! You should receive a confirmation email soon.';
     const { rsvp } = this.props;
 
     let RsvpFound;
-    if(rsvp.id){
-      // console.log("FOUND!! ", rsvp.id);
+    if (rsvp.id) {
       RsvpFound = (
         <RsvpForm
           rsvp={rsvp}
@@ -72,7 +52,7 @@ class Rsvp extends React.Component {
         />
       );
     } else {
-      RsvpFound = <RsvpNotFound />
+      RsvpFound = <RsvpNotFound />;
     }
 
     return (
@@ -111,7 +91,7 @@ class Rsvp extends React.Component {
     const rsvpData = Object.assign({}, this.props.rsvp, { returned: true });
     const invitations = this.props.horizon('invitations');
     invitations.update(rsvpData).subscribe(
-      (id) => this._showSavedModal(),
+      () => this._showSavedModal(),
       (err) => console.error(err)
     );
   }
@@ -125,5 +105,3 @@ class Rsvp extends React.Component {
 export default subscribe({
   mapStateToProps
 })(Rsvp);
-
-// export default Rsvp;
