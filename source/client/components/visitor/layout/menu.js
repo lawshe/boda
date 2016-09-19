@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar } from 'react-bootstrap';
+import { Link } from 'react-router';
 import wedding from '../../../../../config/wedding.js';
 import glob from 'styles/app';
 import local from './_styles';
@@ -26,7 +27,7 @@ export default () => {
     <Navbar className={`${glob.mainMenu}`}>
       <Navbar.Header>
         <Navbar.Brand>
-          <a href="/" className={local.initials} activeStyle={ACTIVE}>{coupleInitials}</a>
+          <Link href="/" className={local.initials} activeStyle={ACTIVE}>{coupleInitials}</Link>
         </Navbar.Brand>
         <Navbar.Toggle id={local.navToggle} />
       </Navbar.Header>
