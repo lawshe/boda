@@ -14,7 +14,7 @@ import { Button, Modal } from 'react-bootstrap';
   */
 
 export default (props) => (
-  <Modal show={props.show} onHide={props.closeSavedModal}>
+  <Modal show={props.show} onHide={props._closeSavedModal}>
     <Modal.Header closeButton>
       <Modal.Title>{props.title}</Modal.Title>
     </Modal.Header>
@@ -24,7 +24,7 @@ export default (props) => (
     </Modal.Body>
 
     <Modal.Footer>
-      <Button onClick={props.closeSavedModal}>Close</Button>
+      <Button onClick={props._closeSavedModal}>Close</Button>
     </Modal.Footer>
   </Modal>
 );

@@ -60,10 +60,11 @@ class Rsvp extends React.Component {
         <PageHeader page="RSVP" />
         <Row>
           <SavedModal
+            id="test"
             title="RSVP Sent"
             message={savedMessage}
-            show={this.state._showSavedModal}
-            closeSavedModal={this._closeSavedModal.bind(this)}
+            show={this.state.showSavedModal}
+            _closeSavedModal={this._closeSavedModal.bind(this)}
           />
           <Col xs={12} sm={10} smOffset={1} md={8} mdOffset={2} lg={6} lgOffset={3}>
             {RsvpFound}
@@ -91,7 +92,7 @@ class Rsvp extends React.Component {
     const rsvpData = Object.assign({}, this.props.rsvp, { returned: true });
     const invitations = this.props.horizon('invitations');
     invitations.update(rsvpData).subscribe(
-      () => this._showSavedModal(),
+      (id) => this._showSavedModal(),
       (err) => console.error(err)
     );
   }
