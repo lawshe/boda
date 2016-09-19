@@ -43,6 +43,6 @@ export default (props) => {
   }
 
   return (
-    <Row><Col xs={12}>{plusSelect}</Col></Row>
+    <Row><Col xs={6} xsOffset={3}>{plusSelect}</Col></Row>
   );
 };
