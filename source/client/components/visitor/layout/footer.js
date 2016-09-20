@@ -45,7 +45,7 @@ export default () => (
         <Col xs={12} sm={4}>
           <h3><WeddingDate /></h3>
           <h4>{countdown}</h4>
-          <p><NavList navId="footerMenu" /></p>
+          <NavList navId="footerMenu" />
         </Col>
         <Col xs={12} sm={4}  className={local.eucTwoContainer}>
           <div className={`${local.footerEuc} ${local.footerEucTwo}`}><EucThree /></div>

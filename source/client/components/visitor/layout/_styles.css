@@ -94,6 +94,7 @@
       display: inline-block;
       a{
         color: $black;
+        font-size: 0.9rem;
         &:hover{
           background-color: $whiteDark!important;
         }
