@@ -58,13 +58,19 @@ class Rsvp extends React.Component {
   render() {
     const query = this.props.rsvpSearch.query;
 
-    const queryMessage = query
-    ? `Invitation for ` + query + ` not found. Email ${wedding.email} for support.`
-    : '';
+    const queryMessageJsx = query
+      ? (
+        <div>
+          <h2>Invitation not found for</h2>
+          <h3>{query}</h3>
+          <h4>Email <a href="mailto:{wedding.email}&body={query}">{wedding.email}</a> for support.</h4>
+        </div>
+        )
+      : '';
 
     const inviteFound = this.props.rsvpSearch.result
     ? <Button bsSize="large" className={`${glob.button}`} href={`/rsvp/${this.props.rsvpSearch.result.shortName}`}>Go to RSVP</Button>
-    : <div>{queryMessage}</div>;
+    : <div>{queryMessageJsx}</div>;
 
     const inputJsx = (
       <span>
@@ -99,7 +105,7 @@ class Rsvp extends React.Component {
           <Col xs={8} xsOffset={2} sm={6} smOffset={3}>
             <Form
               className={glob.card}
-              onSubmit={this.handleSubmit}
+              onSubmit={this._handleSubmit}
               style={{ padding: '30px', textAlign: 'center' }}
             >
               <Row>
