@@ -88,7 +88,7 @@ class Rsvp extends React.Component {
     );
 
     let formGroupClasses = `${glob.matGroup}`;
-    if (this.state && this.state.active) {
+    if (this.state && this.state.active || query) {
       formGroupClasses = `${glob.matGroup} ${glob.isActive} ${glob.isCompleted}`;
     }
 
