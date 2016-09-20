@@ -63,7 +63,7 @@ class Rsvp extends React.Component {
         <div>
           <h2>Invitation not found for</h2>
           <h3>{query}</h3>
-          <h4>Email <a href="mailto:{wedding.email}&body={query}">{wedding.email}</a> for support.</h4>
+          <h4>Email <a href="mailto:{wedding.email}?Subject=RSVP Not found">{wedding.email}</a> for support.</h4>
         </div>
         )
       : '';
