@@ -23,19 +23,29 @@ import glob from 'styles/app';
   * @return {ReactComponent}
   */
 
+const emailInInvitation = (invitation, props, cb) => {
+  let found = false;
+  invitation.guests.forEach(
+    guest => {
+      if (guest.email && guest.email === props.rsvpSearch.query) {
+        found = true;
+      }
+    }
+  );
+  cb(found);
+};
+
 const mapDataToProps = {
   invitations: (hz, props) => {
     hz('invitations').fetch().subscribe(
       invitations => {
         invitations.forEach(
           invitation => {
-            invitation.guests.forEach(
-              guest => {
-                if (guest.email && guest.email === props.rsvpSearch.query) {
-                  props.dispatch(updateRsvpResult(invitation));
-                }
+            emailInInvitation(invitation, props, (found) => {
+              if (found) {
+                props.dispatch(updateRsvpResult(invitation));
               }
-            );
+            });
           }
         );
       }
@@ -43,6 +53,7 @@ const mapDataToProps = {
     return hz('invitations');
   }
 };
+
 
 const mapStateToProps = (state) => ({
   rsvpSearch: state.rsvpSearch
@@ -58,19 +69,33 @@ class Rsvp extends React.Component {
   render() {
     const query = this.props.rsvpSearch.query;
 
+    const supportEmail = <a href="mailto:{wedding.email}?Subject=RSVP Not found">{wedding.email}</a>;
+
     const queryMessageJsx = query
       ? (
-        <div>
-          <h2>Invitation not found for</h2>
-          <h3>{query}</h3>
-          <h4>Email <a href="mailto:{wedding.email}?Subject=RSVP Not found">{wedding.email}</a> for support.</h4>
-        </div>
-        )
+      <div>
+        <h2>Invitation not found for</h2>
+        <h3>{query}</h3>
+        <h4>Email {supportEmail} for support.</h4>
+      </div>
+      )
       : '';
 
-    const inviteFound = this.props.rsvpSearch.result
-    ? <Button bsSize="large" className={`${glob.button}`} href={`/rsvp/${this.props.rsvpSearch.result.shortName}`}>Go to RSVP</Button>
-    : <div>{queryMessageJsx}</div>;
+    let inviteFoundJsx = <div>{queryMessageJsx}</div>;
+
+    if (this.props.rsvpSearch.result) {
+      // added check for when invite found, and then input changes
+      emailInInvitation(this.props.rsvpSearch.result, this.props, (found) => {
+        if (found) {
+          const shortName = this.props.rsvpSearch.result.shortName;
+          inviteFoundJsx = (
+            <Button bsSize="large" className={`${glob.button}`} href={`/rsvp/${shortName}`}>
+              Go to RSVP
+            </Button>
+          );
+        }
+      });
+    }
 
     const inputJsx = (
       <span>
@@ -118,7 +143,7 @@ class Rsvp extends React.Component {
         </Row>
         <Row style={{ marginTop: '30px' }}>
           <Col xs={12} style={{ textAlign: 'center' }}>
-            {inviteFound}
+            {inviteFoundJsx}
           </Col>
         </Row>
       </div>
