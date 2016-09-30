@@ -1,15 +1,20 @@
 import path from 'path';
 import express from 'express';
 import horizon from '@horizon/server';
+import nodemailer from 'nodemailer';
+import bodyParser from 'body-parser';
 import devProps from '../../config/webpack/devProps';
 import config from '../../config/page';
-import weddingConfig from '../../config/wedding';
+import wedding from '../../config/wedding';
+import variables from '../../config/variables';
 import apiKeys from '../../config/keys';
+import fxns from '../utils/fxns';
 
 const app = express();
 
 const googleMapsApi = apiKeys.googleMaps;
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
 app.use('/static', express.static(path.join(process.cwd(), '.build')));
 
 /**
@@ -20,13 +25,66 @@ const bundle = `${host}/static/client.bundle.js`;
 const styles = `${host}/static/styles.css`;
 const images = `${host}/static/images/`;
 
-const htmlTitle = `${weddingConfig.couple[0].name.first} & ${weddingConfig.couple[1].name.first}`;
+const coupleOne = wedding.couple[0].name.first;
+const coupleTwo = wedding.couple[1].name.first;
+
+const couple = `${coupleOne} & ${coupleTwo}`;
+const coupleInitials = fxns.coupleInitials();
+const weddingDate = new Date(wedding.date);
+const weddingDay = weddingDate.getDate();
+const weddingMonth = parseInt(weddingDate.getMonth() + 1, 10);
+const weddingYear = weddingDate.getFullYear().toString().slice(-2);
+const prettyWeddingDate = `${weddingMonth}·${weddingDay}·${weddingYear}`;
+
+const transporter = nodemailer.createTransport(`smtps://${wedding.gmail.user}%40gmail.com:${wedding.gmail.pw}@smtp.gmail.com`);
+const mailOptions = {
+  from: `${couple} <${wedding.gmail.user}@gmail.com>`,
+  subject: ` RSVP Received | ${coupleInitials} | ${prettyWeddingDate}`
+};
+
+app.post('/notify', (req) => {
+  if (req.body && req.body.id) {
+    const rsvp = fxns.rsvpProcessData(req.body);
+    // signature
+    const attendingMsg = rsvp.attendingNamesStr
+      ? `${rsvp.attendingNamesStr}`
+      : '';
+    const plusMsg = rsvp.plusMessage
+      ? `<br/>${rsvp.plusMessage}`
+      : '';
+    const signature = `Love,<br/>${couple}`;
+
+    const style = `color:${variables.black};font-family:Garamond,Palatino,serif; font-size: 12pt;`;
+    // the body of the email
+    const body = `
+      <div style="${style}">
+        <p>Hello ${rsvp.salutationNamesStr},</p>
+        <p>${rsvp.rsvpReceivedMessage}</p>
+        <p>${attendingMsg}${plusMsg}</p>
+        <p>${signature}</p>
+      </div>`;
+
+    const sendTo = process.env.NODE_ENV !== 'production' ? wedding.email : rsvp.toEmails;
+
+    const mailOptionsCloned = Object.assign(
+      { to: sendTo, html: body },
+      mailOptions
+    );
+
+    transporter.sendMail(mailOptionsCloned, function(error, info){
+      if (error) {
+        return console.log(error);
+      }
+      console.log('Message sent: ' + info.response);
+    });
+  }
+});
 
 app.use('/', (req, res) => {
   res.status(200).send(`<!doctype html>
     <html>
       <head>
-        <title>${htmlTitle}</title>
+        <title>${couple}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="${styles}" />
