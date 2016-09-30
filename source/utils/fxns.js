@@ -1,3 +1,5 @@
+import wedding from '../../config/wedding';
+
 const prettyGroupNames = (people) => {
   let prettyNames = '';
   if (people.length === 1) {
@@ -92,5 +94,10 @@ module.exports = {
     }
 
     return rsvpResult;
+  },
+  coupleInitials() {
+    const coupleOneInitial = wedding.couple[0].name.first.charAt(0);
+    const coupleTwoInitial = wedding.couple[1].name.first.charAt(0);
+    return `${coupleOneInitial} & ${coupleTwoInitial}`;
   }
 };
