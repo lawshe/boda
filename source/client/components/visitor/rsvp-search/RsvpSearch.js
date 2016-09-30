@@ -8,6 +8,7 @@ import wedding from '../../../../../config/wedding.js';
 import { updateRsvpQuery, updateRsvpResult } from '../../../actions/actionCreators';
 
 import PageHeader from '../../_partials/page-header';
+import InviteNotFound from '../rsvp/not-found';
 
 
 import glob from 'styles/app';
@@ -69,16 +70,8 @@ class Rsvp extends React.Component {
   render() {
     const query = this.props.rsvpSearch.query;
 
-    const supportEmail = <a href="mailto:{wedding.email}?Subject=RSVP Not found">{wedding.email}</a>;
-
     const queryMessageJsx = query
-      ? (
-      <div>
-        <h2>Invitation not found for</h2>
-        <h3>{query}</h3>
-        <h4>Email {supportEmail} for support.</h4>
-      </div>
-      )
+      ? <InviteNotFound />
       : '';
 
     let inviteFoundJsx = <div>{queryMessageJsx}</div>;
