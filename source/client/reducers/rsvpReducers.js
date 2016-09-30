@@ -1,5 +1,5 @@
-import addons from 'react-addons';
 import update from 'react-addons-update';
+import fxns from '../../utils/fxns';
 
 import { SET_RSVP, UPDATE_PERSON_RSVP, UPDATE_PLUS } from '../actions/actionTypes';
 
@@ -8,7 +8,9 @@ const initialState = {};
 export default function rsvpReducers(state = initialState, action) {
   switch (action.type) {
     case SET_RSVP: {
-      return Object.assign({}, state, action.rsvp);
+      return update(action.rsvp, {
+        processed: { $set: fxns.rsvpProcessData(action.rsvp) }
+      });
     }
     case UPDATE_PERSON_RSVP: {
       const guests = state.guests;
