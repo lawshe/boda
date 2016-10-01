@@ -20,12 +20,19 @@ export default function rsvpReducers(state = initialState, action) {
       });
       const updatedRsvp = update(state, { guests: { $set: updatedGuests } });
 
-      return updatedRsvp;
+      const processed = fxns.rsvpProcessData(updatedRsvp);
+      const updatedRsvpProcessed = update(updatedRsvp, { processed: { $set: processed } });
+
+      return updatedRsvpProcessed;
     }
     case UPDATE_PLUS: {
       const plus = parseInt(action.plus, 10);
+      const updatedPlus = update(state, { plus: { bringing: { $set: plus } } });
 
-      return update(state, { plus: { bringing: { $set: plus } } });
+      const processed = fxns.rsvpProcessData(updatedPlus);
+      const updatedPlusProcessed = update(updatedPlus, { processed: { $set: processed } });
+
+      return updatedPlusProcessed;
     }
     default:
       return state;
