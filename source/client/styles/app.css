@@ -64,6 +64,10 @@ body {
   .matInput:focus::after {
     transform: scaleX(1);
   }
+  input:-webkit-autofill{
+    background-color: $whiteMed!important;
+    -webkit-box-shadow: 0 0 0px 1000px $whiteMed inset!important;
+  }
   .matLabel{
     color: $gray;
     display: block;
@@ -104,6 +108,10 @@ body {
       text-decoration: none;
     	-webkit-transition: all 250ms ease;
     	transition: all 250ms ease;
+    }
+    &:focus{
+      text-decoration: none;
+      color: $blueDark;
     }
   }
   .button{
