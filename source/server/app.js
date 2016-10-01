@@ -44,27 +44,28 @@ const mailOptions = {
 
 app.post('/notify', (req) => {
   if (req.body && req.body.id) {
-    const rsvp = fxns.rsvpProcessData(req.body);
     // signature
-    const attendingMsg = rsvp.attendingNamesStr
-      ? `${rsvp.attendingNamesStr}`
+    const attendingMsg = req.body.attendingNamesStr
+      ? `Attending:<br/>${req.body.attendingNamesStr}`
       : '';
-    const plusMsg = rsvp.plusMessage
-      ? `<br/>${rsvp.plusMessage}`
+
+    const plusMsg = req.body.plusMessage
+      ? `<br/>${req.body.plusMessage}`
       : '';
+
     const signature = `Love,<br/>${couple}`;
 
     const style = `color:${variables.black};font-family:Garamond,Palatino,serif; font-size: 12pt;`;
     // the body of the email
     const body = `
       <div style="${style}">
-        <p>Hello ${rsvp.salutationNamesStr},</p>
-        <p>${rsvp.rsvpReceivedMessage}</p>
+        <p>Hello ${req.body.salutationNamesStr},</p>
+        <p>${req.body.rsvpReceivedMessage}</p>
         <p>${attendingMsg}${plusMsg}</p>
         <p>${signature}</p>
       </div>`;
 
-    const sendTo = process.env.NODE_ENV !== 'production' ? wedding.email : rsvp.toEmails;
+    const sendTo = process.env.NODE_ENV !== 'production' ? wedding.email : req.body.toEmails;
 
     const mailOptionsCloned = Object.assign(
       { to: sendTo, html: body },
