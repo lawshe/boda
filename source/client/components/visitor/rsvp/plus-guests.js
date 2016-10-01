@@ -14,7 +14,7 @@ export default (props) => {
   let plusSelect;
   let allowed = 0;
   const plusGuestOptions = [
-      { value: 0, label: 'Select Plus' },
+      { value: 0, label: '+ guests?' },
       { value: 1, label: 'Plus One' },
       { value: 2, label: 'Plus Two' },
       { value: 3, label: 'Plus Three' },
@@ -26,23 +26,25 @@ export default (props) => {
     allowed = props.rsvp.plus.allowed;
   }
 
-  const plusOptions = plusGuestOptions.map(function(option, i){
+  const plusOptions = plusGuestOptions.map((option, i) => {
     if (option.value <= allowed) {
       return <option value={option.value} key={i}>{option.label}</option>;
+    } else {
+      return '';
     }
   });
 
   if (allowed !== 0) {
     plusSelect = (
-      <FormGroup>
-        <ControlLabel>+ guests?</ControlLabel>
-        <FormControl componentClass="select" placeholder="select" onChange={props._changePlus} value={props.rsvp.plus.bringing}>
-          {plusOptions}
-        </FormControl>
-      </FormGroup>);
+      <FormControl componentClass="select" placeholder="select" onChange={props._changePlus} value={props.rsvp.plus.bringing}>
+        {plusOptions}
+      </FormControl>
+    );
   }
 
   return (
-    <Row><Col xs={6} xsOffset={3}>{plusSelect}</Col></Row>
+    <Row style={{ marginBottom: '15px' }}>
+      <Col xs={12} sm={6} smOffset={6}>{plusSelect}</Col>
+    </Row>
   );
 };
