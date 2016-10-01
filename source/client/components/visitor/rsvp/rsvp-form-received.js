@@ -20,7 +20,7 @@ export default (props) => {
     : '';
 
   const plusJsx = props.rsvpProcessed.plusMessage
-    ? <h4 style={{ margin: '15px 0 0 0'}}>{props.rsvpProcessed.plusMessage}</h4>
+    ? <h4 style={{ margin: '15px 0 0 0' }}>{props.rsvpProcessed.plusMessage}</h4>
     : '';
 
   return (
