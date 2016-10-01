@@ -80,12 +80,7 @@ class Rsvp extends React.Component {
     const { rsvp } = this.props;
     if (rsvp && rsvp.id) {
       const data = querystring.stringify({
-        id: rsvp.id,
-        salutationNamesStr: rsvp.processed.salutationNamesStr,
-        rsvpReceivedMessage: rsvp.processed.rsvpReceivedMessage,
-        attendingNamesStr: rsvp.processed.attendingNamesStr,
-        plusMessage: rsvp.processed.plusMessage,
-        toEmails: rsvp.processed.toEmails
+        id: rsvp.id
       });
 
       const options = {

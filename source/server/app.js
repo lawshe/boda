@@ -9,6 +9,7 @@ import wedding from '../../config/wedding';
 import variables from '../../config/variables';
 import apiKeys from '../../config/keys';
 import fxns from '../utils/fxns';
+import { r, r_internal } from './db';
 
 const app = express();
 
@@ -39,45 +40,75 @@ const prettyWeddingDate = `${weddingMonth}·${weddingDay}·${weddingYear}`;
 const transporter = nodemailer.createTransport(`smtps://${wedding.gmail.user}%40gmail.com:${wedding.gmail.pw}@smtp.gmail.com`);
 const mailOptions = {
   from: `${couple} <${wedding.gmail.user}@gmail.com>`,
-  subject: ` RSVP Received | ${coupleInitials} | ${prettyWeddingDate}`
+  subject: ` RSVP Received: ${coupleInitials} | ${prettyWeddingDate}`
+};
+
+const sendErrorEmail = (reqBody) => {
+  const errorMessage = `Error<br/>Cannot send email notification.<br/>Not Found in DB<br/>${JSON.stringify(reqBody)}`;
+  const mailOptionsCloned = Object.assign(
+    { to: wedding.email, html: errorMessage },
+    mailOptions
+  );
+
+  transporter.sendMail(mailOptionsCloned, function(error, info){
+    if (error) {
+      return console.log(error);
+    }
+    console.log('Message sent: ' + info.response);
+  });
 };
 
 app.post('/notify', (req) => {
   if (req.body && req.body.id) {
-    // signature
-    const attendingMsg = req.body.attendingNamesStr
-      ? `Attending:<br/>${req.body.attendingNamesStr}`
-      : '';
+    r_internal.table('collections').get('invitations').run()
+    .then(function(result) {
+      r.table(result.table).get(req.body.id).run().then((invitation) => {
 
-    const plusMsg = req.body.plusMessage
-      ? `<br/>${req.body.plusMessage}`
-      : '';
+        if (invitation && invitation.processed) {
+          const processed = invitation.processed;
+          // signature
+          const attendingMsg = processed.attendingNamesStr
+            ? `Attending:<br/>${processed.attendingNamesStr}`
+            : '';
 
-    const signature = `Love,<br/>${couple}`;
+          const plusMsg = processed.plusMessage
+            ? `<br/>${processed.plusMessage}`
+            : '';
 
-    const style = `color:${variables.black};font-family:Garamond,Palatino,serif; font-size: 12pt;`;
-    // the body of the email
-    const body = `
-      <div style="${style}">
-        <p>Hello ${req.body.salutationNamesStr},</p>
-        <p>${req.body.rsvpReceivedMessage}</p>
-        <p>${attendingMsg}${plusMsg}</p>
-        <p>${signature}</p>
-      </div>`;
+          const signature = `Love,<br/>${couple}`;
 
-    const sendTo = process.env.NODE_ENV !== 'production' ? wedding.email : req.body.toEmails;
+          const style = `color:${variables.black};font-family:Garamond,Palatino,serif; font-size: 12pt;`;
+          // the body of the email
+          const body = `
+            <div style="${style}">
+              <p>Hello ${processed.salutationNamesStr},</p>
+              <p>${processed.rsvpReceivedMessage}</p>
+              <p>${attendingMsg}${plusMsg}</p>
+              <p>${signature}</p>
+            </div>`;
 
-    const mailOptionsCloned = Object.assign(
-      { to: sendTo, html: body },
-      mailOptions
-    );
+          const sendTo = process.env.NODE_ENV !== 'production' ? wedding.email : processed.toEmails;
 
-    transporter.sendMail(mailOptionsCloned, function(error, info){
-      if (error) {
-        return console.log(error);
-      }
-      console.log('Message sent: ' + info.response);
+          const mailOptionsCloned = Object.assign(
+            { to: sendTo, html: body },
+            mailOptions
+          );
+
+          transporter.sendMail(mailOptionsCloned, function(error, info){
+            if (error) {
+              return console.log(error);
+            }
+            console.log('Message sent: ' + info.response);
+          });
+        } else {
+          // Send error email
+          sendErrorEmail(req.body)
+        }
+      });
     });
+  } else {
+    // Send error email
+    sendErrorEmail(req.body);
   }
 });
 

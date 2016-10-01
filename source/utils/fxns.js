@@ -27,16 +27,7 @@ module.exports = {
     };
 
     if (rsvp) {
-      rsvp.guests.forEach((guest) => {
-        let guestObj;
-
-        if (typeof guest === 'string') {
-          // post request to notify via email will have a string
-          guestObj = JSON.parse(guest);
-        } else {
-          guestObj = guest;
-        }
-
+      rsvp.guests.forEach((guestObj) => {
         if (guestObj.rsvp === true) {
           rsvpResult.attending++;
 
@@ -61,36 +52,24 @@ module.exports = {
           }
           rsvpResult.toEmails.push(guestObj.email);
         }
-
-        rsvpResult.salutationNamesStr = prettyGroupNames(rsvpResult.salutationNames);
-        rsvpResult.attendingNamesStr = prettyGroupNames(rsvpResult.attendingNames);
-
-        // plus
-        let plus = 0;
-        if (rsvp.returned) {
-          plus = rsvp.plus.bringing;
-        } else {
-          if (rsvp.plus && typeof rsvp.plus === 'string') {
-            // post request will pass as string
-            plus = parseInt(rsvp.plus, 10);
-          } else if (rsvp.plus && typeof rsvp.plus !== 'string') {
-            plus = rsvp.plus;
-          }
-        }
-
-        if (plus > 0 && rsvpResult.attending > 0) {
-          rsvpResult.attending = rsvpResult.attending + plus;
-          const guestWord = plus > 1 ? 'guests' : 'guest';
-          rsvpResult.plusMessage = `+ ${plus} ${guestWord}`;
-        }
-
-        // extra message and name string
-        if (rsvpResult.attending === 0) {
-          rsvpResult.rsvpReceivedMessage = 'We will miss yall!';
-        } else if (rsvpResult.attending === 1) {
-          rsvpResult.rsvpReceivedMessage = 'We look forward to seeing you!';
-        }
       });
+
+      rsvpResult.salutationNamesStr = prettyGroupNames(rsvpResult.salutationNames);
+      rsvpResult.attendingNamesStr = prettyGroupNames(rsvpResult.attendingNames);
+
+      // plus
+      if (rsvp.plus.bringing > 0 && rsvpResult.attending > 0) {
+        rsvpResult.attending = rsvpResult.attending + rsvp.plus.bringing;
+        const guestWord = rsvp.plus.bringing > 1 ? 'guests' : 'guest';
+        rsvpResult.plusMessage = `+ ${rsvp.plus.bringing} ${guestWord}`;
+      }
+
+      // extra message and name string
+      if (rsvpResult.attending === 0) {
+        rsvpResult.rsvpReceivedMessage = 'We will miss yall!';
+      } else if (rsvpResult.attending === 1) {
+        rsvpResult.rsvpReceivedMessage = 'We look forward to seeing you!';
+      }
     }
 
     return rsvpResult;
