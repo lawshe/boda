@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
+import { Row, Col, FormControl } from 'react-bootstrap';
 
 /**
   *
