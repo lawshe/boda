@@ -1,6 +1,8 @@
 import React from 'react';
 import { subscribe } from 'horizon-react';
 import { Row, Col } from 'react-bootstrap';
+import http from 'http';
+import querystring from 'querystring';
 import { setRsvp, updateRsvp, updatePlus } from '../../../actions/actionCreators';
 import PageHeader from '../../_partials/page-header';
 import RsvpForm from './form';
@@ -26,7 +28,9 @@ const mapStateToProps = (state) => {
 
 const databaseInvite = (props) => {
   props.horizon('invitations').find({ shortName: props.params.shortName }).fetch().subscribe(
-    invite => props.dispatch(setRsvp(invite))
+    invite => {
+      return props.dispatch(setRsvp(invite));
+    }
   );
 };
 
@@ -38,9 +42,8 @@ class Rsvp extends React.Component {
   }
 
   render() {
-    const savedMessage = 'Thank you for RSVPing! You should receive a confirmation email soon.';
+    const savedMessage = 'Thank you for RSVPing! You should receive an email confirmation soon.';
     const { rsvp } = this.props;
-
     let RsvpFound;
     if (rsvp.id) {
       RsvpFound = (
@@ -73,7 +76,34 @@ class Rsvp extends React.Component {
       </div>
     );
   }
+  _notify() {
+    const { rsvp } = this.props;
+    if (rsvp && rsvp.id) {
+      const data = querystring.stringify({
+        id: rsvp.id,
+        salutationNamesStr: rsvp.processed.salutationNamesStr,
+        rsvpReceivedMessage: rsvp.processed.rsvpReceivedMessage,
+        attendingNamesStr: rsvp.processed.attendingNamesStr,
+        plusMessage: rsvp.processed.plusMessage,
+        toEmails: rsvp.processed.toEmails
+      });
 
+      const options = {
+        host: 'localhost',
+        port: 3000,
+        path: '/notify',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Content-Length': Buffer.byteLength(data)
+        }
+      };
+
+      const req = http.request(options);
+      req.write(data);
+      req.end();
+    }
+  }
 
   _changePlus(event) {
     this.props.dispatch(updatePlus(event.target.value));
@@ -92,7 +122,10 @@ class Rsvp extends React.Component {
     const rsvpData = Object.assign({}, this.props.rsvp, { returned: true });
     const invitations = this.props.horizon('invitations');
     invitations.update(rsvpData).subscribe(
-      (id) => this._showSavedModal(),
+      (id) => {
+        this._notify();
+        this._showSavedModal();
+      },
       (err) => console.error(err)
     );
   }
