@@ -1,4 +1,3 @@
-import addons from 'react-addons';
 import update from 'react-addons-update';
 
 import {
@@ -26,7 +25,6 @@ const initialState = {
     }
   ]
 };
-// initialState.guests.push(emptyGuest);
 
 export default function invitationReducers(state = initialState, action) {
   switch (action.type) {
