@@ -67,11 +67,13 @@ class PopUpInfoWindow extends React.Component {
       }
     }
 
-    let markerType = 'Food';
+    let markerType = '';
     if ( marker.pin === 'fun' ) {
       markerType = 'Misc';
     } else if ( marker.pin === 'bar' ) {
       markerType = 'Drinks';
+    } else if ( marker.pin === 'food' ) {
+      markerType = 'Food';
     } else if ( marker.pin === 'music' ) {
       markerType = 'Music';
     }
