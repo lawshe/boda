@@ -8,19 +8,20 @@ const gray =          '#9e9e9e';
 const grayLight =     '#b0b0b0';
 const grayLightest =  '#cacaca';
 const grayDark =      '#707070';
-const green =         '#006634';
-const greenLight =    '#32845c';
+const green =         '#016735';
+const greenLight =    '#4d9471';
 const greenMuted =    '#99c1ad';
 const pink =          '#9b073e';
 const white =         '#f8f5f3';
 const whiteMed =      '#efe8e3';
-const whiteDark =     '#e6dbd3';
+const whiteDark =     '#dccdc3';
 
 module.exports = {
   $black: black,
   $blackLight: blackLight,
   $blackLightest: gray,
   $gray: gray,
+  $grayDark: grayDark,
   $grayLight: grayLight,
   $grayLightest: grayLightest,
   $green: green,
