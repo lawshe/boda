@@ -16,14 +16,16 @@ const mapStateToProps = (state) => ({
   guideMap: state.guideMap
 });
 
+const border = variables.$grayDark;
+
 const pinSymbol = (color) => {
   return {
     path: MapPinPath,
     fillColor: color,
     fillOpacity: 1,
-    strokeColor: color,
-    strokeWeight: 4,
-    scale: 1
+    strokeColor: border,
+    strokeWeight: 2,
+    scale: 1.3
   }
 };
 
@@ -43,7 +45,6 @@ class PopUpInfoWindow extends React.Component {
         }
         return marker;
     });
-
     if(this.props.type === 'guide'  ){
       this.props.dispatch(updateGuideMarkers(markers));
     } else{
@@ -57,23 +58,33 @@ class PopUpInfoWindow extends React.Component {
 
   renderInfoWindow(ref, marker) {
     const linkJsx = () => {
-      if(marker.website){
+      if (marker.website) {
         return (
-          <div style={{margin: '10px auto'}}>
+          <div>
             <a href={`${marker.website}`} target="_BLANK">Website</a>
           </div>
         );
       }
     }
 
+    let markerType = 'Food';
+    if ( marker.pin === 'fun' ) {
+      markerType = 'Misc';
+    } else if ( marker.pin === 'bar' ) {
+      markerType = 'Drinks';
+    } else if ( marker.pin === 'music' ) {
+      markerType = 'Music';
+    }
+
     return (
       <InfoWindow
         key={`${ref}_info_window`}
         onCloseclick={this.handleMarkerClose.bind(this, marker)} >
-          <div>
-            {`${marker.content}`}
-            {linkJsx()}
-            <div>
+          <div style={{ padding: '5px'}}>
+            <div style={{ fontSize: '10px' }}>{markerType}</div>
+            <div style={{ fontSize: '14px', margin: '10px auto' }}>{`${marker.content}`}</div>
+            <div style={{ fontSize: '12px', margin: '10px auto' }}>{linkJsx()}</div>
+            <div style={{ fontSize: '12px' }}>
               <a href={`https://www.google.com/maps?q=${marker.mapQuery}`} target="_BLANK">Directions</a>
             </div>
           </div>
