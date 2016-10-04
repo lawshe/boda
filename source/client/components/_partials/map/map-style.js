@@ -18,7 +18,7 @@ module.exports = [
     featureType: 'landscape.natural',
     elementType: 'geometry',
     stylers: [
-      { color: variables.$greenMuted }
+      { color: variables.$white }
     ]
   },
   {
