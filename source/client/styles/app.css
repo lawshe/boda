@@ -122,9 +122,9 @@ body {
   	-webkit-transition: all 250ms ease;
   	transition: all 250ms ease;
     &:hover{
-      background-color: $blueDark;
-      border-color: $blueDark;
-      color: $whiteDark;
+      background-color: $blueDark!important;
+      border-color: $blueDark!important;
+      color: $whiteMed!important;
     }
   }
   .buttonAction{
@@ -139,14 +139,14 @@ body {
   }
   h1 {
     font-family: 'fontleroybrownregular', sans-serif;
-    font-size: 4rem;
+    font-size: 4.5rem;
     color: $black;
     margin: 0 auto 15px auto;
   }
   h2 {
     color: $black;
     font-family: 'GreatVibes', sans-serif;
-    font-size: 2.7rem;
+    font-size: 2.5rem;
     margin: 15px 0 15px 0;
   }
   h3 {
