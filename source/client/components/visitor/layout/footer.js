@@ -6,6 +6,7 @@ import local from './_styles';
 import WeddingDate from '../../_partials/pretty-wedding-date';
 import NavList from './nav-list';
 import EucThree from '../../svg/euc-3';
+import EucFour from '../../svg/euc-4';
 
 /**
   *
@@ -39,16 +40,16 @@ export default () => (
   <div className={`${local.footer} ${glob.verticalContainer}`}>
     <div className={`${glob.verticallyAligned}`}>
       <Row>
-        <Col xs={12} sm={4} className={local.eucOneContainer}>
+        <Col xs={12} sm={4} md={5} className={local.eucOneContainer}>
           <div className={`${local.footerEuc}`}><EucThree /></div>
         </Col>
-        <Col xs={12} sm={4}>
+        <Col xs={12} sm={4} md={2}>
           <h3><WeddingDate /></h3>
           <h4>{countdown}</h4>
           <NavList navId="footerMenu" />
         </Col>
-        <Col xs={12} sm={4}  className={local.eucTwoContainer}>
-          <div className={`${local.footerEuc} ${local.footerEucTwo}`}><EucThree /></div>
+        <Col xs={12} sm={4} md={5}  className={local.eucTwoContainer}>
+          <div className={`${local.footerEuc} ${local.footerEucTwo}`}><EucFour /></div>
         </Col>
       </Row>
     </div>
