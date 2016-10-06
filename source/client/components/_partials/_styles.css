@@ -14,6 +14,7 @@
 .pageHeader{
   composes: leroy from 'styles/type';
   color: $green;
+  letter-spacing: -1px;
   margin: 0 auto 15px auto;
 }
 .euc{
