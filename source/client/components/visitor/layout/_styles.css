@@ -55,12 +55,13 @@
   .footerEuc{
     display: inline-block;
     margin: 0 auto;
+    opacity: 0.5;
     padding: 30px;
-    transform: scaleX(-1) rotate(90deg);
+    transform: scaleX(-1) rotate(105deg);
     width: $footerHeight;
   }
   .footerEucTwo{
-    transform: scaleX(-1) rotate(-90deg);
+    transform: scaleX(-1) rotate(-105deg);
   }
   .eucOneContainer{
     text-align: right;
