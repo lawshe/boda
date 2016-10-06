@@ -23,7 +23,7 @@ module.exports = {
       salutationNamesStr: '',
       toEmails: [],
       plusMessage: '',
-      rsvpReceivedMessage: 'We look forward to seeing yall!'
+      rsvpReceivedMessage: 'We look forward to seeing you!'
     };
 
     if (rsvp) {
@@ -66,7 +66,7 @@ module.exports = {
 
       // extra message and name string
       if (rsvpResult.attending === 0) {
-        rsvpResult.rsvpReceivedMessage = 'We will miss yall!';
+        rsvpResult.rsvpReceivedMessage = 'We will miss you!';
       } else if (rsvpResult.attending === 1) {
         rsvpResult.rsvpReceivedMessage = 'We look forward to seeing you!';
       }
