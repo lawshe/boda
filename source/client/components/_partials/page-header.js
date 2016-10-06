@@ -3,6 +3,7 @@ import { Row, Col } from 'react-bootstrap';
 
 import local from './_styles';
 import EucOne from '../svg/euc-1';
+import EucFive from '../svg/euc-5';
 
 /**
   *
@@ -14,15 +15,15 @@ import EucOne from '../svg/euc-1';
   */
 
 const eucLeftJsx = (
-  <div className={`${local.euc} ${local.eucLeft}`}><EucOne color="$green" /></div>
+  <div className={`${local.euc} ${local.eucLeft}`}><EucFive color="$green" /></div>
 );
 const eucRightJsx = (
-  <div className={`${local.euc}`}><EucOne color="$green" /></div>
+  <div className={`${local.euc} ${local.eucRight}`}><EucOne color="$green" /></div>
 );
 
 export default (props) => (
   <Row>
-    <Col xs={12} style={{padding: '0'}}>
+    <Col xs={12} style={{ padding: '0' }}>
       <h1 className={`${local.pageHeader}`}>{eucLeftJsx}{props.page}{eucRightJsx}</h1>
     </Col>
   </Row>
