@@ -1,20 +1,22 @@
-const black =         '#4a4a4a';
-const blackLight =    '#636363';
-const blue =          '#073e9b';
-const blueDark =      '#05317D';
-const blueLight =     '#3864af';
-const blueMuted =     '#839ecd';
-const gray =          '#9e9e9e';
-const grayLight =     '#b0b0b0';
-const grayLightest =  '#cacaca';
-const grayDark =      '#707070';
-const green =         '#016735';
-const greenLight =    '#4d9471';
-const greenMuted =    '#99c1ad';
-const pink =          '#9b073e';
-const white =         '#f8f5f3';
-const whiteMed =      '#efe8e3';
-const whiteDark =     '#dccdc3';
+const black = '#4b4a4b';
+const blackLight = '#636363';
+const blue = '#073e9b';
+const blueDark = '#253978';
+const blueLight = '#3864af';
+const blueMuted = '#839ecd';
+const gray = '#9e9e9e';
+const grayLight = '#b0b0b0';
+const grayLightest = '#cacaca';
+const grayDark = '#707070';
+const greenDark = '#05512A';
+const green = '#036635';
+const greenLight = '#4d9471';
+const greenMuted = '#99c1ad';
+const pink = '#9b073e';
+const white = '#f8f5f2';
+const whiteAlt = '#f6f1ef';
+const whiteMed = '#efe7e2';
+const whiteDark = '#e6d9d2';
 
 module.exports = {
   $black: black,
@@ -27,9 +29,11 @@ module.exports = {
   $green: green,
   $greenLight: greenLight,
   $greenMuted: greenMuted,
+  $greenDark: greenDark,
   $white: white,
   $whiteMed: whiteMed,
   $whiteDark: whiteDark,
+  $whiteAlt: whiteAlt,
   $blue: blue,
   $blueDark: blueDark,
   $blueLight: blueLight,
@@ -43,13 +47,14 @@ module.exports = {
   $marginLg: '30px',
   $btnSubmit: blue,
   $btnAction: green,
-  $borderRadius: '5px',
+  $borderRadius: '0px',
+  $error: pink,
   $map: {
     colors: {
-      bar: blueDark,
+      music: blueDark,
+      fun: blueMuted,
       food: green,
-      fun: greenLight,
-      music: blueLight
+      bar: greenDark,
     }
   }
 };
