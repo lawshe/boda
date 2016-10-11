@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Grid } from 'react-bootstrap';
+import { Grid } from 'react-bootstrap';
 
 import glob from 'styles/app';
 import local from './_styles';
@@ -19,9 +19,9 @@ import Menu from './menu';
 export default (props) => (
   <div className={`${glob.layoutContainer}`}>
     <Menu />
-    <div className={`${local.home}`}>
+    <Grid className={`${local.homeGrid}`}>
       {props.children}
-    </div>
+    </Grid>
     <Footer />
   </div>
 );
