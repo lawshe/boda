@@ -8,7 +8,11 @@
   text-align: center;
 }
 .name{
+  font-size: 2.5rem;
   text-align: right;
+}
+.namePiece{
+  display: block;
 }
 .person{
   margin-bottom: 30px;
@@ -16,8 +20,9 @@
 .person:last-child{
   margin-bottom: 0px;
 }
-
-
+.radio{
+  margin-top: 10px!important;
+}
 .attending{
   margin-top: 20px;
 }
@@ -26,5 +31,11 @@
 @media (max-width : 768px){
   .name{
     text-align: left;
+  }
+  .namePiece{
+    display: inline-block;
+    &:first-child{
+      margin-right: 10px;
+    }
   }
 }

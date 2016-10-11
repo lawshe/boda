@@ -15,7 +15,7 @@ class RsvpRadioButtons extends React.Component {
     const checkedNo = guest.rsvp ? '' : 'checked';
 
     return (
-      <ul className={`${radio.ul}`} >
+      <ul className={`${radio.ul} ${local.radio}`} >
         <li className={`${radio.li}`}>
           <input className={`${radio.input}`} type="radio" id={yesId} value="yes" name={radioName} onChange={this.handleChange.bind(this)} checked={checkedYes} />
           <label className={`${local.label} ${radio.label}`} htmlFor={yesId}>
