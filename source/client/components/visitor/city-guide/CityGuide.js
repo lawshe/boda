@@ -1,16 +1,13 @@
 import React from 'react';
 import { subscribe } from 'horizon-react';
-
 import wedding from '../../../../../config/wedding.js';
 import variables from '../../../../../config/variables.js';
 import glob from 'styles/app';
-// import type from 'styles/type';
 import local from './_styles';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Button } from 'react-bootstrap';
 import PageHeader from '../../_partials/page-header';
 import prettyAddress from '../../_partials/pretty-address';
 import Map from '../../_partials/map/map';
-
 import { showGuideMapInfo } from '../../../actions/actionCreators';
 
 /**
@@ -51,18 +48,18 @@ class CityGuide extends React.Component {
   }
 
   render(){
-    const accommodationsAddress = prettyAddress(wedding.accommodations.address);
+    const accommodationsAddress = prettyAddress(wedding.accommodations.hotel.address);
 
     const makeList = (listType) => {
       let prettyListType = listType;
       if(listType === 'bar'){
-        prettyListType = <span>Drink<br/><i className={`fa fa-glass ${local.icon}`}></i></span>;
+        prettyListType = <span>Drink<br/><i className={`material-icons ${local.icon}`}>local_bar</i></span>;
       } else if(listType === 'music'){
-        prettyListType = <span>Music<br/><i className={`fa fa-music ${local.icon}`}></i></span>;
+        prettyListType = <span>Music<br/><i className={`material-icons ${local.icon}`}>music_note</i></span>;
       } else if(listType === 'food'){
-        prettyListType = <span>Eat<br/><i className={`fa fa-cutlery ${local.icon}`}></i></span>;
+        prettyListType = <span>Eat<br/><i className={`material-icons ${local.icon}`}>restaurant</i></span>;
       } else if(listType === 'fun'){
-        prettyListType = <span>Misc<br/><i className={`fa fa-bicycle ${local.icon}`}></i></span>;
+        prettyListType = <span>Misc<br/><i className={`material-icons ${local.icon}`}>directions_bike</i></span>;
       }
       return (
         <ul className={`${local.todoListCol}`}>
@@ -77,7 +74,7 @@ class CityGuide extends React.Component {
           {wedding.guide[listType].list.map(
             (place, idx) => {
               return (
-                <li className={glob.card} style={{paddingTop: '0px'}} key={idx}>
+                <li className={`${glob.card} ${local.listItem}`} style={{paddingTop: '0px'}} key={idx}>
                   <h4>
                     <a
                       href={place.website}
@@ -112,10 +109,10 @@ class CityGuide extends React.Component {
 
     const fullList = (
       <ul className={local.todoCatList}>
-        <li className={local.todoCat}>{barList}</li>
         <li className={local.todoCat}>{musicList}</li>
-        <li className={local.todoCat}>{foodList}</li>
         <li className={local.todoCat}>{funList}</li>
+        <li className={local.todoCat}>{foodList}</li>
+        <li className={local.todoCat}>{barList}</li>
       </ul>
     );
 
@@ -123,48 +120,59 @@ class CityGuide extends React.Component {
       <div className={glob.pageDetails}>
         <PageHeader page="City Guide" />
 
-        <div className="section">
+        <h2 style={{ marginBottom: '0px' }}>Welcome to</h2>
+        <h1 style={{ marginTop: '0px' }}>{wedding.city.name}</h1>
+
+        <div className={`${glob.section} ${glob.sectionWhite}`} style={{ marginBottom: '0px' }}>
           <h2>Accommodations</h2>
-          <Row>
-            <Col xs={8} xsOffset={2} lg={6} lgOffset={3}>
-              <div className={`${glob.card}`} style={{margin: '0 0 30px 0'}}>
-                <h3>{wedding.accommodations.name}</h3>
-                <h4 style={{marginBottom: '0px'}}>{accommodationsAddress}</h4>
-              </div>
+          <Row className={glob.verticalRow}>
+            <Col xs={8} sm={4} className={glob.verticalCol}>
+                <div className={`${glob.card}`} style={{margin: '0 0 30px 0'}}>
+                    <h3>
+                      <i className="material-icons">hotel</i>
+                      <br />
+                      {wedding.accommodations.hotel.name}
+                      <br />
+                      {wedding.accommodations.hotel.location}
+                    </h3>
+                    <h4>{accommodationsAddress}</h4>
+                    <p style={{marginBottom: '0px'}}>{wedding.accommodations.hotel.discount}</p>
+                </div>
+            </Col>
+            <Col xs={8} sm={4} className={glob.verticalCol}>
+              <h4><i>{wedding.accommodations.hotel.highlight}</i></h4>
+              <p>{wedding.accommodations.hotel.message}</p>
             </Col>
           </Row>
         </div>
 
-        <div className="section">
-          <h2>Transportation</h2>
+        <div className={`${glob.section} ${glob.sectionBlue}`} style={{ marginTop: '0px' }}>
           <Row>
-            <Col smOffset={2} sm={8} lg={6} lgOffset={3}>
-              <Row style={{margin: '0 0 15px 0'}}>
-                <Col xs={8} xsOffset={2} sm={4} smOffset={0}>
-                  <div className={`${glob.card} ${local.transportation}`}>
-                    <h3>{wedding.guide.transportation.bus.how.name}</h3>
-                    <p style={{marginBottom: '0px'}}>
-                      <a href={wedding.guide.transportation.bus.how.website} target="_BLANK">website</a>
-                    </p>
-                  </div>
-                </Col>
-                <Col xs={8} xsOffset={2} sm={4} smOffset={0}>
-                  <div className={`${glob.card} ${local.transportation}`}>
-                    <h3>{wedding.guide.transportation.rideshare.how.name}</h3>
-                    <p style={{marginBottom: '0px'}}>
-                      <a href={wedding.guide.transportation.rideshare.how.website}  target="_BLANK">website</a>
-                    </p>
-                  </div>
-                </Col>
-                <Col xs={8} xsOffset={2} sm={4} smOffset={0}>
-                  <div className={`${glob.card} ${local.transportation}`}>
-                    <h3>{wedding.guide.transportation.taxi.how.name}</h3>
-                    <p style={{marginBottom: '0px'}}>
-                      <a href={wedding.guide.transportation.taxi.how.website} target="_BLANK">website</a>
-                    </p>
-                  </div>
-                </Col>
-              </Row>
+            <Col xs={12}>
+              <h2 style={{ marginBottom: '0px' }}>Transportation</h2>
+              <ul className={`${local.transportation}`}>
+                  <li>
+                    <Button className={`${glob.button}`} href={wedding.guide.transportation.bus.how.website} target="_BLANK">
+                      <i className="material-icons">directions_bus</i>
+                      <br />
+                      {wedding.guide.transportation.bus.how.name}
+                    </Button>
+                  </li>
+                  <li>
+                    <Button className={`${glob.button}`} href={wedding.guide.transportation.rideshare.how.website}  target="_BLANK">
+                      <i className="material-icons">directions_car</i>
+                      <br />
+                      {wedding.guide.transportation.rideshare.how.name}
+                    </Button>
+                  </li>
+                  <li>
+                    <Button className={`${glob.button}`} href={wedding.guide.transportation.taxi.how.website} target="_BLANK">
+                      <i className="material-icons">local_taxi</i>
+                      <br />
+                      {wedding.guide.transportation.taxi.how.name}
+                    </Button>
+                  </li>
+              </ul>
             </Col>
           </Row>
         </div>
@@ -172,12 +180,12 @@ class CityGuide extends React.Component {
         <div className="section">
           <h2>Things to Do</h2>
           <Row id="map">
-            <Col xs={10} xsOffset={1} sm={8} smOffset={2}>
+            <Col xs={10} xsOffset={1} mdOffset={2} md={8}>
               <Map type="guide" />
             </Col>
           </Row>
           <Row>
-            <Col xs={10} xsOffset={1} sm={8} smOffset={2}>
+            <Col xs={10} xsOffset={1} mdOffset={2} md={8}>
               {fullList}
             </Col>
           </Row>

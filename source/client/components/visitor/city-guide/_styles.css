@@ -1,9 +1,7 @@
 .icon{
   margin-top: 15px;
 }
-.transportation{
-  margin: 0px auto 15px auto;
-}
+
 .thingsToDo{
   height: $mapHeight;
   overflow: scroll;
@@ -23,6 +21,17 @@
 .todoCat{
   display: inline-block;
 }
+.transportation{
+  list-style: none;
+  margin: 0 0 15px 0;
+  padding: 0;
+
+  li{
+    display: inline-block;
+    padding: 0 15px 15px 15px;
+  }
+}
+
 .todoListCol{
   display: flex;
   flex-direction: row;
@@ -77,16 +86,31 @@
   }
 }
 
-@media (max-width : 1024px){
+@media (max-width : 1023px){
   .todoCatList{
     text-align: center;
   }
+  .todoCat{
+    width: 100%;
+  }
   .todoListCol{
     flex-direction: column;
+
+    li{
+      margin: 15px auto;
+    }
   }
   .todoListHeader{
     h3{
       margin: 0px;
+    }
+  }
+}
+
+@media (min-width : 1024px){
+  .listItem{
+    &:last-child{
+      margin-right: 0px;
     }
   }
 }
