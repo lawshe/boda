@@ -1,12 +1,9 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-
 import wedding from '../../../../../config/wedding.js';
-
 import glob from 'styles/app';
 import local from './_styles';
 import Map from '../../_partials/map/map';
-
 import PageHeader from '../../_partials/page-header';
 import WeddingDate from '../../_partials/pretty-wedding-date';
 import EucThree from '../../svg/euc-3';
