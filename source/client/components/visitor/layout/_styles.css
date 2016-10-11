@@ -1,5 +1,4 @@
 /*layout*/
-
 .header, .date {
   composes: shadowed from 'styles/app';
 }
@@ -8,18 +7,16 @@
   width: 300px;
 }
 
-.pageHeader{
-  composes: tCenter from 'styles/app';
-  border: 0px;
-  img{
-    margin-top: -40px;
-    max-width: 600px;
-  }
-}
-
 .mainGrid{
   min-height: 100vh;
-  padding: 15px 15px 30px 15px;
+  padding: 15px 0px 45px 0px;
+  width: auto;
+  z-index: 0;
+}
+
+.homeGrid{
+  min-height: 100vh;
+  padding: 0;
   width: auto;
   z-index: 0;
 }
@@ -44,10 +41,17 @@
   .footer {
     composes: tCenter from 'styles/app';
 
-    background-color: $whiteDark;
+    background-color: $greenDark;
     font-size: 0.6em;
     height: $footerHeight;
+    overflow: hidden;
     width: 100%;
+    h3{
+      color: $white;
+    }
+    h4{
+      color: $whiteDark;
+    }
     p {
       margin-bottom: 0px;
     }
@@ -94,8 +98,11 @@
     li{
       display: inline-block;
       a{
-        color: $black;
+        color: $greenLight;
         font-size: 0.9rem;
+        &:active: {
+          color: $white;
+        }
         &:hover{
           background-color: $whiteDark!important;
         }
@@ -106,11 +113,11 @@
     float: right;
   }
   #navToggle{
-    border-color: $blackLight;
+    border-color: $grayLight;
   	-webkit-transition: $linkTransition;
   	transition: $linkTransition;
     span{
-      background-color: $blackLight;
+      background-color: $grayLight;
     }
     &:hover{
       background-color: $blueDark;
