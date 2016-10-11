@@ -11,14 +11,14 @@ module.exports = [
     featureType: 'landscape.man_made',
     elementType: 'geometry',
     stylers: [
-      { color: variables.$white }
+      { color: variables.$whiteAlt }
     ]
   },
   {
     featureType: 'landscape.natural',
     elementType: 'geometry',
     stylers: [
-      { color: variables.$white }
+      { color: variables.$whiteAlt }
     ]
   },
   {
@@ -40,21 +40,21 @@ module.exports = [
     featureType: 'poi.government',
     elementType: 'geometry',
     stylers: [
-      { color: variables.$white }
+      { color: variables.$whiteAlt }
     ]
   },
   {
     featureType: 'poi.school',
     elementType: 'geometry',
     stylers: [
-      { color: variables.$white }
+      { color: variables.$whiteAlt }
     ]
   },
   {
     featureType: 'road.arterial',
     elementType: 'geometry',
     stylers: [
-      { color : variables.$grayLight },
+      { color : variables.$whiteDark },
       { visibility: 'simplified' }
     ]
   },
@@ -62,7 +62,7 @@ module.exports = [
     featureType: 'road.arterial',
     elementType: 'labels.text',
     stylers: [
-      { color : variables.$grayMed },
+      { color : variables.$grayLight },
       { visibility: 'simplified' }
     ]
   },
@@ -86,7 +86,7 @@ module.exports = [
     featureType: 'road.local',
     elementType: 'geometry',
     stylers: [
-      { color : variables.$grayLightest },
+      { color : variables.$whiteDark },
       { visibility: 'simplified' }
     ]
   },
