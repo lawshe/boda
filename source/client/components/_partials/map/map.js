@@ -16,36 +16,48 @@ const mapStateToProps = (state) => ({
   guideMap: state.guideMap
 });
 
-const border = variables.$grayDark;
-
 const pinSymbol = (color) => {
   return {
     path: MapPinPath,
     fillColor: color,
     fillOpacity: 1,
-    strokeColor: border,
-    strokeWeight: 2,
-    scale: 1.3
+    strokeColor: color,
+    strokeWeight: 0,
+    scale: 1
   }
 };
 
 
 class PopUpInfoWindow extends React.Component {
+  constructor(props) {
+    super(props);
+    let center = this.state ? this.state.center : props.guideMap.center;
+
+    this.state = { center: props.venueMap.center };
+  }
+
   handleMarkerClick(targetMarker) {
     let markerSet = 'guideMap';
     if(this.props.type === 'venue'){
       markerSet = 'venueMap';
     }
+    const newCenter = { lat: targetMarker.position.lat(), lng: targetMarker.position.lng() };
+    this.setState({ center: newCenter });
     const markers = this.props[markerSet].markers.map(marker => {
         if (marker === targetMarker) {
           return {
             ...marker,
             showInfo: !marker.showInfo,
           };
+        } else {
+          return {
+            ...marker,
+            showInfo: false,
+          };
         }
         return marker;
     });
-    if(this.props.type === 'guide'  ){
+    if (this.props.type === 'guide') {
       this.props.dispatch(updateGuideMarkers(markers));
     } else{
       this.props.dispatch(updateVenueMarkers(markers));
@@ -98,15 +110,15 @@ class PopUpInfoWindow extends React.Component {
     let markers = [];
 
     // center
-    let center = this.props.venueMap.center;
+    let center = this.state.center;
     let defaultZoom = 14;
 
-    if(this.props.type === 'venue'){
-      markers = this.props.venueMap.markers;
-    } else if(this.props.type === 'guide'){
+    if (this.props.type === 'guide') {
       markers = this.props.guideMap.markers;
-      center = this.props.guideMap.center;
       defaultZoom = 11;
+    } else{
+      markers = this.props.venueMap.markers;
+      defaultZoom = 14;
     }
 
     // markers
