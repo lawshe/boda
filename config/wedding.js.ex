@@ -1,6 +1,7 @@
 module.exports = {
   accommodations: {
     name: 'Hyatt Regency Austin',
+    location: '',
     address: {
       street: '208 Barton Springs Rd',
       city: 'Austin',
@@ -170,5 +171,12 @@ module.exports = {
       },
       eventName: 'Dinner'
     }
-  ]
+  ],
+  honeymoon: {
+    city: 'Omaha'
+  },
+  attire: {
+    dressCode: 'Semiformal',
+    message: 'Ceremony will be outside, weather permitting.'
+  }
 };
