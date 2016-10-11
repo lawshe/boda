@@ -15,7 +15,7 @@
   composes: leroy from 'styles/type';
   color: $green;
   letter-spacing: -1px;
-  margin: 0 auto 15px auto;
+  margin: 0 auto;
 }
 .euc{
   display: inline-block;
@@ -43,19 +43,6 @@
 
 .mapContainer{
   height: $mapHeight;
-  border: 2px solid $gray;
-  -webkit-border-radius: $borderRadius;
-  -moz-border-radius: $borderRadius;
-  border-radius: $borderRadius;
-  margin-bottom: 30px;
-  div:nth-child(2){
-    -webkit-border-radius: $borderRadius;
-    -moz-border-radius: $borderRadius;
-    border-radius: $borderRadius;
-  }
-  div + .gm-style{
-    -webkit-border-radius: $borderRadius;
-    -moz-border-radius: $borderRadius;
-    border-radius: $borderRadius;
-  }
+  border: 1px solid $gray;
+  margin: 0px;
 }
