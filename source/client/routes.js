@@ -8,7 +8,7 @@ import wedding from '../../config/wedding';
 import store from './store';
 
 import MainLayout from './components/visitor/layout/layout';
-// import HomeLayout from './components/visitor/layout/home-layout'
+import HomeLayout from './components/visitor/layout/home-layout';
 import AdminLayout from './components/admin/layout/layout';
 
 // Visitor
@@ -38,8 +38,10 @@ const logPageView = () => {
 
 export default (
   <Router history={history} onUpdate={logPageView}>
-    <Route path="/" component={MainLayout}>
+    <Route path="/" component={HomeLayout}>
       <IndexRoute component={Home} />
+    </Route>
+    <Route path="/" component={MainLayout}>
       <Route path="rsvp" component={RsvpSearch} store={store} />
       <Route path="rsvp/:shortName" component={Rsvp} store={store} />
       <Route path="the-wedding" component={Details} />
