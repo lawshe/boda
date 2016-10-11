@@ -49,7 +49,9 @@ export default () => (
           <NavList navId="footerMenu" />
         </Col>
         <Col xs={12} sm={4} md={5} className={local.eucTwoContainer}>
-          <div className={`${local.footerEuc} ${local.footerEucTwo}`}><EucFour color="$whiteDark" /></div>
+          <div className={`${local.footerEuc} ${local.footerEucTwo}`}>
+            <EucFour color="$whiteDark" />
+          </div>
         </Col>
       </Row>
     </div>
