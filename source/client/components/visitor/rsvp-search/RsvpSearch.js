@@ -1,17 +1,13 @@
 import React from 'react';
-// import { Link } from 'react-router';
 import { subscribe } from 'horizon-react';
 import { Row, Col, Form, FormGroup, Button } from 'react-bootstrap';
-
-import wedding from '../../../../../config/wedding.js';
-
 import { updateRsvpQuery, updateRsvpResult } from '../../../actions/actionCreators';
-
 import PageHeader from '../../_partials/page-header';
 import InviteNotFound from '../rsvp/not-found';
-
-
+import SubmitBtn from '../../shared/submit-btn';
 import glob from 'styles/app';
+import effects from 'styles/effects';
+import local from './_styles';
 
 /**
   *
@@ -63,9 +59,8 @@ const mapStateToProps = (state) => ({
 class Rsvp extends React.Component {
   constructor(props) {
     super(props);
-    // this.state({ active: false });
+    this.state = { submitted: false };
   }
-
 
   render() {
     const query = this.props.rsvpSearch.query;
@@ -76,15 +71,20 @@ class Rsvp extends React.Component {
 
     let inviteFoundJsx = <div>{queryMessageJsx}</div>;
 
-    if (this.props.rsvpSearch.result) {
+    if (!this.state.submitted) {
+      inviteFoundJsx = <SubmitBtn displayText="Find" />;
+    } else if (this.props.rsvpSearch.result) {
       // added check for when invite found, and then input changes
       emailInInvitation(this.props.rsvpSearch.result, this.props, (found) => {
         if (found) {
           const shortName = this.props.rsvpSearch.result.shortName;
           inviteFoundJsx = (
-            <Button bsSize="large" className={`${glob.button}`} href={`/rsvp/${shortName}`}>
-              Go to RSVP
-            </Button>
+            <div className={`${local.found} ${effects.fade}`}>
+              <h3>RSVP Found</h3>
+              <Button bsSize="large" className={`${glob.button}`} href={`/rsvp/${shortName}`}>
+                Go to RSVP
+              </Button>
+            </div>
           );
         }
       });
@@ -118,34 +118,35 @@ class Rsvp extends React.Component {
 
     return (
       <div>
-        <PageHeader page="Find Invitation" />
+        <PageHeader page="Find RSVP" />
         <Row>
-          <Col xs={8} xsOffset={2} sm={6} smOffset={3}>
+          <Col xs={10} xsOffset={1} sm={6} smOffset={3}>
             <Form
-              className={glob.card}
-              onSubmit={this._handleSubmit}
-              style={{ padding: '30px', textAlign: 'center' }}
+              onSubmit={this._handleSubmit.bind(this)}
+              style={{ textAlign: 'center' }}
             >
-              <Row>
-                <Col xs={12}>
-                  {formGroupJsx}
+              <div className={glob.card}>
+                <Row>
+                  <Col xs={12}>
+                    {formGroupJsx}
+                  </Col>
+                </Row>
+              </div>
+              <Row style={{ marginTop: '30px' }}>
+                <Col xs={12} style={{ textAlign: 'center' }}>
+                  {inviteFoundJsx}
                 </Col>
               </Row>
             </Form>
-          </Col>
-        </Row>
-        <Row style={{ marginTop: '30px' }}>
-          <Col xs={12} style={{ textAlign: 'center' }}>
-            {inviteFoundJsx}
           </Col>
         </Row>
       </div>
     );
   }
 
-
   _handleSubmit(e) {
     e.preventDefault();
+    this.setState({ submitted: true });
   }
 
   _handleBlur() {
