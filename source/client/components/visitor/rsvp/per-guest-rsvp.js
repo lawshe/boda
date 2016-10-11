@@ -21,7 +21,12 @@ export default (props) => {
         <Row className={local.radioRow}>
           <Col xs={12} sm={6}>
             <h3 className={`${type.cursive} ${local.name}`}>
-              {guest.name.first} {guest.name.last}
+              <span className={local.namePiece}>
+                {guest.name.first}
+              </span>
+              <span className={local.namePiece}>
+                {guest.name.last}
+              </span>
             </h3>
           </Col>
           <Col xs={12} sm={6}>
