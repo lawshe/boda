@@ -1,16 +1,15 @@
 html {
   font-size: 100%;
-  /*min-height: 100%;*/
   height: 100%;
+  min-width: 280px;
 }
 
 body {
-  background-color: $white !important;
+  background-color: $whiteMed !important;
   color: $black;
   display: flex;
   flex-direction: column;
   font-family: georgia, serif;
-  /*height: 100%;*/
   min-height: 100%;
   -webkit-font-smoothing: antialiased;
 }
@@ -18,22 +17,34 @@ body {
   flex: 1;
   min-height: 100vh;
 }
-.section{
-  margin-bottom: 45px;
-}
-.card{
-  background-color: $whiteMed;
-  -webkit-border-radius: $borderRadius;
-  -moz-border-radius: $borderRadius;
-  border-radius: $borderRadius;
-  padding: 30px;
-  h2{
-    margin-top: 0;
+
+/* cards */
+  .card{
+    background-color: $white;
+    border: 1px solid $whiteDark;
+    padding: 30px;
+    h2{
+      margin-top: 0;
+    }
+    label{
+      color: $blackLight;
+    }
   }
-  label{
-    color: $blackLight;
+  .cardImage{
+    background-image: url('images/Haeckel_Muscinae.png');
+    background-size: cover;
+    background-position: center center;
+    border-color: $greenDark;
+
+    a{
+      color: $greenMuted;
+    }
+    .cardContent{
+      background-color: $whiteMed;
+      margin: 0 auto;
+      padding: 30px 15px;
+    }
   }
-}
 
 /*form*/
   .matGroup{
@@ -65,8 +76,8 @@ body {
     transform: scaleX(1);
   }
   input:-webkit-autofill{
-    background-color: $whiteMed!important;
-    -webkit-box-shadow: 0 0 0px 1000px $whiteMed inset!important;
+    background-color: $white!important;
+    -webkit-box-shadow: 0 0 0px 1000px $white inset!important;
   }
   .matLabel{
     color: $gray;
@@ -116,21 +127,67 @@ body {
   }
   .button{
     background-color: $btnSubmit;
-    border-color: $btnSubmit;
-    color: $white;
+    border-radius: 0px;
+    color: $whiteMed;
     margin: 15px auto 0 auto;
   	-webkit-transition: all 250ms ease;
   	transition: all 250ms ease;
     &:hover{
-      background-color: $blueDark!important;
-      border-color: $blueDark!important;
-      color: $whiteMed!important;
+      background-color: $greenLight!important;
+      color: $whiteDark!important;
     }
   }
-  .buttonAction{
-    background-color: $btnAction;
-  }
 
+/* sections */
+  .section{
+    display: block;
+    float: left;
+    margin: 30px 0;
+    padding: 0px 15px;
+    width: 100%;
+    .row{
+      margin: 0;
+    }
+  }
+  .sectionDark{
+    padding: 30px 15px;
+
+    h1, h2, h4{
+      color: $whiteMed;
+    }
+    h3, p{
+      color: $whiteDark;
+    }
+    .button{
+      border-color: $whiteDark;
+    }
+  }
+  .sectionBlue{
+    composes: sectionDark;
+
+    background-color: $blueDark;
+  }
+  .sectionGreen{
+    composes: sectionDark;
+
+    background-color: $greenDark;
+  }
+  .sectionWhiteDark{
+    background-color: $whiteDark;
+    padding: 30px 15px;
+  }
+  .sectionWhite{
+    background-color: $white;
+    padding: 30px 15px;
+  }
+  .sectionWhiteMed{
+    background-color: $whiteMed;
+    padding: 30px 15px;
+  }
+  .sectionGrayLight{
+    background-color: $grayLightest;
+    padding: 30px 15px;
+  }
 
 /* text */
   h1, h2, h3, h4, h5, p{
@@ -179,7 +236,7 @@ body {
     margin: 0 0 1rem;
   }
   .smallType{
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
 
   .tCenter {
@@ -223,10 +280,18 @@ body {
   .marginBtmLg{
     margin-bottom: $marginLg;
   }
-
+  .clearfix{
+    clear: both;
+  }
+  .verticalCol{
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+  }
 /* menu */
   .mainMenu{
-    background-color: $white!important;
+    background-color: $whiteMed!important;
+    border-bottom: 1px solid $whiteDark;
     z-index: 1000;
   }
 
