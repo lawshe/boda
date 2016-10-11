@@ -1,6 +1,6 @@
 import React from 'react';
 import { subscribe } from 'horizon-react';
-import { Row, Col } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import http from 'http';
 import querystring from 'querystring';
 import { setRsvp, updateRsvp, updatePlus } from '../../../actions/actionCreators';
@@ -69,9 +69,7 @@ class Rsvp extends React.Component {
             show={this.state.showSavedModal}
             _closeSavedModal={this._closeSavedModal.bind(this)}
           />
-          <Col xs={12} sm={10} smOffset={1} md={8} mdOffset={2} lg={6} lgOffset={3}>
-            {RsvpFound}
-          </Col>
+          {RsvpFound}
         </Row>
       </div>
     );
@@ -117,7 +115,7 @@ class Rsvp extends React.Component {
     const rsvpData = Object.assign({}, this.props.rsvp, { returned: true });
     const invitations = this.props.horizon('invitations');
     invitations.update(rsvpData).subscribe(
-      (id) => {
+      () => {
         this._notify();
         this._showSavedModal();
       },

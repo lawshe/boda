@@ -49,12 +49,18 @@ module.exports = {
   $btnAction: green,
   $borderRadius: '0px',
   $error: pink,
+  $font: {
+    p: '0.9rem'
+  },
   $map: {
     colors: {
       music: blueDark,
       fun: blueMuted,
       food: green,
-      bar: greenDark,
+      bar: greenDark
     }
+  },
+  $screens: {
+    tabletStart: '768px'
   }
 };

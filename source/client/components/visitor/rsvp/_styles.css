@@ -7,35 +7,45 @@
 .rsvpForm{
   text-align: center;
 }
+
 .name{
   font-size: 2.5rem;
-  text-align: right;
+  margin-bottom: 0;
+  text-align: left;
 }
+
 .namePiece{
-  display: block;
+  display: inline-block;
+  &:first-child{
+    margin-right: 10px;
+  }
 }
+
 .person{
   margin-bottom: 30px;
+  &:last-child{
+    margin-bottom: 0px;
+  }
 }
-.person:last-child{
-  margin-bottom: 0px;
-}
+
+
 .radio{
   margin-top: 10px!important;
 }
+
 .attending{
   margin-top: 20px;
 }
 
-
-@media (max-width : 768px){
+@media (min-width : $screensTabletStart){
   .name{
-    text-align: left;
+    text-align: right;
   }
+
   .namePiece{
-    display: inline-block;
+    display: block;
     &:first-child{
-      margin-right: 10px;
+      margin: 0px;
     }
   }
 }

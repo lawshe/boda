@@ -35,10 +35,7 @@ class RsvpRadioButtons extends React.Component {
   }
 
   handleChange(event) {
-    // console.log('handleChange. this.props = ',this.props);
-    const rsvpValue = event.target.value === 'yes'
-        ? true
-        : false;
+    const rsvpValue = event.target.value === 'yes';
     this.props._changeRsvp(rsvpValue, this.props.index);
   }
 }

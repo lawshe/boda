@@ -45,25 +45,24 @@ export default (props) => {
   );
 
   const plusJsx = rsvp.plus.allowed > 0
-      ? <PlusGuests rsvp={rsvp} _changePlus={props._changePlus} />
+      ? <PlusGuests rsvp={rsvp} _changePlus={props.changePlus} />
       : '';
 
-
   const RsvpFormForm = () => (
-    <div>
+    <Col xs={10} xsOffset={1} style={{ textAlign: 'center' }}>
       <h4>Please submit by<br /><PrettyDate date={wedding.rsvp.date} /></h4>
       <div className={`${glob.card} ${local.rsvpForm}`}>
-        <form onSubmit={props._sendRsvp} style={{ margin: '20px auto' }}>
+        <form onSubmit={props._sendRsvp} style={{ margin: '0px auto' }}>
           <PerGuestRsvp rsvp={rsvp} _changeRsvp={props._changeRsvp} />
           {plusJsx}
           <Row>
-            <Col sm={12} className={`${glob.tCenter}`}>
+            <Col sm={12} className={`${glob.submitCol}`}>
               {submitBtnJsx}
             </Col>
           </Row>
         </form>
       </div>
-    </div>
+    </Col>
   );
 
   // Display form, or that we've recieved RSVP

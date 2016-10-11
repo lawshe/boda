@@ -22,6 +22,7 @@ body {
   .card{
     background-color: $white;
     border: 1px solid $whiteDark;
+    display: inline-block;
     padding: 30px;
     h2{
       margin-top: 0;
@@ -231,7 +232,7 @@ body {
   }
   p {
     color: $blackLight;
-    font-size: 0.9rem;
+    font-size: $font.p;
     line-height: 1.1;
     margin: 0 0 1rem;
   }
@@ -288,6 +289,9 @@ body {
     vertical-align: middle;
     float: none;
   }
+  .submitCol{
+    text-align: left;
+  }
 /* menu */
   .mainMenu{
     background-color: $whiteMed!important;
@@ -318,6 +322,15 @@ body {
   .fourOhFour{
     composes: tCenter;
   }
+
+
+/*media queries*/
+@media (min-width : $screensTabletStart){
+  .submitCol{
+    margin-top: 15px;
+    text-align: center;
+  }
+}
 
 @media print {
 
