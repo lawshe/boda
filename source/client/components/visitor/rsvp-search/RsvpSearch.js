@@ -7,7 +7,6 @@ import InviteNotFound from '../rsvp/not-found';
 import SubmitBtn from '../../shared/submit-btn';
 import glob from 'styles/app';
 import effects from 'styles/effects';
-import local from './_styles';
 
 /**
   *
