@@ -9,6 +9,7 @@ import Map from '../../_partials/map/map';
 
 import PageHeader from '../../_partials/page-header';
 import WeddingDate from '../../_partials/pretty-wedding-date';
+import EucThree from '../../svg/euc-3';
 import EucFour from '../../svg/euc-4';
 import VenueAddress from '../../_partials/venue-address';
 
@@ -26,66 +27,86 @@ export default () => {
     <div className={glob.pageDetails}>
       <PageHeader page="The Wedding" />
 
-      <Row style={{marginBottom: '30px'}}>
-        <Col xs={12}>
-          <div className={`${local.eucSet}`}>
-            <div className={`${local.eucDate} ${local.eucBorderLeft}`}>
-              <EucFour color="$black" />
-            </div>
-            <div className={`${local.eucDate} ${local.eucBorderRight}`}>
-              <EucFour color="$black" />
-            </div>
-          </div>
-          <h2 className={`${local.date}`}>
-            <WeddingDate />
-          </h2>
-          <div className={`${local.eucSet} ${local.eucSetBtm}`}>
-            <div className={`${local.eucDate} ${local.eucBorderLeft}`}>
-              <EucFour color="$blackLight" />
-            </div>
-            <div className={`${local.eucDate} ${local.eucBorderRight}`}>
-              <EucFour color="$blackLight" />
-            </div>
-          </div>
-        </Col>
-      </Row>
-
-      <Row style={{ marginBottom: '30px' }}>
-        <Col xs={12} sm={6} md={4} mdOffset={2} className={local.location}>
-          <h4>Ceremony & Reception<br />to Follow at:</h4>
-          <h2>{wedding.venue.name}</h2>
-          <h3><VenueAddress /></h3>
-        </Col>
-        <Col xs={10} xsOffset={1} sm={6} smOffset={0} md={4}>
-          <Map type="venue" />
-        </Col>
-      </Row>
-
-      <div className={glob.section}>
-        <h2>Timeline</h2>
+      <div className={`${glob.section}`}>
         <Row>
-          <Col xs={10} xsOffset={1} sm={6} smOffset={3} md={4} mdOffset={4}>
-            <div className={`${glob.card} ${local.timeline}`}>
-              {wedding.timeline.map((timelineEvent, index) => {
-                const ref = `timeline_${index}`;
-
-                return (
-                  <Row className={local.event} key={ref}>
-                    <Col xs={5}>
-                      <p style={{ textAlign: 'right' }}>{timelineEvent.time.start}</p>
-                    </Col>
-                    <Col xs={2}>
-                      <p style={{ overflow: 'hidden' }}>
-                        &middot;&middot;&middot;&middot;&middot;&middot;&middot;
-                      </p>
-                    </Col>
-                    <Col xs={5}>
-                      <p style={{ textAlign: 'left' }}>{timelineEvent.eventName}</p>
-                    </Col>
-                  </Row>
-                );
-              })}
+          <Col xs={12}>
+            <div className={`${local.eucDate} ${local.eucBorderTop}`}>
+              <EucFour color="$green" />
             </div>
+            <h2 className={`${local.date}`}>
+              <WeddingDate />
+            </h2>
+            <div className={`${local.eucDate} ${local.eucBorderBtm}`}>
+              <EucThree color="$green" />
+            </div>
+          </Col>
+        </Row>
+      </div>
+
+      <div className={`${glob.section} ${glob.sectionWhite}`} style={{ marginBottom: '0px' }}>
+        <Row>
+          <Col xs={10} xsOffset={1} sm={5} md={4} mdOffset={0} className={glob.verticalCol}>
+            <div className={`${glob.card} ${glob.cardImage} ${local.timeline}`}>
+              <div className={`${glob.cardContent}`}>
+                <h4 style={{ marginTop: '0px' }}>Ceremony & Reception at</h4>
+                <h2 style={{ margin: '0px' }}>{wedding.venue.name}</h2>
+                <h5 style={{ marginTop: '0px' }}><VenueAddress /></h5>
+                {wedding.timeline.map((timelineEvent, index) => {
+                  const ref = `timeline_${index}`;
+
+                  return (
+                    <Row className={local.event} key={ref}>
+                      <Col xs={5}>
+                        <h5 style={{ margin: '0px', textAlign: 'right' }}>
+                          {timelineEvent.time.start}
+                        </h5>
+                      </Col>
+                      <Col xs={2} style={{ padding: '0 5px' }}>
+                        <h5 style={{ margin: '0px', overflow: 'hidden' }}>
+                          &middot;&middot;&middot;&middot;&middot;&middot;&middot;
+                        </h5>
+                      </Col>
+                      <Col xs={5}>
+                        <h5 style={{ margin: '0px', textAlign: 'left' }}>
+                          {timelineEvent.eventName}
+                        </h5>
+                      </Col>
+                    </Row>
+                  );
+                })}
+              </div>
+            </div>
+          </Col>
+          <Col xs={10} xsOffset={1} sm={5} smOffset={0} md={4} className={glob.verticalCol}>
+            <div className={local.venueMap}>
+              <Map type="venue" />
+            </div>
+          </Col>
+        </Row>
+      </div>
+
+      <div className={`${glob.section} ${glob.sectionBlue}`} style={{ marginTop: '0px' }}>
+        <h2>Attire</h2>
+        <Row>
+          <Col xs={12} sm={4} smOffset={4}>
+            <h3>{wedding.attire.dressCode}</h3>
+            <p style={{ margin: '0px' }}>{wedding.attire.message}</p>
+          </Col>
+        </Row>
+      </div>
+
+      <div className={`${glob.section}`}>
+        <h2>Reception</h2>
+        <Row>
+          <Col xs={12} sm={6}>
+            <h3>{wedding.reception.meal.what}</h3>
+            <h4>{wedding.reception.meal.details}</h4>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12} sm={6}>
+            <h3>{wedding.reception.bar.what}</h3>
+            <h4>{wedding.reception.bar.details}</h4>
           </Col>
         </Row>
       </div>
