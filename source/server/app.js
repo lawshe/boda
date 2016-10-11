@@ -119,6 +119,7 @@ app.use('/', (req, res) => {
         <title>${couple}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="${styles}" />
         <link rel="icon" href="${images}favicon.ico">
         <script type="text/javascript"
