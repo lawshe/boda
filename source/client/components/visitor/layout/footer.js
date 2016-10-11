@@ -40,15 +40,15 @@ export default () => (
   <div className={`${local.footer} ${glob.verticalContainer}`}>
     <div className={`${glob.verticallyAligned}`}>
       <Row>
-        <Col xs={12} sm={4} md={5} className={local.eucOneContainer}>
+        <Col xs={12} sm={3} md={3} className={local.eucOneContainer}>
           <div className={`${local.footerEuc}`}><EucThree color="$whiteDark" /></div>
         </Col>
-        <Col xs={12} sm={4} md={2}>
+        <Col xs={12} sm={6} md={6}>
           <h3><WeddingDate /></h3>
           <h4>{countdown}</h4>
           <NavList navId="footerMenu" />
         </Col>
-        <Col xs={12} sm={4} md={5} className={local.eucTwoContainer}>
+        <Col xs={12} sm={3} md={3} className={local.eucTwoContainer}>
           <div className={`${local.footerEuc} ${local.footerEucTwo}`}>
             <EucFour color="$whiteDark" />
           </div>
