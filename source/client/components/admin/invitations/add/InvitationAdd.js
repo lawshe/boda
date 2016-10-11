@@ -66,7 +66,7 @@ class AddInvitation extends React.Component {
                 <Row>
                   <Col sm={12}>
                     <Button
-                      className={`${glob.button} ${glob.buttonAction} ${glob.marginBtmLg}`}
+                      className={`${glob.button} ${glob.marginBtmLg}`}
                       onClick={this.addGuest.bind(this)}
                     ><i className="fa fa-plus" ariaHidden="true"></i> Another Guest</Button>
                   </Col>
