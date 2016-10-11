@@ -5,10 +5,14 @@ import variables from '../../../../../config/variables.js';
 
 import local from './_styles';
 
-const ACTIVE = { color : variables.$blue };
-
 export default (props) => {
   const navId = local[props.navId];
+
+  let ACTIVE = { color : variables.$blue };
+  if (props.navId === 'footerMenu') {
+    ACTIVE = { color : variables.$white };
+  }
+
   return (
     <Nav id={navId}>
       <li><Link to="/rsvp" activeStyle={ACTIVE}>RSVP</Link></li>
