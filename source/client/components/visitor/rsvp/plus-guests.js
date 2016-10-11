@@ -43,8 +43,8 @@ export default (props) => {
   }
 
   return (
-    <Row style={{ marginBottom: '15px' }}>
-      <Col xs={12} sm={6} smOffset={6}>{plusSelect}</Col>
+    <Row style={{ marginTop: '30px' }}>
+      <Col xs={10} xsOffset={0} sm={4} smOffset={4}>{plusSelect}</Col>
     </Row>
   );
 };
