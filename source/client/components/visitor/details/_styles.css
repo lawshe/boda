@@ -7,6 +7,8 @@
 }
 
 .timeline{
+  float: none;
+
   .event{
     div{
       padding: 0px;
@@ -75,7 +77,14 @@
           transform: rotate(-20deg);
 }
 
+
 /* media queries */
+
+/*@media (min-width : $screensTabletStart){
+  .timeline{
+    float: right;
+  }
+}*/
 @media (max-width: 768px){
   .location{
     h2, h3, h4, h5, p{

@@ -40,41 +40,51 @@ export default () => {
         </Row>
       </div>
 
-      <div className={`${glob.section} ${glob.sectionWhite}`} style={{ marginBottom: '0px' }}>
-        <Row>
-          <Col xs={10} xsOffset={1} sm={5} md={4} mdOffset={0} className={glob.verticalCol}>
-            <div className={`${glob.card} ${glob.cardImage} ${local.timeline}`}>
-              <div className={`${glob.cardContent}`}>
-                <h4 style={{ marginTop: '0px' }}>Ceremony & Reception at</h4>
-                <h2 style={{ margin: '0px' }}>{wedding.venue.name}</h2>
-                <h5 style={{ marginTop: '0px' }}><VenueAddress /></h5>
-                {wedding.timeline.map((timelineEvent, index) => {
-                  const ref = `timeline_${index}`;
 
-                  return (
-                    <Row className={local.event} key={ref}>
-                      <Col xs={5}>
-                        <h5 style={{ margin: '0px', textAlign: 'right' }}>
-                          {timelineEvent.time.start}
-                        </h5>
-                      </Col>
-                      <Col xs={2} style={{ padding: '0 5px' }}>
-                        <h5 style={{ margin: '0px', overflow: 'hidden' }}>
-                          &middot;&middot;&middot;&middot;&middot;&middot;&middot;
-                        </h5>
-                      </Col>
-                      <Col xs={5}>
-                        <h5 style={{ margin: '0px', textAlign: 'left' }}>
-                          {timelineEvent.eventName}
-                        </h5>
-                      </Col>
-                    </Row>
-                  );
-                })}
-              </div>
+      <div className={`${glob.section} ${glob.sectionImage}`}>
+      <Row>
+        <Col xs={12} className={glob.verticalCol}>
+          <div className={`${glob.card} ${local.timeline}`}>
+            <div className={`${glob.cardContent}`}>
+              <h4 style={{ marginTop: '0px' }}>January 7th, 2017</h4>
+              <h2 style={{ margin: '0px' }}>{wedding.venue.name}</h2>
+              {wedding.timeline.map((timelineEvent, index) => {
+                const ref = `timeline_${index}`;
+
+                return (
+                  <Row className={local.event} key={ref}>
+                    <Col xs={5}>
+                      <h5 style={{ margin: '5px 0px', textAlign: 'right' }}>
+                        {timelineEvent.time.start}
+                      </h5>
+                    </Col>
+                    <Col xs={2} style={{ padding: '0 5px' }}>
+                      <h5 style={{ margin: '5px 0px', overflow: 'hidden' }}>
+                        &middot;&middot;&middot;&middot;&middot;&middot;&middot;
+                      </h5>
+                    </Col>
+                    <Col xs={5}>
+                      <h5 style={{ margin: '5px 0px', textAlign: 'left' }}>
+                        {timelineEvent.eventName}
+                      </h5>
+                    </Col>
+                  </Row>
+                );
+              })}
             </div>
+          </div>
+        </Col>
+      </Row>
+      </div>
+
+      <div className={`${glob.section} ${glob.sectionWhite}`}>
+        <Row>
+          <Col xs={10} sm={4} className={glob.verticalCol}>
+            <h4 style={{ marginTop: '0px', textAlign: 'right' }}>Ceremony & Reception at</h4>
+            <h5 style={{ marginTop: '0px', textAlign: 'right' }}><VenueAddress /></h5>
+            <p style={{ marginTop: '0px', textAlign: 'right' }}>{wedding.venue.directions}</p>
           </Col>
-          <Col xs={10} xsOffset={1} sm={5} smOffset={0} md={4} className={glob.verticalCol}>
+          <Col xs={10} sm={4} className={glob.verticalCol}>
             <div className={local.venueMap}>
               <Map type="venue" />
             </div>
@@ -82,10 +92,10 @@ export default () => {
         </Row>
       </div>
 
-      <div className={`${glob.section} ${glob.sectionBlue}`} style={{ marginTop: '0px' }}>
-        <h2>Attire</h2>
+      <div className={`${glob.section} ${glob.sectionBlue}`}>
+        <h2 className={`${glob.headerLines} ${glob.whiteDark}`}><span>Attire</span></h2>
         <Row>
-          <Col xs={12} sm={4} smOffset={4}>
+          <Col xs={8} xsOffset={2} sm={4} smOffset={4}>
             <h3>{wedding.attire.dressCode}</h3>
             <p style={{ margin: '0px' }}>{wedding.attire.message}</p>
           </Col>
@@ -93,17 +103,21 @@ export default () => {
       </div>
 
       <div className={`${glob.section}`}>
-        <h2>Reception</h2>
+        <h2 className={`${glob.headerLines} ${glob.black}`}><span>Reception</span></h2>
         <Row>
-          <Col xs={12} sm={6}>
-            <h3>{wedding.reception.meal.what}</h3>
-            <h4>{wedding.reception.meal.details}</h4>
+          <Col xs={6} sm={6}>
+            <h3 style={{ margin: '0px', textAlign: 'right' }}>
+              <i className="material-icons">local_dining</i>
+              <br />
+              {wedding.reception.meal.what}
+            </h3>
           </Col>
-        </Row>
-        <Row>
-          <Col xs={12} sm={6}>
-            <h3>{wedding.reception.bar.what}</h3>
-            <h4>{wedding.reception.bar.details}</h4>
+          <Col xs={6} sm={6}>
+            <h3 style={{ margin: '0px', textAlign: 'left' }}>
+              <i className="material-icons">local_drink</i>
+              <br />
+              {wedding.reception.bar.what}
+            </h3>
           </Col>
         </Row>
       </div>
