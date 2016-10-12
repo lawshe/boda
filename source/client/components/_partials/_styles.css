@@ -15,7 +15,7 @@
   composes: leroy from 'styles/type';
   color: $green;
   letter-spacing: -1px;
-  margin: 0 auto;
+  margin: 0 auto -30px auto;
 }
 .euc{
   display: inline-block;
@@ -42,7 +42,6 @@
 
 
 .mapContainer{
-  height: $mapHeight;
   border: 1px solid $gray;
   margin: 0px;
 }

@@ -1,9 +1,7 @@
 import React from 'react';
 import { subscribe } from 'horizon-react';
 import { GoogleMapLoader, GoogleMap, InfoWindow, Marker } from 'react-google-maps';
-
 import { updateVenueMarkers, updateGuideMarkers } from '../../../actions/actionCreators';
-
 import wedding from '../../../../../config/wedding.js';
 import variables from '../../../../../config/variables.js';
 import mapStyle from './map-style';
@@ -109,6 +107,9 @@ class PopUpInfoWindow extends React.Component {
   render() {
     let markers = [];
 
+    // height
+    let mapHeight = variables.$mapHeight;
+
     // center
     let center = this.state.center;
     let defaultZoom = 14;
@@ -119,6 +120,7 @@ class PopUpInfoWindow extends React.Component {
     } else{
       markers = this.props.venueMap.markers;
       defaultZoom = 14;
+      mapHeight = variables.$mapHeightVenue;
     }
 
     // markers
@@ -153,7 +155,7 @@ class PopUpInfoWindow extends React.Component {
     return (
       <GoogleMapLoader
         containerElement={
-          <div className={local.mapContainer}>
+          <div className={`${local.mapContainer}`} style={{ height: mapHeight}}>
           </div>
         }
         googleMapElement={
