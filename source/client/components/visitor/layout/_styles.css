@@ -9,7 +9,7 @@
 
 .mainGrid{
   min-height: 100vh;
-  padding: 15px 0px 45px 0px;
+  padding: 15px 0px 0px 0px;
   width: auto;
   z-index: 0;
 }
@@ -49,7 +49,7 @@
     overflow: hidden;
     width: 100%;
     h3{
-      color: $white;
+      color: $whiteMed;
     }
     h4{
       color: $whiteDark;
@@ -95,7 +95,13 @@
     text-decoration: none;
   }
   #mainMenu{
-    float: right
+    float: right;
+    width: 100%;
+    li{
+      border-top: 1px solid $whiteDark;
+      text-align: right;
+    }
+
   }
   #footerMenu{
     float: none;
@@ -103,13 +109,14 @@
     li{
       display: inline-block;
       a{
-        color: $greenLight;
+        color: $grayLight;
         font-size: 0.9rem;
         &:active: {
           color: $white;
         }
         &:hover{
-          background-color: $whiteDark!important;
+          background-color: $greenDark!important;
+          color: $green;
         }
       }
     }
@@ -138,6 +145,13 @@
 
 
 @media (min-width : $screensTabletStart){
+  #mainMenu{
+    width: auto;
+    li{
+      border: 0px;
+      text-align: left;
+    }
+  }
   #navList{
     float: right;
   }
