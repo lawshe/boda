@@ -74,8 +74,8 @@ class CityGuide extends React.Component {
           {wedding.guide[listType].list.map(
             (place, idx) => {
               return (
-                <li className={`${glob.card} ${local.listItem}`} style={{paddingTop: '0px'}} key={idx}>
-                  <h4>
+                <li className={`${glob.card} ${local.listItem}`} key={idx}>
+                  <h5>
                     <a
                       href={place.website}
                       style={{
@@ -86,14 +86,14 @@ class CityGuide extends React.Component {
                     >
                       {place.name}
                     </a>
-                  </h4>
-                  <h5>{place.address.street}</h5>
-                  <p>
+                  </h5>
+                  <p className={glob.smallType}>{place.description}</p>
+                  <p>{place.address.street}</p>
+                  <p style={{ marginBottom: '0px' }}>
                     <a href="#" style={{border : '0px', color : variables.$map.colors[listType]}} onClick={this.handlePlaceNameClick.bind(this)} id={`${listType}-${idx}`}>
                       View on Map
                     </a>
                   </p>
-                  <p className={glob.smallType}><i>{place.tip}</i></p>
                 </li>
               );
             }
@@ -120,36 +120,39 @@ class CityGuide extends React.Component {
       <div className={glob.pageDetails}>
         <PageHeader page="City Guide" />
 
-        <h2 style={{ marginBottom: '0px' }}>Welcome to</h2>
-        <h1 style={{ marginTop: '0px' }}>{wedding.city.name}</h1>
+        <div className={`${glob.section}`}>
+          <h2 style={{ margin: '30px 0px -15px 0px' }}>Welcome to</h2>
+          <h1 style={{ marginTop: '0px' }}>{wedding.city.name}</h1>
+        </div>
 
-        <div className={`${glob.section} ${glob.sectionWhite}`} style={{ marginBottom: '0px' }}>
-          <h2>Accommodations</h2>
+        <div className={`${glob.section} ${glob.sectionWhite}`}>
+          <h2 className={`${glob.headerLines} ${glob.black}`}><span>Accommodations</span></h2>
           <Row className={glob.verticalRow}>
-            <Col xs={8} sm={4} className={glob.verticalCol}>
-                <div className={`${glob.card}`} style={{margin: '0 0 30px 0'}}>
-                    <h3>
-                      <i className="material-icons">hotel</i>
-                      <br />
+            <Col xs={8} sm={6} md={4} className={glob.verticalCol}>
+                <div className={`${glob.card}`}>
+                    <h3 style={{ margin: '0px' }}>
                       {wedding.accommodations.hotel.name}
                       <br />
                       {wedding.accommodations.hotel.location}
                     </h3>
                     <h4>{accommodationsAddress}</h4>
-                    <p style={{marginBottom: '0px'}}>{wedding.accommodations.hotel.discount}</p>
+                    <p style={{marginBottom: '0px'}}>
+                      <a href="{wedding.accommodations.hotel.discountLink}" target="_BLANK">Book Hotel at {wedding.accommodations.hotel.discountAmt}% OFF</a>
+                    </p>
                 </div>
             </Col>
-            <Col xs={8} sm={4} className={glob.verticalCol}>
+            <Col xs={8} sm={4} md={3} className={glob.verticalCol}>
+              <h2 style={{ marginBottom: '-10px' }}><i className="material-icons">hotel</i></h2>
               <h4><i>{wedding.accommodations.hotel.highlight}</i></h4>
               <p>{wedding.accommodations.hotel.message}</p>
             </Col>
           </Row>
         </div>
 
-        <div className={`${glob.section} ${glob.sectionBlue}`} style={{ marginTop: '0px' }}>
+        <div className={`${glob.section} ${glob.sectionBlue}`}>
           <Row>
             <Col xs={12}>
-              <h2 style={{ marginBottom: '0px' }}>Transportation</h2>
+              <h2 className={`${glob.headerLines} ${glob.whiteDark}`}><span>Transportation</span></h2>
               <ul className={`${local.transportation}`}>
                   <li>
                     <Button className={`${glob.button}`} href={wedding.guide.transportation.bus.how.website} target="_BLANK">
@@ -177,8 +180,8 @@ class CityGuide extends React.Component {
           </Row>
         </div>
 
-        <div className="section">
-          <h2>Things to Do</h2>
+        <div  className={`${glob.section}`}>
+          <h2 className={`${glob.headerLines} ${glob.black}`}><span>Things to Do</span></h2>
           <Row id="map">
             <Col xs={10} xsOffset={1} mdOffset={2} md={8}>
               <Map type="guide" />
