@@ -4,6 +4,10 @@ html {
   min-width: 280px;
 }
 
+html, body{
+  overflow-x: hidden;
+}
+
 body {
   background-color: $whiteMed !important;
   color: $black;
@@ -43,7 +47,7 @@ body {
     .cardContent{
       background-color: $whiteMed;
       margin: 0 auto;
-      padding: 30px 15px;
+      padding: 30px;
     }
   }
 
@@ -107,6 +111,45 @@ body {
   }
 
 
+/*lines*/
+.headerLines {
+  line-height: 0.5rem;
+  text-align: center;
+}
+h2.headerLines{
+  margin-bottom: 45px;
+}
+.headerLines span {
+  display: inline-block;
+  position: relative;
+}
+.headerLines span:before,
+.headerLines span:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  top: 0;
+  width: 100px;
+}
+.headerLines.black span:before,
+.headerLines.black span:after {
+  border-color: $black;
+}
+.headerLines.whiteDark span:before,
+.headerLines.whiteDark span:after {
+  border-color: $whiteDark;
+}
+.headerLines span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+.headerLines span:after {
+  left: 100%;
+  margin-left: 15px;
+}
+
 /* links */
   a {
     color: $blue;
@@ -135,24 +178,39 @@ body {
   	transition: all 250ms ease;
     &:hover{
       background-color: $greenLight!important;
+      border-color: $greenMuted!important;
       color: $whiteDark!important;
     }
   }
+
+/*misc*/
+.opaqueRow{
+  div{
+    opacity: 0.5;
+  }
+  a, button{
+    pointer-events: none;
+    cursor: none;
+  }
+}
+.whiteTopBorder{
+  border-top: 1px solid $whiteDark;
+  padding: 5px;
+}
 
 /* sections */
   .section{
     display: block;
     float: left;
-    margin: 30px 0;
-    padding: 0px 15px;
+    /*margin: 30px 0;*/
+    padding: 45px 15px;
     width: 100%;
+
     .row{
       margin: 0;
     }
   }
   .sectionDark{
-    padding: 30px 15px;
-
     h1, h2, h4{
       color: $whiteMed;
     }
@@ -160,8 +218,16 @@ body {
       color: $whiteDark;
     }
     .button{
-      border-color: $whiteDark;
+      background-color: $whiteDark;
+      border-color: $blue;
+      color: $blue;
     }
+  }
+  .sectionImage{
+    background-image: url('images/Haeckel_Muscinae.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
   }
   .sectionBlue{
     composes: sectionDark;
@@ -175,19 +241,15 @@ body {
   }
   .sectionWhiteDark{
     background-color: $whiteDark;
-    padding: 30px 15px;
   }
   .sectionWhite{
     background-color: $white;
-    padding: 30px 15px;
   }
   .sectionWhiteMed{
     background-color: $whiteMed;
-    padding: 30px 15px;
   }
   .sectionGrayLight{
     background-color: $grayLightest;
-    padding: 30px 15px;
   }
 
 /* text */
@@ -200,41 +262,62 @@ body {
     font-size: 4.5rem;
     color: $black;
     margin: 0 auto 15px auto;
+    i {
+      font-size: inherit!important;
+    }
   }
   h2 {
     color: $black;
     font-family: 'GreatVibes', sans-serif;
     font-size: 2.5rem;
-    margin: 15px 0 15px 0;
+    margin: 15px 0 30px 0;
+    i {
+      font-size: inherit!important;
+    }
   }
   h3 {
     color: $black;
     font-family: georgia, serif;
     font-size: 1.6rem;
     margin: 0px auto 15px auto;
+    i {
+      font-size: 1.6rem!important;
+    }
   }
   h4 {
     color: $blackLight;
     font-family: georgia, serif;
     font-size: 1.3rem;
     margin: 15px auto;
+    i {
+      font-size: inherit!important;
+    }
   }
   h5 {
     color: $black;
     font-family: georgia, serif;
     font-size: 1.1rem;
     margin: 15px auto;
+    i {
+      font-size: inherit!important;
+    }
   }
   h6 {
     color: $blackLight;
     font-size: 1.1rem;
     margin: 15px auto;
+    i {
+      font-size: inherit!important;
+    }
   }
   p {
     color: $blackLight;
     font-size: $font.p;
     line-height: 1.1;
     margin: 0 0 1rem;
+    i {
+      font-size: inherit!important;
+    }
   }
   .smallType{
     font-size: 0.6rem;
@@ -306,7 +389,7 @@ body {
 
 /* panel */
   .panel{
-    background-color: #fefefa!important;
+    background-color: $white!important;
   }
   .panelHeader{
     composes: GreatVibes from 'styles/type';
