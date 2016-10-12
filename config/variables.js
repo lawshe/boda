@@ -43,6 +43,7 @@ module.exports = {
   $linkTransition: 'all 250ms ease',
   $linkTransitionSpeed: '250ms',
   $mapHeight: '300px',
+  $mapHeightVenue: '150px',
   $marginMd: '20px',
   $marginLg: '30px',
   $btnSubmit: blue,
@@ -60,7 +61,5 @@ module.exports = {
       bar: greenDark
     }
   },
-  $screens: {
-    tabletStart: '768px'
-  }
+  $screensTabletStart: '768px'
 };
