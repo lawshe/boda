@@ -49,7 +49,7 @@ export default (props) => {
 
   const RsvpFormForm = () => (
     <Col xs={10} xsOffset={1} style={{ textAlign: 'center' }}>
-      <h4 style={{ marginTop: '0px' }}>Please submit by<br /><PrettyDate date={wedding.rsvp.date} /></h4>
+      <h3 style={{ marginTop: '0px' }}>Please submit by<br /><PrettyDate date={wedding.rsvp.date} /></h3>
       <div className={`${glob.card} ${local.rsvpForm}`}>
         <form onSubmit={props._sendRsvp} style={{ margin: '0px auto' }}>
           <PerGuestRsvp rsvp={rsvp} _changeRsvp={props._changeRsvp} />
