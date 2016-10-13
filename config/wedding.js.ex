@@ -145,16 +145,23 @@ module.exports = {
       }
     }
   ],
-  registry: [
-    {
-      name: 'Honeymoon Wishes',
-      link: 'https://www.honeymoonwishes.com/'
-    },
-    {
-      name: 'Amazon',
-      link: 'https://www.amazon.com/wedding/home'
-    }
-  ],
+  registry: {
+    messageToGuests: '',
+    where: [
+      {
+        name: 'Amazon',
+        link: 'https://www.amazon.com/wedding/home'
+      }
+    ],
+    honeymoon: [
+      {
+        title: 'Dine Out',
+        description: 'Dinner for 2',
+        price: '50',
+        remaining: 4
+      },
+    ]
+  },
   rsvp: {
     date: '12/01/16'
   },

@@ -190,6 +190,11 @@ h2.headerLines{
       color: $whiteDark!important;
     }
   }
+  .buttonLarge{
+    composes: button;
+    font-size: calc( $fontP * 1.2);
+    font-weight: bold;
+  }
 
 /*misc*/
 .opaqueRow{
