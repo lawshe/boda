@@ -3,8 +3,8 @@ import { Row, Col } from 'react-bootstrap';
 import wedding from '../../../../../config/wedding.js';
 import glob from 'styles/app';
 import local from './_styles';
-import PerGuestRsvp from './per-guest-rsvp';
-import PlusGuests from './plus-guests';
+import PerGuestRsvp from './form-pieces/per-guest-rsvp';
+import PlusGuests from './form-pieces/plus-guests';
 import SubmitBtn from '../../shared/submit-btn';
 import PrettyDate from '../../_partials/pretty-date';
 

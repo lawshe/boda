@@ -1,7 +1,5 @@
 import React from 'react';
-import { FormGroup, Radio } from 'react-bootstrap';
-
-import local from './_styles';
+import local from '../_styles';
 import radio from 'styles/radio.css';
 
 class RsvpRadioButtons extends React.Component {

@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col, FormGroup } from 'react-bootstrap';
 
 import RadioButtons from './radio-buttons';
-import local from './_styles';
+import local from '../_styles';
 import type from 'styles/type';
 
 /**
