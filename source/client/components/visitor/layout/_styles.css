@@ -43,17 +43,12 @@
   .footer {
     composes: tCenter from 'styles/app';
 
-    background-color: $greenDark;
+    background-color: $whiteDark;
     font-size: 0.6em;
     height: $footerHeight;
     overflow: hidden;
     width: 100%;
-    h3{
-      color: $whiteMed;
-    }
-    h4{
-      color: $whiteDark;
-    }
+
     p {
       margin-bottom: 0px;
     }
@@ -101,7 +96,9 @@
       border-top: 1px solid $whiteDark;
       text-align: right;
     }
-
+  }
+  #mainMenu > li > a , .navInitials{
+      color: $gray;
   }
   #footerMenu{
     float: none;
@@ -109,13 +106,11 @@
     li{
       display: inline-block;
       a{
-        color: $grayLight;
+        background-color: transparent!important;
+        color: $blueDark;
         font-size: 0.9rem;
-        &:active: {
-          color: $white;
-        }
-        &:hover{
-          background-color: $greenDark!important;
+        &:hover, &:focus{
+          background-color: transparent!important;
           color: $green;
         }
       }
