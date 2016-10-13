@@ -54,14 +54,18 @@
     }
   }
   .footerEuc{
-    display: inline-block;
+    display: none;
     margin: 0 auto;
     opacity: 0.5;
     padding: 30px;
     transform: scaleX(-1) rotate(105deg);
     width: $footerHeight;
   }
+  .footerEucOne{
+    float: right
+  }
   .footerEucTwo{
+    float: left;
     transform: scaleX(-1) rotate(-105deg);
   }
 
@@ -140,5 +144,8 @@
   }
   #navList{
     float: right;
+  }
+  .footerEuc{
+    display: inline-block;
   }
 }

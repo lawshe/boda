@@ -39,15 +39,15 @@ if (today.toDateString() === bigDay.toDateString()) {
 export default () => (
   <div className={`${local.footer} ${glob.verticalContainer}`}>
       <Row className={`${glob.verticallyAligned}`}>
-        <Col xs={12} sm={3} md={3} className={`${glob.verticalCol}`}>
-          <div className={`${local.footerEuc}`}><EucThree color="$green" /></div>
+        <Col xs={12} sm={3} md={3} lg={4} className={`${glob.verticalCol}`}>
+          <div className={`${local.footerEuc} ${local.footerEucOne}`}><EucThree color="$green" /></div>
         </Col>
-        <Col xs={12} sm={6} md={6} className={glob.verticalCol}>
+        <Col xs={12} sm={6} md={6} lg={4} className={glob.verticalCol}>
           <h3><WeddingDate /></h3>
           <h5>{countdown}</h5>
           <NavList navId="footerMenu" />
         </Col>
-        <Col xs={12} sm={3} md={3} className={`${glob.verticalCol}`}>
+        <Col xs={12} sm={3} md={3} lg={4} className={`${glob.verticalCol}`}>
           <div className={`${local.footerEuc} ${local.footerEucTwo}`}>
             <EucFour color="$green" />
           </div>
