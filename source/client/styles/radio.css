@@ -29,10 +29,10 @@
   display: block;
   position: relative;
   font-weight: 300;
-  font-size: $font.p;
+  font-size: $fontP;
   padding: 0px 0px 0px 45px;
   margin: 0px auto;
-  height: calc($font.p * 2);
+  height: calc($fontP * 2);
   z-index: 9;
   -webkit-transition: $linkTransition;
   transition: $linkTransition;
