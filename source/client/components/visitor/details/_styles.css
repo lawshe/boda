@@ -13,6 +13,19 @@
     div{
       padding: 0px;
     }
+    .eventDetail{
+      margin: 15px 0;
+    }
+    &:first-child{
+      .eventDetail{
+        margin-top: 0;
+      }
+    }
+    &:last-child{
+      .eventDetail{
+        margin-bottom: 0;
+      }
+    }
   }
 }
 .date{
