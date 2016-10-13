@@ -64,11 +64,7 @@ class Rsvp extends React.Component {
   render() {
     const query = this.props.rsvpSearch.query;
 
-    const queryMessageJsx = query
-      ? <InviteNotFound />
-      : '';
-
-    let inviteFoundJsx = <div>{queryMessageJsx}</div>;
+    let inviteFoundJsx = <InviteNotFound />;
 
     if (!this.state.submitted) {
       inviteFoundJsx = <SubmitBtn displayText="Find" />;
@@ -78,8 +74,8 @@ class Rsvp extends React.Component {
         if (found) {
           const shortName = this.props.rsvpSearch.result.shortName;
           inviteFoundJsx = (
-            <div className={`${local.found} ${effects.fade}`}>
-              <h3>RSVP Found</h3>
+            <div className={`${effects.fade}`}>
+              <h3 style={{ marginTop: '15px' }}>RSVP Found</h3>
               <Button bsSize="large" className={`${glob.button}`} href={`/rsvp/${shortName}`}>
                 Go to RSVP
               </Button>
@@ -118,27 +114,29 @@ class Rsvp extends React.Component {
     return (
       <div>
         <PageHeader page="Find RSVP" />
-        <Row>
-          <Col xs={10} xsOffset={1} sm={6} smOffset={3}>
-            <Form
-              onSubmit={this._handleSubmit.bind(this)}
-              style={{ textAlign: 'center' }}
-            >
-              <div className={glob.card}>
-                <Row>
-                  <Col xs={12}>
-                    {formGroupJsx}
+        <div className={glob.section}>
+          <Row>
+            <Col xs={10} xsOffset={1} sm={6} smOffset={3}>
+              <Form
+                onSubmit={this._handleSubmit.bind(this)}
+                style={{ textAlign: 'center' }}
+              >
+                <div className={glob.card}>
+                  <Row>
+                    <Col xs={12}>
+                      {formGroupJsx}
+                    </Col>
+                  </Row>
+                </div>
+                <Row style={{ marginTop: '30px' }}>
+                  <Col xs={12} style={{ textAlign: 'center' }}>
+                    {inviteFoundJsx}
                   </Col>
                 </Row>
-              </div>
-              <Row style={{ marginTop: '30px' }}>
-                <Col xs={12} style={{ textAlign: 'center' }}>
-                  {inviteFoundJsx}
-                </Col>
-              </Row>
-            </Form>
-          </Col>
-        </Row>
+              </Form>
+            </Col>
+          </Row>
+        </div>
       </div>
     );
   }
