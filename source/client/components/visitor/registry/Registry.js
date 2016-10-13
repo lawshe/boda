@@ -23,7 +23,7 @@ export default () => (
     <div className={`${glob.section}`}>
       <Row>
         <Col xs={12}>
-          <h2>Your presence is all that we ask for!</h2>
+          <h2 style={{ marginTop: '0px' }}>Your presence is all that we ask for!</h2>
           <p>{wedding.registry.messageToGuests}</p>
         </Col>
       </Row>
