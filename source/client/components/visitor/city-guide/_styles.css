@@ -2,6 +2,16 @@
   margin-top: 15px;
 }
 
+.hotel{
+  float: none;
+}
+
+.hotelAbout{
+  h2, h3, h4, p{
+    text-align: center;
+  }
+}
+
 .thingsToDo{
   height: $mapHeight;
   overflow: scroll;
@@ -9,22 +19,23 @@
 .todoListHeader{
   h3{
     color: $white;
-    margin: 15px 0 0 0;
+    margin: 0;
   }
 }
 .todoCatList{
   list-style: none;
   margin: 0;
   padding: 0;
-  text-align: left;
+  text-align: center;
 }
 .todoCat{
   display: inline-block;
+  width: 100%;
 }
 .transportation{
   list-style: none;
-  margin: 0 0 15px 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 
   li{
     display: inline-block;
@@ -34,15 +45,15 @@
 
 .todoListCol{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   list-style: none;
-  margin: 0;
+  margin: 15px 0 0 0;
   padding: 0;
   text-align: left;
   li{
     display: inline-block;
     float: none;
-    margin: 15px 15px 15px 0px;
+    margin: 15px auto;
     padding: 15px;
     h4, h5{
       text-align: center;
@@ -59,18 +70,15 @@
       }
     }
     h5{
-      margin: 15px 0 0 0;
+      margin: 0;
     }
     p{
       margin-bottom: 15px;
-      a{
-        padding: 15px 15px 0px 15px;
-      }
     }
     a{
       border-bottom: 1px solid;
       display: block;
-      margin: 0px auto;
+      margin: 5px auto;
       width: 100%;
     }
   }
@@ -86,23 +94,31 @@
   }
 }
 
-@media (max-width : 1023px){
+@media (min-width : $screensTabletStart){
+  .hotel{
+    float: right;
+  }
+  .hotelAbout{
+    h2, h3, h4, p{
+      text-align: left;
+    }
+  }
   .todoCatList{
-    text-align: center;
+    text-align: left;
   }
   .todoCat{
-    width: 100%;
+    width: auto;
   }
   .todoListCol{
-    flex-direction: column;
+    flex-direction: row;
 
     li{
-      margin: 15px auto;
+      margin: 15px 15px 15px 0px;;
     }
   }
   .todoListHeader{
     h3{
-      margin: 0px;
+      margin: 15px 0 0 0;
     }
   }
 }
