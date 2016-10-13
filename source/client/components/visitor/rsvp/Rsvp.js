@@ -4,7 +4,9 @@ import { Row } from 'react-bootstrap';
 import http from 'http';
 import querystring from 'querystring';
 import { setRsvp, updateRsvp, updatePlus } from '../../../actions/actionCreators';
+import glob from 'styles/app';
 import PageHeader from '../../_partials/page-header';
+import RsvpFormReceived from './rsvp-form-received';
 import RsvpForm from './form';
 import RsvpNotFound from './not-found';
 import SavedModal from '../../shared/saved-modal';
@@ -45,7 +47,9 @@ class Rsvp extends React.Component {
     const savedMessage = 'Thank you for RSVPing! You should receive an email confirmation soon.';
     const { rsvp } = this.props;
     let RsvpFound;
-    if (rsvp.id) {
+    if (rsvp.id && rsvp.returned) {
+      RsvpFound = <RsvpFormReceived rsvpProcessed={rsvp.processed} />;
+    } else if (rsvp.id) {
       RsvpFound = (
         <RsvpForm
           rsvp={rsvp}
@@ -61,16 +65,18 @@ class Rsvp extends React.Component {
     return (
       <div>
         <PageHeader page="RSVP" />
-        <Row>
-          <SavedModal
-            id="test"
-            title="RSVP Sent"
-            message={savedMessage}
-            show={this.state.showSavedModal}
-            _closeSavedModal={this._closeSavedModal.bind(this)}
-          />
-          {RsvpFound}
-        </Row>
+        <div className={glob.section}>
+          <Row>
+            <SavedModal
+              id="test"
+              title="RSVP Sent"
+              message={savedMessage}
+              show={this.state.showSavedModal}
+              _closeSavedModal={this._closeSavedModal.bind(this)}
+            />
+            {RsvpFound}
+          </Row>
+        </div>
       </div>
     );
   }
