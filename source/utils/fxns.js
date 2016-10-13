@@ -12,6 +12,26 @@ const prettyGroupNames = (people) => {
   return prettyNames;
 };
 
+const ordinalSuffixOf = (i) => {
+  const j = i % 10;
+  const k = i % 100;
+
+  if (j === 1 && k !== 11) {
+    return `${i}st`;
+  }
+  if (j === 2 && k !== 12) {
+    return `${i}nd`;
+  }
+  if (j === 3 && k !== 13) {
+    return `${i}rd`;
+  }
+  return `${i}th`;
+};
+
+const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December'
+];
+
 module.exports = {
   prettyGroupNames,
   rsvpProcessData(rsvp) {
@@ -78,5 +98,13 @@ module.exports = {
     const coupleOneInitial = wedding.couple[0].name.first.charAt(0);
     const coupleTwoInitial = wedding.couple[1].name.first.charAt(0);
     return `${coupleOneInitial} & ${coupleTwoInitial}`;
+  },
+  weddingWordDate() {
+    const weddingDate = new Date(wedding.date);
+    const weddingDay = weddingDate.getDate();
+    const weddingDaySuffix = ordinalSuffixOf(weddingDay);
+    const weddingMonth = monthNames[weddingDate.getMonth()];
+    const weddingYear = weddingDate.getFullYear();
+    return `${weddingMonth} ${weddingDaySuffix}, ${weddingYear}`;
   }
 };
