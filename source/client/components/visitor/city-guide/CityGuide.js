@@ -19,6 +19,8 @@ import { showGuideMapInfo } from '../../../actions/actionCreators';
   * @return {ReactComponent}
   */
 
+const images = process.env.NODE_ENV === 'production' ? 'images' : `http://127.0.0.1:9095/static/images`;
+
 const mapStateToProps = (state) => ({
   guideMap: state.guideMap
 });
@@ -120,28 +122,36 @@ class CityGuide extends React.Component {
       <div className={glob.pageDetails}>
         <PageHeader page="City Guide" />
 
-        <div className={`${glob.section}`}>
-          <h2 style={{ margin: '30px 0px -15px 0px' }}>Welcome to</h2>
+        <div className={`${glob.section}`} style={{ paddingBottom: '0px' }}>
+          <h2 style={{ margin: '0px 0px -15px 0px' }}>Welcome to</h2>
           <h1 style={{ marginTop: '0px' }}>{wedding.city.name}</h1>
         </div>
 
-        <div className={`${glob.section} ${glob.sectionWhite}`}>
+        <div className={`${glob.section} ${glob.sectionBlue}`} style={{  }}>
+          <Row>
+            <Col xs={8} sm={5} md={4} className={glob.verticalCol}>
+              <img src={`${images}/greetings.png`} />
+            </Col>
+          </Row>
+        </div>
+
+        <div className={`${glob.section}`}>
           <h2 className={`${glob.headerLines} ${glob.black}`}><span>Accommodations</span></h2>
-          <Row className={glob.verticalRow}>
-            <Col xs={8} sm={6} md={4} className={glob.verticalCol}>
-                <div className={`${glob.card}`}>
+          <Row>
+            <Col xs={8} sm={6} className={glob.verticalCol}>
+                <div className={`${glob.card} ${local.hotel}`}>
                     <h3 style={{ margin: '0px' }}>
                       {wedding.accommodations.hotel.name}
                       <br />
                       {wedding.accommodations.hotel.location}
                     </h3>
-                    <h4>{accommodationsAddress}</h4>
+                    <h5>{accommodationsAddress}</h5>
                     <p style={{marginBottom: '0px'}}>
                       <a href="{wedding.accommodations.hotel.discountLink}" target="_BLANK">Book Hotel at {wedding.accommodations.hotel.discountAmt}% OFF</a>
                     </p>
                 </div>
             </Col>
-            <Col xs={8} sm={4} md={3} className={glob.verticalCol}>
+            <Col xs={8} sm={6} className={`${glob.verticalCol} ${local.hotelAbout}`}>
               <h2 style={{ marginBottom: '-10px' }}><i className="material-icons">hotel</i></h2>
               <h4><i>{wedding.accommodations.hotel.highlight}</i></h4>
               <p>{wedding.accommodations.hotel.message}</p>
@@ -149,10 +159,10 @@ class CityGuide extends React.Component {
           </Row>
         </div>
 
-        <div className={`${glob.section} ${glob.sectionBlue}`}>
+        <div className={`${glob.section} ${glob.sectionWhiteMed}`}>
           <Row>
             <Col xs={12}>
-              <h2 className={`${glob.headerLines} ${glob.whiteDark}`}><span>Transportation</span></h2>
+              <h2 className={`${glob.headerLines}`}><span>Transportation</span></h2>
               <ul className={`${local.transportation}`}>
                   <li>
                     <Button className={`${glob.button}`} href={wedding.guide.transportation.bus.how.website} target="_BLANK">
@@ -183,12 +193,12 @@ class CityGuide extends React.Component {
         <div  className={`${glob.section}`}>
           <h2 className={`${glob.headerLines} ${glob.black}`}><span>Things to Do</span></h2>
           <Row id="map">
-            <Col xs={10} xsOffset={1} mdOffset={2} md={8}>
+            <Col xs={10} xsOffset={1} lg={6} lgOffset={3}>
               <Map type="guide" />
             </Col>
           </Row>
           <Row>
-            <Col xs={10} xsOffset={1} mdOffset={2} md={8}>
+            <Col xs={10} xsOffset={1} lg={6} lgOffset={3}>
               {fullList}
             </Col>
           </Row>
