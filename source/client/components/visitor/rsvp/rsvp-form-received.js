@@ -1,6 +1,6 @@
 import React from 'react';
 import glob from 'styles/app';
-
+import { Col } from 'react-bootstrap';
 import wedding from '../../../../../config/wedding';
 
 /**
@@ -16,22 +16,26 @@ const supportEmail = <a href={`mailto:${wedding.email}?Subject=RSVP Not found`}>
 
 export default (props) => {
   const attendingJsx = props.rsvpProcessed.attendingNamesStr
-    ? <h4 style={{ marginBottom: '0px' }}>{props.rsvpProcessed.attendingNamesStr}</h4>
+    ? <h3>{props.rsvpProcessed.attendingNamesStr}</h3>
     : '';
 
   const plusJsx = props.rsvpProcessed.plusMessage
-    ? <h4 style={{ margin: '15px 0 0 0' }}>{props.rsvpProcessed.plusMessage}</h4>
+    ? <h3 style={{ margin: '15px 0 0 0' }}>{props.rsvpProcessed.plusMessage}</h3>
     : '';
 
   return (
-    <div>
-      <div className={`${glob.card}`}>
-        <h2>RSVP Received</h2>
-        <h3 style={{ marginBottom: '0px' }}>{props.rsvpProcessed.rsvpReceivedMessage}</h3>
-        {attendingJsx}
-        {plusJsx}
+    <Col xs={12} style={{ textAlign: 'center' }}>
+      <div className={`${glob.card} ${glob.cardImage}`}>
+        <div className={`${glob.cardContent}`}>
+          <h2 style={{ marginTop: '0px' }}>Received</h2>
+          <h3 style={{ marginBottom: '0px' }}>{props.rsvpProcessed.rsvpReceivedMessage}</h3>
+          {attendingJsx}
+          {plusJsx}
+        </div>
       </div>
-      <p style={{ margin: '45px 0 15px 0' }}>Email {supportEmail}<br />if you have any questions.</p>
-    </div>
+      <p style={{ margin: '45px 0 15px 0' }}>
+        Please email {supportEmail}<br />if you have any questions.
+      </p>
+    </Col>
   );
 };
