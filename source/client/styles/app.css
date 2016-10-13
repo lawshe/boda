@@ -9,14 +9,20 @@ html, body{
 }
 
 body {
-  background-color: $whiteMed !important;
+  background-color: $white!important;
   color: $black;
   display: flex;
   flex-direction: column;
   font-family: georgia, serif;
   min-height: 100%;
-  -webkit-font-smoothing: antialiased;
 }
+body,
+input,
+button  {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
 .layoutContainer{
   flex: 1;
   min-height: 100vh;
@@ -24,10 +30,9 @@ body {
 
 /* cards */
   .card{
-    background-color: $white;
     border: 1px solid $whiteDark;
     display: inline-block;
-    padding: 30px;
+    padding: 45px;
     h2{
       margin-top: 0;
     }
@@ -35,17 +40,20 @@ body {
       color: $blackLight;
     }
   }
+
+  .card, .cardContent{
+    background-color: $whiteMed;
+  }
   .cardImage{
     background-image: url('images/Haeckel_Muscinae.png');
     background-size: cover;
     background-position: center center;
-    border-color: $greenDark;
 
     a{
       color: $greenMuted;
     }
     .cardContent{
-      background-color: $whiteMed;
+      border: 1px solid $whiteDark;
       margin: 0 auto;
       padding: 30px;
     }
@@ -214,8 +222,11 @@ h2.headerLines{
     h1, h2, h4{
       color: $whiteMed;
     }
-    h3, p{
+    h3, h5, p{
       color: $whiteDark;
+    }
+    a {
+      color: $greenLight;
     }
     .button{
       background-color: $whiteDark;
@@ -253,58 +264,53 @@ h2.headerLines{
   }
 
 /* text */
+  .serif{
+    font-family: georgia, serif;
+  }
   h1, h2, h3, h4, h5, p{
     text-align: center;
     font-weight: normal;
+
+    i {
+      font-size: inherit!important;
+    }
   }
   h1 {
     font-family: 'fontleroybrownregular', sans-serif;
     font-size: 4.5rem;
     color: $black;
     margin: 0 auto 15px auto;
-    i {
-      font-size: inherit!important;
-    }
   }
   h2 {
     color: $black;
     font-family: 'GreatVibes', sans-serif;
     font-size: 2.5rem;
     margin: 15px 0 30px 0;
-    i {
-      font-size: inherit!important;
-    }
   }
   h3 {
     color: $black;
-    font-family: georgia, serif;
     font-size: 1.6rem;
+    font-family: georgia, serif;
     margin: 0px auto 15px auto;
-    i {
-      font-size: 1.6rem!important;
-    }
   }
   h4 {
     color: $blackLight;
-    font-family: georgia, serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1.3rem;
     margin: 15px auto;
-    i {
-      font-size: inherit!important;
-    }
+    text-transform: uppercase;
   }
   h5 {
     color: $black;
     font-family: georgia, serif;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     margin: 15px auto;
-    i {
-      font-size: inherit!important;
-    }
   }
   h6 {
     color: $blackLight;
-    font-size: 1.1rem;
+    font-family: georgia, serif;
+    font-size: 1.2rem;
+    font-weight: bold;
     margin: 15px auto;
     i {
       font-size: inherit!important;
@@ -312,15 +318,17 @@ h2.headerLines{
   }
   p {
     color: $blackLight;
-    font-size: $font.p;
-    line-height: 1.1;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: $fontP;
+    line-height: calc($fontP * 1.3);
     margin: 0 0 1rem;
     i {
       font-size: inherit!important;
     }
   }
+
   .smallType{
-    font-size: 0.6rem;
+    font-size: calc($fontP * 0.9);
   }
 
   .tCenter {
@@ -377,8 +385,8 @@ h2.headerLines{
   }
 /* menu */
   .mainMenu{
-    background-color: $whiteMed!important;
-    border-bottom: 1px solid $whiteDark;
+    background-color: $white!important;
+    border-bottom: 1px solid $grayLightest;
     z-index: 1000;
   }
 
