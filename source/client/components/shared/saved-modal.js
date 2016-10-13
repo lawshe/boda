@@ -20,7 +20,7 @@ export default (props) => (
     </Modal.Header>
 
     <Modal.Body>
-      {props.message}
+      <p>{props.message}</p>
     </Modal.Body>
 
     <Modal.Footer>
