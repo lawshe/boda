@@ -27,7 +27,9 @@ export default () => {
     <Navbar className={`${glob.mainMenu}`}>
       <Navbar.Header>
         <Navbar.Brand>
-          <Link href="/" className={local.initials} activeStyle={ACTIVE}>{coupleInitials}</Link>
+          <Link href="/" className={`${glob.navInitials} ${local.initials}`} activeStyle={ACTIVE}>
+            {coupleInitials}
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle id={local.navToggle} />
       </Navbar.Header>
