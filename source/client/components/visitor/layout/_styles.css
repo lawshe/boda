@@ -64,15 +64,6 @@
   .footerEucTwo{
     transform: scaleX(-1) rotate(-105deg);
   }
-  .eucOneContainer, .eucTwoContainer{
-    display: none;
-  }
-  .eucOneContainer{
-    text-align: right;
-  }
-  .eucTwoContainer{
-    text-align: left;
-  }
 
 /*menu*/
   .menu{
@@ -149,8 +140,5 @@
   }
   #navList{
     float: right;
-  }
-  .eucOneContainer, .eucTwoContainer{
-    display: block;
   }
 }
