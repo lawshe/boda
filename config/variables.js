@@ -16,7 +16,7 @@ const pink = '#9b073e';
 const white = '#f8f5f2';
 const whiteAlt = '#f6f1ef';
 const whiteMed = '#efe7e2';
-const whiteDark = '#e6d9d2';
+const whiteDark = '#ddccc1';
 
 module.exports = {
   $black: black,
@@ -50,9 +50,7 @@ module.exports = {
   $btnAction: green,
   $borderRadius: '0px',
   $error: pink,
-  $font: {
-    p: '0.9rem'
-  },
+  $fontP: '1.0rem',
   $map: {
     colors: {
       music: blueDark,
