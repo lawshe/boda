@@ -5,7 +5,6 @@ import glob from 'styles/app';
 import local from './_styles';
 import PerGuestRsvp from './per-guest-rsvp';
 import PlusGuests from './plus-guests';
-import RsvpFormReceived from './rsvp-form-received';
 import SubmitBtn from '../../shared/submit-btn';
 import PrettyDate from '../../_partials/pretty-date';
 
@@ -50,7 +49,7 @@ export default (props) => {
 
   const RsvpFormForm = () => (
     <Col xs={10} xsOffset={1} style={{ textAlign: 'center' }}>
-      <h4>Please submit by<br /><PrettyDate date={wedding.rsvp.date} /></h4>
+      <h4 style={{ marginTop: '0px' }}>Please submit by<br /><PrettyDate date={wedding.rsvp.date} /></h4>
       <div className={`${glob.card} ${local.rsvpForm}`}>
         <form onSubmit={props._sendRsvp} style={{ margin: '0px auto' }}>
           <PerGuestRsvp rsvp={rsvp} _changeRsvp={props._changeRsvp} />
@@ -66,9 +65,7 @@ export default (props) => {
   );
 
   // Display form, or that we've recieved RSVP
-  const form = rsvp.returned
-    ? <RsvpFormReceived rsvpProcessed={rsvp.processed} />
-    : <RsvpFormForm />;
+  const form = <RsvpFormForm />;
 
   return (
     <div>{form}</div>
