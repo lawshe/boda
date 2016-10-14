@@ -8,9 +8,9 @@ import local from './_styles';
 export default (props) => {
   const navId = local[props.navId];
 
-  let ACTIVE = { color : variables.$blue };
+  let ACTIVE = { color : variables.$grayLight };
   if (props.navId === 'footerMenu') {
-    ACTIVE = { color : variables.$white };
+    ACTIVE = { color : variables.$blackLight };
   }
 
   return (
