@@ -24,7 +24,7 @@ export default (props) => {
     : '';
 
   return (
-    <Col xs={12} style={{ textAlign: 'center' }}>
+    <Col xs={10} xsOffset={1} style={{ textAlign: 'center' }}>
       <div className={`${glob.card} ${glob.cardImage}`}>
         <div className={`${glob.cardContent}`}>
           <h2 style={{ marginTop: '0px' }}>Received</h2>
