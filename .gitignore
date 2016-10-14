@@ -3,5 +3,6 @@ rethinkdb_data
 npm-debug.log
 config/wedding.js
 config/keys.js
+config/gifnoc.js
 .DS_STORE*
 .build
