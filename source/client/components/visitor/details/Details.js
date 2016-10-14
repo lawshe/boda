@@ -47,7 +47,7 @@ export default () => {
       <div className={`${glob.section} ${glob.sectionImage}`}>
         <Row>
           <Col xs={12} className={glob.verticalCol}>
-            <div className={`${glob.card} ${local.timeline}`}>
+            <div className={`${glob.card} ${glob.cardBordered} ${local.timeline}`}>
               <div className={`${glob.cardContent}`}>
                 <h3 style={{ marginTop: '0px' }}>{wordDate}</h3>
                 <h2 style={{ margin: '0px' }}>{wedding.venue.name}</h2>
@@ -121,6 +121,11 @@ export default () => {
               <br />
               {wedding.reception.bar.what}
             </h3>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={6} xsOffset={3} sm={4} smOffset={4}>
+            <p style={{ margin: '30px 0 0 0' }}>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis autesunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </Col>
         </Row>
       </div>
