@@ -31,6 +31,7 @@ button  {
   .card{
     border: 1px solid $whiteDark;
     display: inline-block;
+    max-width: 100%;
     h2{
       margin-top: 0;
     }
