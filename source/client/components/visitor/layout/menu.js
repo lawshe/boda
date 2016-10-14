@@ -16,7 +16,7 @@ import variables from '../../../../../config/variables.js';
   * @return {ReactComponent}
   */
 
-const ACTIVE = { color : variables.$blue };
+// const ACTIVE = { color : variables.$blue };
 
 export default () => {
   const coupleOneInitial = wedding.couple[0].name.first.charAt(0);
@@ -27,7 +27,7 @@ export default () => {
     <Navbar className={`${glob.mainMenu}`}>
       <Navbar.Header>
         <Navbar.Brand>
-          <Link href="/" className={`${glob.navInitials} ${local.initials}`} activeStyle={ACTIVE}>
+          <Link href="/" className={`${local.navInitials}`}>
             {coupleInitials}
           </Link>
         </Navbar.Brand>
