@@ -429,6 +429,16 @@ h2.headerLines{
 
 /*media queries*/
 @media (min-width : $screensTabletStart){
+  h1 {
+    /*font-size: 4.5rem;*/
+  }
+  h2 {
+    /*font-size: 2.5rem;*/
+  }
+  h3 {
+    font-size: 1.4rem;
+  }
+
   .card{
     padding: 45px;
   }
