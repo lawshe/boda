@@ -5,6 +5,7 @@ import nodemailer from 'nodemailer';
 import bodyParser from 'body-parser';
 import devProps from '../../config/webpack/devProps';
 import config from '../../config/page';
+import gifnoc from '../../config/gifnoc';
 import wedding from '../../config/wedding';
 import variables from '../../config/variables';
 import apiKeys from '../../config/keys';
@@ -37,9 +38,9 @@ const weddingMonth = parseInt(weddingDate.getMonth() + 1, 10);
 const weddingYear = weddingDate.getFullYear().toString().slice(-2);
 const prettyWeddingDate = `${weddingMonth}·${weddingDay}·${weddingYear}`;
 
-const transporter = nodemailer.createTransport(`smtps://${wedding.gmail.user}%40gmail.com:${wedding.gmail.pw}@smtp.gmail.com`);
+const transporter = nodemailer.createTransport(`smtps://${gifnoc.gmail.user}%40gmail.com:${gifnoc.gmail.pw}@smtp.gmail.com`);
 const mailOptions = {
-  from: `${couple} <${wedding.gmail.user}@gmail.com>`,
+  from: `${couple} <${gifnoc.gmail.user}@gmail.com>`,
   subject: ` RSVP Received: ${coupleInitials} | ${prettyWeddingDate}`
 };
 
