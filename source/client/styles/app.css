@@ -47,6 +47,9 @@ button  {
   }
   .cardImage{
     background-image: url('images/bg/Haeckel_Muscinae_1100.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
     background-position: center center;
 
@@ -242,6 +245,9 @@ h2.headerLines{
   }
   .sectionImage{
     background-image: url('images/bg/Haeckel_Muscinae_1100.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
