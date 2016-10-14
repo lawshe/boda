@@ -27,11 +27,6 @@
   font-size: 50px;
   margin-top: 10px;
 }
-
-.initials{
-  composes: leroy from 'styles/type';
-}
-
 .location{
   composes: shadowed from 'styles/app';
 
@@ -90,10 +85,20 @@
     li{
       border-top: 1px solid $whiteDark;
       text-align: right;
+      &:first-child{
+        border-top: 0px;
+      }
     }
   }
   #mainMenu > li > a , .navInitials{
-      color: $gray;
+      color: $blackLight;
+      &:hover{
+        color: $green!important;
+      }
+  }
+  .navInitials{
+    color: $blackLight!important;
+    composes: leroy from 'styles/type';
   }
   #footerMenu{
     float: none;
