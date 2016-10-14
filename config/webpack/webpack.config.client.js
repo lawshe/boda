@@ -28,7 +28,7 @@ module.exports = {
     alias: {
       utils: path.join(basePath, '/utils'),
       styles: path.join(basePath, '/client/styles'),
-      images: path.join(staticPath, 'images'),
+      images: path.join(staticPath, '/images'),
       static: path.join(staticPath)
     }
   },
