@@ -57,7 +57,7 @@ button  {
     .cardContent{
       border: 1px solid $whiteDark;
       margin: 0 auto;
-      padding: 30px;
+      padding: 15px;
     }
   }
 
@@ -424,6 +424,9 @@ h2.headerLines{
 
 /*media queries*/
 @media (min-width : $screensTabletStart){
+  .cardContent{
+    padding: 30px;
+  }
   .sectionImage, .cardImage{
     background-image: url('images/bg/Haeckel_Muscinae_1300.png');
   }
