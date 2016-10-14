@@ -66,7 +66,7 @@ class Rsvp extends React.Component {
       <div>
         <PageHeader page="RSVP" />
         <div className={glob.section}>
-          <Row>
+          <Row style={{ textAlign: 'center' }}>
             <SavedModal
               id="test"
               title="RSVP Sent"
