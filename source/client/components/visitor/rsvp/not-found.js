@@ -15,11 +15,17 @@ import wedding from '../../../../../config/wedding';
 const supportEmail = <a href={`mailto:${wedding.email}?Subject=RSVP Not found`}>{wedding.email}</a>;
 
 const notFound = () => (
-  <Col xs={10} xsOffset={1} sm={10} smOffset={1} md={8} mdOffset={2} lg={6} lgOffset={3} style={{ textAlign: 'center' }}>
+  <Col xs={10} xsOffset={1}>
     <div className={`${glob.card} ${glob.cardImage} ${glob.fourOhFour}`}>
       <div className={`${glob.cardContent}`}>
         <h2 style={{ marginTop: '0px' }}>Invitation not found</h2>
-        <h4>Email {supportEmail} for support.</h4>
+        <h3 style={{ marginBottom: '0px' }}>
+          Please email
+          <br />
+          {supportEmail}
+          <br />
+          for support
+        </h3>
       </div>
     </div>
   </Col>
