@@ -21,13 +21,15 @@ import effects from 'styles/effects';
 
 const emailInInvitation = (invitation, props, cb) => {
   let found = false;
-  invitation.guests.forEach(
-    guest => {
-      if (guest.email && guest.email === props.rsvpSearch.query) {
-        found = true;
+  if (invitation.guests) {
+    invitation.guests.forEach(
+      guest => {
+        if (guest.email && guest.email === props.rsvpSearch.query) {
+          found = true;
+        }
       }
-    }
-  );
+    );
+  }
   cb(found);
 };
 
