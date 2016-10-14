@@ -53,9 +53,6 @@ button  {
     background-size: cover;
     background-position: center center;
 
-    a{
-      color: $greenMuted;
-    }
     .cardContent{
       border: 1px solid $whiteDark;
       margin: 0 auto;
