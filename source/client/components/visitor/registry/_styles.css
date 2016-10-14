@@ -1,0 +1,18 @@
+.item{
+  border-top: 1px solid $whiteDark;
+  padding: 30px 0;
+}
+.itemTitle, .itemDescription {
+  margin: 0px;
+  text-align: left;
+}
+.paypal {
+  input[type="image"]{
+    height: 40px!important;
+  }
+}
+@media (min-width : $screensTabletStart){
+  .itemTitle, .itemDescription {
+    text-align: right;
+  }
+}
