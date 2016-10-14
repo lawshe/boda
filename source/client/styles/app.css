@@ -31,7 +31,6 @@ button  {
   .card{
     border: 1px solid $whiteDark;
     display: inline-block;
-    padding: 30px;
     h2{
       margin-top: 0;
     }
@@ -44,6 +43,7 @@ button  {
   }
   .card, .cardContent{
     background-color: $whiteMed;
+    padding: 30px;
   }
   .cardImage{
     background-image: url('images/bg/Haeckel_Muscinae_1100.png');
@@ -59,7 +59,6 @@ button  {
     .cardContent{
       border: 1px solid $whiteDark;
       margin: 0 auto;
-      padding: 0;
     }
   }
 
@@ -439,7 +438,7 @@ h2.headerLines{
     font-size: 1.6rem;
   }
 
-  .card{
+  .card, .cardContent{
     padding: 45px;
   }
   .sectionImage, .cardImage{
