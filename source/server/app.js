@@ -128,7 +128,7 @@ app.use('/', (req, res) => {
         </script>
       </head>
       <body>
-        <div id='root' style='min-height:100vh;height:100%;'></div>
+        <div id='root'></div>
         <script src="${bundle}"></script>
       </body>
     </html>`);
