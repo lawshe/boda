@@ -40,12 +40,14 @@ button  {
       color: $blackLight;
     }
   }
-
+  .cardBordered {
+    border: 15px solid $whiteDark;
+  }
   .card, .cardContent{
     background-color: $whiteMed;
   }
   .cardImage{
-    background-image: url('images/Haeckel_Muscinae.png');
+    background-image: url('images/bg/Haeckel_Muscinae_1100.png');
     background-size: cover;
     background-position: center center;
 
@@ -240,7 +242,7 @@ h2.headerLines{
     }
   }
   .sectionImage{
-    background-image: url('images/Haeckel_Muscinae.png');
+    background-image: url('images/bg/Haeckel_Muscinae_1100.png');
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
@@ -333,7 +335,7 @@ h2.headerLines{
   }
 
   .smallType{
-    font-size: calc($fontP * 0.9);
+    font-size: calc($fontP * 0.8);
   }
 
   .tCenter {
@@ -422,9 +424,18 @@ h2.headerLines{
 
 /*media queries*/
 @media (min-width : $screensTabletStart){
+  .sectionImage, .cardImage{
+    background-image: url('images/bg/Haeckel_Muscinae_1300.png');
+  }
   .submitCol{
     margin-top: 15px;
     text-align: center;
+  }
+}
+
+@media (min-width : $screensDesktopStart){
+  .sectionImage, .cardImage{
+    background-image: url('images/bg/Haeckel_Muscinae.png');
   }
 }
 
