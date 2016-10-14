@@ -35,17 +35,15 @@ const mapDataToProps = {
   invitations: (hz, props) => {
     hz('invitations').fetch().subscribe(
       invitations => {
-        if (invitations) {
-          invitations.forEach(
-            invitation => {
-              emailInInvitation(invitation, props, (found) => {
-                if (found) {
-                  props.dispatch(updateRsvpResult(invitation));
-                }
-              });
-            }
-          );
-        }
+        invitations.forEach(
+          invitation => {
+            emailInInvitation(invitation, props, (found) => {
+              if (found) {
+                props.dispatch(updateRsvpResult(invitation));
+              }
+            });
+          }
+        );
       }
     );
     return hz('invitations');
