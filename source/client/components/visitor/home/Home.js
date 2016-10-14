@@ -21,7 +21,7 @@ const Home = () => {
   return (
     <div className={local.home}>
       <div className={`${glob.verticalContainer}`}>
-        <div className={`${glob.verticallyAligned}`}>
+        <div className={`${glob.verticallyAligned} ${local.eucContainer}`}>
           <div className={`${local.euc} ${local.eucTop}`}>
             <EucThree color="$green" />
           </div>
