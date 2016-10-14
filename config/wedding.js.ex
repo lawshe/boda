@@ -159,6 +159,7 @@ module.exports = {
         description: 'Dinner for 2',
         price: '50',
         remaining: 4
+        payPal: 'this is the value for the embedded button that paypal provides'
       },
     ]
   },
