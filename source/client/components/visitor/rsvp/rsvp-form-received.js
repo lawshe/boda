@@ -16,11 +16,11 @@ const supportEmail = <a href={`mailto:${wedding.email}?Subject=RSVP Not found`}>
 
 export default (props) => {
   const attendingJsx = props.rsvpProcessed.attendingNamesStr
-    ? <h3>{props.rsvpProcessed.attendingNamesStr}</h3>
+    ? <h5>{props.rsvpProcessed.attendingNamesStr}</h5>
     : '';
 
   const plusJsx = props.rsvpProcessed.plusMessage
-    ? <h3 style={{ margin: '15px 0 0 0' }}>{props.rsvpProcessed.plusMessage}</h3>
+    ? <h5 style={{ margin: '15px 0 0 0' }}>{props.rsvpProcessed.plusMessage}</h5>
     : '';
 
   return (
