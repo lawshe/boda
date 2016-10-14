@@ -68,22 +68,30 @@ class Rsvp extends React.Component {
   render() {
     const query = this.props.rsvpSearch.query;
 
-    let inviteFoundJsx = <InviteNotFound />;
+    let inviteFoundOrNotJsx = (
+      <div className={`${effects.fade}`}>
+        <InviteNotFound />
+      </div>
+    );
 
     if (!this.state.submitted) {
-      inviteFoundJsx = <SubmitBtn displayText="Find" />;
+      inviteFoundOrNotJsx = (
+        <Col xs={12} style={{ textAlign: 'center' }} className={`${effects.fade}`}>
+          <SubmitBtn displayText="Find" />
+        </Col>
+      );
     } else if (this.props.rsvpSearch.result) {
       // added check for when invite found, and then input changes
       emailInInvitation(this.props.rsvpSearch.result, this.props, (found) => {
         if (found) {
           const shortName = this.props.rsvpSearch.result.shortName;
-          inviteFoundJsx = (
-            <div className={`${effects.fade}`}>
-              <h3 style={{ marginTop: '15px' }}>RSVP Found</h3>
-              <Button bsSize="large" className={`${glob.button}`} href={`/rsvp/${shortName}`}>
-                Go to RSVP
-              </Button>
-            </div>
+          inviteFoundOrNotJsx = (
+              <Col xs={12} style={{ textAlign: 'center' }} className={`${effects.fade}`}>
+                <h3 style={{ marginTop: '15px' }}>RSVP Found</h3>
+                <Button bsSize="large" className={`${glob.button}`} href={`/rsvp/${shortName}`}>
+                  Go to RSVP
+                </Button>
+              </Col>
           );
         }
       });
@@ -133,9 +141,7 @@ class Rsvp extends React.Component {
                   </Row>
                 </div>
                 <Row style={{ marginTop: '30px' }}>
-                  <Col xs={12} style={{ textAlign: 'center' }}>
-                    {inviteFoundJsx}
-                  </Col>
+                  {inviteFoundOrNotJsx}
                 </Row>
               </Form>
             </Col>
