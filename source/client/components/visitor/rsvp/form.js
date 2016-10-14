@@ -44,7 +44,7 @@ export default (props) => {
   );
 
   const plusJsx = rsvp.plus.allowed > 0
-      ? <PlusGuests rsvp={rsvp} _changePlus={props.changePlus} />
+      ? <PlusGuests rsvp={rsvp} _changePlus={props._changePlus} />
       : '';
 
   const RsvpFormForm = () => (
