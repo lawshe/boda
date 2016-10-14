@@ -59,5 +59,6 @@ module.exports = {
       bar: greenDark
     }
   },
-  $screensTabletStart: '768px'
+  $screensTabletStart: '768px',
+  $screensDesktopStart: '1200px'
 };
