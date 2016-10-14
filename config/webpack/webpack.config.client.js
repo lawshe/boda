@@ -36,7 +36,8 @@ module.exports = {
     loaders: [
       {
         test: /\.(jpe?g|png|gif|mp3|ogg|wav|ogv|mov|mp4|svg|ttf|eot|woff)/,
-        loader: 'file?limit=2000'
+        loader: 'file?limit=2000',
+        include: staticPath
       },
       {
         test: /\.jsx?$/,
