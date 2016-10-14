@@ -138,7 +138,7 @@ class CityGuide extends React.Component {
         <div className={`${glob.section}`}>
           <h2 className={`${glob.headerLines} ${glob.black}`}><span>Accommodations</span></h2>
           <Row>
-            <Col xs={8} sm={6} className={glob.verticalCol}>
+            <Col xs={10} sm={6} className={glob.verticalCol}>
                 <div className={`${glob.card} ${local.hotel}`}>
                     <h3 style={{ margin: '0px' }}>
                       {wedding.accommodations.hotel.name}
