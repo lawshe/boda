@@ -41,7 +41,7 @@ const prettyWeddingDate = `${weddingMonth}·${weddingDay}·${weddingYear}`;
 const transporter = nodemailer.createTransport(`smtps://${gifnoc.gmail.user}%40gmail.com:${gifnoc.gmail.pw}@smtp.gmail.com`);
 const mailOptions = {
   from: `${couple} <${gifnoc.gmail.user}@gmail.com>`,
-  subject: ` RSVP Received: ${coupleInitials} | ${prettyWeddingDate}`
+  subject: `RSVP Received: ${coupleInitials} | ${prettyWeddingDate}`
 };
 
 const sendErrorEmail = (reqBody) => {
