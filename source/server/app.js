@@ -44,8 +44,11 @@ const mailOptions = {
   subject: `RSVP Received: ${coupleInitials} | ${prettyWeddingDate}`
 };
 
-const sendErrorEmail = (reqBody) => {
-  const errorMessage = `Error<br/>Cannot send email notification.<br/>Not Found in DB<br/>${JSON.stringify(reqBody)}`;
+const sendErrorEmail = (reqBody, noId) => {
+  const idMessage = noId ? 'No ID' : 'Not Processed';
+  const errorMessage = `
+    Error<br/>Cannot send email notification!<br/>Not Found in DB<br/>${JSON.stringify(reqBody)}<br/>${idMessage}
+  `;
   const mailOptionsCloned = Object.assign(
     { to: wedding.email, html: errorMessage },
     mailOptions
@@ -55,16 +58,15 @@ const sendErrorEmail = (reqBody) => {
     if (error) {
       return console.log(error);
     }
-    console.log('Message sent: ' + info.response);
   });
 };
 
 app.post('/notify', (req) => {
   if (req.body && req.body.id) {
+    const rsvpId = req.body.id;
     r_internal.table('collections').get('invitations').run()
     .then(function(result) {
-      r.table(result.table).get(req.body.id).run().then((invitation) => {
-
+      r.table(result.table).get(rsvpId).run().then((invitation) => {
         if (invitation && invitation.processed) {
           const processed = invitation.processed;
           // signature
@@ -101,15 +103,18 @@ app.post('/notify', (req) => {
             }
             console.log('Message sent: ' + info.response);
           });
+        } else if(invitation) {
+          // Send error email
+          sendErrorEmail(invitation)
         } else {
           // Send error email
-          sendErrorEmail(req.body)
+          sendErrorEmail('No Invitation');
         }
       });
     });
   } else {
     // Send error email
-    sendErrorEmail(req.body);
+    sendErrorEmail(req, true);
   }
 });
 
