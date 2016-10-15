@@ -189,6 +189,8 @@ module.exports = {
   },
   attire: {
     dressCode: 'Semiformal',
-    message: 'Ceremony will be outside, weather permitting.'
+    message: [
+      'Ceremony will be outside, weather permitting.'
+    ]
   }
 };

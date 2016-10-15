@@ -51,7 +51,12 @@
     margin-top: 5px;
     p{
       text-align: right;
-    }  
+    }
+  }
+}
+.attire{
+  &:last-child{
+    margin-bottom: 0px;
   }
 }
 
