@@ -5,6 +5,7 @@ import http from 'http';
 import querystring from 'querystring';
 import { setRsvp, updateRsvp, updatePlus } from '../../../actions/actionCreators';
 import glob from 'styles/app';
+import page from '../../../config/page';
 import PageHeader from '../../_partials/page-header';
 import RsvpFormReceived from './rsvp-form-received';
 import RsvpForm from './form';
@@ -21,6 +22,8 @@ import SavedModal from '../../shared/saved-modal';
   *
   * @return {ReactComponent}
   */
+
+const port = page.port;
 
 const mapStateToProps = (state) => {
   return {
@@ -89,6 +92,7 @@ class Rsvp extends React.Component {
 
       const options = {
         host: 'localhost',
+        port
         path: '/notify',
         method: 'POST',
         headers: {
