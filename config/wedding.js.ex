@@ -130,7 +130,10 @@ module.exports = {
     coordinates: {
       lat: '30.268162',
       lng: '-97.7417'
-    }
+    },
+    directions: [
+      'Take the overpass..'
+    ]
   },
   couple: [
     {

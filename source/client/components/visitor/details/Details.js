@@ -23,6 +23,10 @@ import fxns from '../../../../utils/fxns';
 const wordDate = fxns.weddingWordDate();
 
 export default () => {
+  const directions = wedding.venue.directions.map((direction) =>
+    <li><p style={{ margin: '0' }}>{direction}</p></li>
+  );
+
   return (
     <div className={glob.pageDetails}>
       <PageHeader page="The Wedding" />
@@ -85,7 +89,7 @@ export default () => {
           <Col xs={10} sm={4} className={glob.verticalCol}>
             <h4 style={{ marginTop: '0px', textAlign: 'right' }}>Ceremony & Reception at</h4>
             <h5 style={{ marginTop: '0px', textAlign: 'right' }}><VenueAddress /></h5>
-            <p style={{ margin: '0px', textAlign: 'right' }}>{wedding.venue.directions}</p>
+            <ul className={local.directions}>{directions}</ul>
           </Col>
           <Col xs={10} sm={4} className={glob.verticalCol}>
             <div className={local.venueMap}>
