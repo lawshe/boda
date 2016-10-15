@@ -1,4 +1,5 @@
 module.exports = {
+  adminSecret: 'this is a pw',
   accommodations: {
     name: 'Hyatt Regency Austin',
     location: '',

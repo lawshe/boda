@@ -12,7 +12,8 @@ import {
   UPDATE_PLUS_ALLOWED,
   UPDATE_VENUE_MARKERS,
   UPDATE_GUIDE_MARKERS,
-  SHOW_GUIDE_MAP_INFO
+  SHOW_GUIDE_MAP_INFO,
+  AUTHORIZE_ADMIN
 } from '../actions/actionTypes';
 
 module.exports = {
@@ -101,6 +102,12 @@ module.exports = {
     return {
       type: SHOW_GUIDE_MAP_INFO,
       markers
+    };
+  },
+  authorizeAdmin(secret) {
+    return {
+      type: AUTHORIZE_ADMIN,
+      secret
     };
   }
 };
