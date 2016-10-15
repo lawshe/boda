@@ -62,7 +62,7 @@ export default () => {
                         </h3>
                       </Col>
                       <Col xs={2} style={{ padding: '0 5px' }}>
-                        <h3 style={{ overflow: 'hidden' }} className={local.eventDetail}>
+                        <h3 className={`${local.eventDetail} ${local.dot}`}>
                           &middot;&middot;&middot;&middot;&middot;&middot;&middot;
                         </h3>
                       </Col>

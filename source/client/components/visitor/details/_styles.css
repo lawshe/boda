@@ -28,6 +28,10 @@
     }
   }
 }
+.dot{
+  overflow: hidden;
+  word-break: normal!important;
+}
 .date{
   color: $blueDark;
   font-family: georgia, serif;
