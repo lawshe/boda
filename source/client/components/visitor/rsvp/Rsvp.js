@@ -92,7 +92,7 @@ class Rsvp extends React.Component {
 
       const options = {
         host: 'localhost',
-        port
+        port,
         path: '/notify',
         method: 'POST',
         headers: {
