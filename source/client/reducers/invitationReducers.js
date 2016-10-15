@@ -46,7 +46,7 @@ export default function invitationReducers(state = initialState, action) {
       const guests = state.guests;
       const updatedPerson = update(guests[action.guestIndex], { email: { $set: action.email } });
       const updatedGuests = update(guests, {
-        $splice: [[action.index, 1, updatedPerson]]
+        $splice: [[action.guestIndex, 1, updatedPerson]]
       });
       const updatedRsvp = update(state, { guests: { $set: updatedGuests } });
 
