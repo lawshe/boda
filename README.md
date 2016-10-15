@@ -30,7 +30,9 @@ $ rethinkdb
 **Create configs**
 
 Use /config/wedding.js.ex to create /config/wedding.js
+
 Use /config/keys.js.ex to create /config/keys.js
+
 Use /config/gifnoc.js.ex to create /config/gifnoc.js
 
 Get [Google Maps JavaScript API key](https://developers.google.com/maps/documentation/javascript/get-api-key) and use /config/keys.js.ex to create /config/keys.js
