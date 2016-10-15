@@ -3,8 +3,6 @@ import { subscribe } from 'horizon-react';
 import { createDoc } from 'horizon-react/lib/utils';
 import { Row, Col, Form, ListGroup, ListGroupItem, Button, Well } from 'react-bootstrap';
 
-import PageHeader from '../../../_partials/page-header';
-
 import {
   updateGuestName,
   updateGuestEmail,
@@ -19,7 +17,7 @@ import AddPersonNameFirst from './add-person-name-first';
 import AddPersonNameLast from './add-person-name-last';
 import AddPersonEmail from './add-person-email';
 import ShortName from './short-name';
-import PlusGuests from './plus-guests'
+import PlusGuests from './plus-guests';
 import SavedModal from '../../../shared/saved-modal';
 
 import glob from 'styles/app';
