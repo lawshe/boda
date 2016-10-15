@@ -9,7 +9,7 @@ A wedding website to manage RSVPs and provide event information.
 *   [PostCSS](https://github.com/postcss/postcss)
 *   [React](https://facebook.github.io/react/)
 *   [Redux](https://github.com/reactjs/redux)
-<!-- *   [React Bootstrap](https://react-bootstrap.github.io/) -->
+*   [React Bootstrap](https://react-bootstrap.github.io/)
 *   [RethinkDB](https://github.com/rethinkdb/horizon)
 *   [webpack](https://github.com/webpack/webpack)
 
