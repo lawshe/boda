@@ -20,7 +20,7 @@ const mapDataToProps = {
 
 const InvitationList = (props) => (
   <div>
-    <PageHeader page="Add Invitation" />
+    <h1>Add Invitation</h1>
     <Row>
       <Col md={12}>
         <Well>

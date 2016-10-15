@@ -52,12 +52,12 @@ class AddInvitation extends React.Component {
     const { newInvitation } = this.props;
     return (
       <div>
-        <PageHeader page="Add Invitation" />
+        <h1>Add Invitation</h1>
         <SavedModal
           title="Saved"
           message={savedMessage}
           show={this.state.showSavedModal}
-          closeSavedModal={this.closeSavedModal.bind(this)}
+          _closeSavedModal={this.closeSavedModal.bind(this)}
         />
         <Row>
           <Col sm={12}>
@@ -68,7 +68,7 @@ class AddInvitation extends React.Component {
                     <Button
                       className={`${glob.button} ${glob.marginBtmLg}`}
                       onClick={this.addGuest.bind(this)}
-                    ><i className="fa fa-plus" ariaHidden="true"></i> Another Guest</Button>
+                    ><i className="fa fa-plus"></i> Another Guest</Button>
                   </Col>
                 </Row>
                 <ListGroup>
