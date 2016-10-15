@@ -31,6 +31,10 @@ export default () => {
     <p className={local.attire}>{msg}</p>
   );
 
+  const reception = wedding.reception.message.map((msg) =>
+    <p className={local.reception}>{msg}</p>
+  );
+
   return (
     <div className={glob.pageDetails}>
       <PageHeader page="The Wedding" />
@@ -131,9 +135,9 @@ export default () => {
             </h3>
           </Col>
         </Row>
-        <Row>
+        <Row style={{ marginTop: '30px' }}>
           <Col xs={8} xsOffset={2} sm={4} smOffset={4}>
-            <p style={{ margin: '30px 0 0 0' }}>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis autesunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            {reception}
           </Col>
         </Row>
       </div>
