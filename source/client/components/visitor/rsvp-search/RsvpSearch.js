@@ -170,6 +170,11 @@ class Rsvp extends React.Component {
     if (event.target.value === '') {
       this.setState({ active: false });
     }
+
+    if (this.state.submitted === true) {
+      this.setState({ submitted: false });
+    }
+
     this.props.dispatch(updateRsvpQuery(event.target.value));
   }
 }
