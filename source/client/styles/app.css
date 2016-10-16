@@ -14,8 +14,8 @@ body {
   background-color: $white!important;
   color: $black;
   font-family: georgia, serif;
-  -ms-word-break: break-word;
-    word-break: break-word;
+  -ms-word-break: normal;
+    word-break: normal;
 
   -webkit-hyphens: auto;
      -moz-hyphens: auto;
@@ -403,6 +403,11 @@ h2.headerLines{
     background-color: $white!important;
     border-bottom: 1px solid $grayLightest;
     z-index: 1000;
+  }
+
+/* misc */
+  .hidden{
+    display: none;
   }
 
 /* page */
