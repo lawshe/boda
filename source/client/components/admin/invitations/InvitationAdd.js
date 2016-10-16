@@ -1,6 +1,6 @@
 import React from 'react';
 import { subscribe } from 'horizon-react';
-import { createDoc } from 'horizon-react/lib/utils';
+// import { createDoc } from 'horizon-react/lib/utils';
 import { Row, Col, Form, ListGroup, ListGroupItem, Button, Well } from 'react-bootstrap';
 
 import {
@@ -13,12 +13,12 @@ import {
 
 import SubmitBtn from '../../../shared/submit-btn';
 
-import AddPersonNameFirst from './add-person-name-first';
-import AddPersonNameLast from './add-person-name-last';
-import AddPersonEmail from './add-person-email';
-import ShortName from './short-name';
-import PlusGuests from './plus-guests';
-import SavedModal from '../../../shared/saved-modal';
+import AddPersonNameFirst from './_partials/add-person-name-first';
+import AddPersonNameLast from './_partials/add-person-name-last';
+import AddPersonEmail from './_partials/add-person-email';
+import ShortName from './_partials/short-name';
+import PlusGuests from './_partials/plus-guests';
+import SavedModal from '../../shared/saved-modal';
 
 import glob from 'styles/app';
 
@@ -121,10 +121,11 @@ class AddInvitation extends React.Component {
     event.preventDefault();
     const invitations = this.props.horizon('invitations');
     invitations.insert(this.props.newInvitation).subscribe(
-      () => this.showSavedModal(),
+      (res) => {
+        this.showSavedModal()
+      },
       (err) => console.error(err)
     );
-    createDoc(invitations, this.props.newInvitation);
   }
 
   // Modal
