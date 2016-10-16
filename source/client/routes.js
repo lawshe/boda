@@ -21,7 +21,8 @@ import CityGuide from './components/visitor/city-guide/CityGuide';
 
 // Admin
 import InvitationList from './components/admin/invitations/InvitationList';
-import InvitationAdd from './components/admin/invitations/add/InvitationAdd';
+import InvitationAdd from './components/admin/invitations/InvitationAdd';
+import InvitationEdit from './components/admin/invitations/InvitationEdit';
 
 // Sync routing history with redux store
 const history = syncHistoryWithStore(browserHistory, store);
@@ -51,6 +52,7 @@ export default (
     <Route path="/admin" component={AdminLayout}>
       <Route path="invitations" component={InvitationList} />
       <Route path="invitations/add" component={InvitationAdd} />
+      <Route path="invitations/edit/:id" component={InvitationEdit} />
     </Route>
   </Router>
 );
