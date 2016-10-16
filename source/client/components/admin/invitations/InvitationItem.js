@@ -22,12 +22,19 @@ const returnedCheck = (invitation) => {
   return returned;
 };
 
-export default ({ invitation }) => (
-  <tr key={invitation.id}>
-    <td>{returnedCheck(invitation)}</td>
-    <td><GuestList guests={invitation.guests} /></td>
-    <td>{invitation.plus.allowed}</td>
-    <td>{invitation.plus.bringing}</td>
-    <td><Link to={`/rsvp/${invitation.shortName}`}>RSVP</Link></td>
-  </tr>
-);
+export default ({ invitation }) => {
+  const attending = invitation.processed && invitation.processed.attending
+    ? invitation.processed.attending : 'N/A';
+
+  return (
+    <tr key={invitation.id}>
+      <td>{returnedCheck(invitation)}</td>
+      <td>{attending}</td>
+      <td><GuestList guests={invitation.guests} /></td>
+      <td>{invitation.plus.allowed}</td>
+      <td>{invitation.plus.bringing}</td>
+      <td><Link to={`/admin/invitations/edit/${invitation.id}`}>Edit</Link></td>
+      <td><Link to={`/rsvp/${invitation.shortName}`}>RSVP</Link></td>
+    </tr>
+  );
+};

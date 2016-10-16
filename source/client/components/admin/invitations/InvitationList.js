@@ -28,10 +28,12 @@ const InvitationList = (props) => (
             <thead>
               <tr>
                 <th>Returned RSVP?</th>
+                <th>Total Attending</th>
                 <th>Guests</th>
                 <th>Plus Allowed</th>
                 <th>Plus Bringing</th>
-                <th>&nbsp;</th>
+                <th>Admin</th>
+                <th>Visitor</th>
               </tr>
             </thead>
             <tbody>
