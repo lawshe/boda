@@ -1,6 +1,10 @@
 .icon{
   margin-top: 15px;
 }
+.guideLink{
+  border : 0px!important;
+  margin-top: 15px!important;
+}
 
 .hotel{
   float: none;

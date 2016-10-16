@@ -78,23 +78,22 @@ class CityGuide extends React.Component {
             (place, idx) => {
               return (
                 <li className={`${glob.card} ${local.listItem}`} key={idx}>
-                  <h5>
-                    <a
-                      href={place.website}
-                      style={{
-                        borderColor : variables.$map.colors[listType],
-                        color : variables.$map.colors[listType]
-                      }}
-                      target="_BLANK"
-                    >
-                      {place.name}
-                    </a>
+                  <h5
+                    style={{
+                      borderColor : variables.$map.colors[listType],
+                      color : variables.$map.colors[listType],
+                      marginBottom: '5px'
+                    }}>
+                    {place.name}
                   </h5>
                   <p className={glob.smallType}>{place.description}</p>
                   <p>{place.address.street}</p>
                   <p style={{ marginBottom: '0px' }}>
-                    <a href="#" style={{border : '0px', color : variables.$map.colors[listType]}} onClick={this.handlePlaceNameClick.bind(this)} id={`${listType}-${idx}`}>
-                      View on Map
+                    <a className={local.guideLink} href="#" style={{ color: variables.$map.colors[listType]}} onClick={this.handlePlaceNameClick.bind(this)} id={`${listType}-${idx}`}>
+                      <i className="material-icons">map</i>
+                    </a>
+                    <a className={local.guideLink} href={place.website} style={{ color : variables.$map.colors[listType]}} target="_BLANK">
+                      <i className="material-icons">arrow_forward</i>
                     </a>
                   </p>
                 </li>
