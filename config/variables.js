@@ -56,7 +56,8 @@ module.exports = {
       music: blueDark,
       fun: blueMuted,
       food: green,
-      bar: greenDark
+      bar: greenDark,
+      shop: blackLight
     }
   },
   $screensTabletStart: '768px',

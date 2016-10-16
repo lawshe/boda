@@ -48,6 +48,12 @@ const getMarkers = () => {
     }
   );
 
+  wedding.guide.shop.list.forEach(
+    (place, i) => {
+      markers.push(makeMarker(i, place, 'shop'));
+    }
+  );
+
   return markers;
 };
 

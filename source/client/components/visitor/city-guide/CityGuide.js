@@ -63,6 +63,8 @@ class CityGuide extends React.Component {
         prettyListType = <span>Eat<br/><i className={`material-icons ${local.icon}`}>restaurant</i></span>;
       } else if(listType === 'fun'){
         prettyListType = <span>Misc<br/><i className={`material-icons ${local.icon}`}>directions_bike</i></span>;
+      } else if(listType === 'shop'){
+        prettyListType = <span>Shop<br/><i className={`material-icons ${local.icon}`}>shopping_basket</i></span>;
       }
       return (
         <ul className={`${local.todoListCol}`}>
@@ -108,6 +110,7 @@ class CityGuide extends React.Component {
     const musicList = makeList('music');
     const foodList = makeList('food');
     const funList = makeList('fun');
+    const shopList = makeList('shop');
 
     const fullList = (
       <ul className={local.todoCatList}>
@@ -115,6 +118,7 @@ class CityGuide extends React.Component {
         <li className={local.todoCat}>{funList}</li>
         <li className={local.todoCat}>{foodList}</li>
         <li className={local.todoCat}>{barList}</li>
+        <li className={local.todoCat}>{shopList}</li>
       </ul>
     );
 

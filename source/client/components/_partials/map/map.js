@@ -86,6 +86,8 @@ class PopUpInfoWindow extends React.Component {
       markerType = 'Food';
     } else if ( marker.pin === 'music' ) {
       markerType = 'Music';
+    } else if ( marker.pin === 'shop' ) {
+      markerType = 'Shop';
     }
 
     return (
@@ -134,8 +136,10 @@ class PopUpInfoWindow extends React.Component {
           markerColor = variables.$map.colors.bar;
         } else if(marker.pin === 'fun'){
           markerColor = variables.$map.colors.fun;
-        }else if(marker.pin === 'music'){
+        } else if(marker.pin === 'music'){
           markerColor = variables.$map.colors.music;
+        } else if(marker.pin === 'shop'){
+          markerColor = variables.$map.colors.shop;
         }
 
         return (

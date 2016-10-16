@@ -98,6 +98,25 @@ module.exports = {
         }
       ]
     },
+    shops: {
+      list: [
+        {
+          name: 'Room Service',
+          description: '...',
+          address: {
+            street: '117 N Loop Blvd E',
+            city: 'Austin',
+            state: 'TX',
+            zip: '78751'
+          },
+          coordinates: {
+            lat: '30.3175526',
+            lng: '-97.7217232'
+          },
+          website: 'http://roomservicevintage.com/'
+        }
+      ]
+    },
     transportation: {
       rideshare:{
         how: {
