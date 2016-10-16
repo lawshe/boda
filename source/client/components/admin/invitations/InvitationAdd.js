@@ -9,9 +9,9 @@ import {
   addGuest,
   updateShortName,
   updatePlusAllowed
-} from '../../../../actions/actionCreators';
+} from '../../../actions/actionCreators';
 
-import SubmitBtn from '../../../shared/submit-btn';
+import SubmitBtn from '../../shared/submit-btn';
 
 import AddPersonNameFirst from './_partials/add-person-name-first';
 import AddPersonNameLast from './_partials/add-person-name-last';
