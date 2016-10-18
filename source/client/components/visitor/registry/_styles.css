@@ -9,10 +9,16 @@
 .paypal {
   input[type="image"]{
     height: 40px!important;
+    margin-top: 15px;
   }
 }
 @media (min-width : $screensTabletStart){
   .itemTitle, .itemDescription {
     text-align: right;
+  }
+  .paypal {
+    input[type="image"]{
+      margin-top: 0px;
+    }
   }
 }
