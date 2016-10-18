@@ -88,14 +88,14 @@ class Registry extends React.Component {
           </Row>
         </div>
 
-        <div className={`${glob.section} ${glob.sectionWhite} ${showLinks}`}>
+        <div className={`${glob.section} ${glob.sectionWhiteMed} ${showLinks}`}>
           <Row>
             <Col xs={12}>
-              <h5 style={{ marginBottom: '30px' }} id="honeymoon-links">
-                If you’d like to help make our honeymoon wonderful,
-                <br />there are some activities which you can contribute to
+              <h5>Help make our<br />honeymoon wonderful</h5>
+              <p style={{ marginBottom: '30px' }} id="honeymoon-links">
+                There are some activities which you can contribute to
                 <br />via the PayPal links below
-              </h5>
+              </p>
             </Col>
           </Row>
           <Row>
