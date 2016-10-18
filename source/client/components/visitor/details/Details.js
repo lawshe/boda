@@ -39,6 +39,9 @@ class Details extends React.Component {
   }
 
   render() {
+    const isIos = fxns.iOS(navigator);
+    const sectionImageClass = isIos ? glob.iosBgImg : '';
+
     const directions = wedding.venue.directions.map((direction) =>
       <li><p>{direction}</p></li>
     );
@@ -76,7 +79,7 @@ class Details extends React.Component {
         </div>
 
 
-        <div className={`${glob.section} ${glob.sectionImage}`}>
+        <div className={`${glob.section} ${glob.sectionImage} ${sectionImageClass}`}>
           <Row>
             <Col xs={12} className={glob.verticalCol}>
               <div className={`${glob.card} ${glob.cardBordered} ${local.timeline}`}>
