@@ -60,6 +60,7 @@ module.exports = {
       shop: blackLight
     }
   },
+  $minScreen: '280px',
   $screensMobileEnd: '767px',
   $screensTabletStart: '768px',
   $screensDesktopStart: '1200px'
