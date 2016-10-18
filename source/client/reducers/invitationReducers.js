@@ -5,7 +5,8 @@ import {
   UPDATE_GUEST_EMAIL,
   ADD_GUEST,
   UPDATE_SHORT_NAME,
-  UPDATE_PLUS_ALLOWED
+  UPDATE_PLUS_ALLOWED,
+  SET_INVITATION
 } from '../actions/actionTypes';
 
 const initialState = {
@@ -28,6 +29,9 @@ const initialState = {
 
 export default function invitationReducers(state = initialState, action) {
   switch (action.type) {
+    case SET_INVITATION: {
+      return action.invitation;
+    }
     case UPDATE_GUEST_NAME: {
       const guests = state.guests;
 
@@ -44,12 +48,13 @@ export default function invitationReducers(state = initialState, action) {
     }
     case UPDATE_GUEST_EMAIL: {
       const guests = state.guests;
+
       const updatedPerson = update(guests[action.guestIndex], { email: { $set: action.email } });
+
       const updatedGuests = update(guests, {
         $splice: [[action.guestIndex, 1, updatedPerson]]
       });
       const updatedRsvp = update(state, { guests: { $set: updatedGuests } });
-
       return updatedRsvp;
     }
     case ADD_GUEST: {
@@ -72,7 +77,7 @@ export default function invitationReducers(state = initialState, action) {
       return update(state, { shortName: { $set: action.shortName } });
     }
     case UPDATE_PLUS_ALLOWED: {
-      return update(state, { plus: { allowed: { $set: action.allowed } } });
+      return update(state, { plus: { allowed: { $set: parseInt(action.allowed, 10) } } });
     }
     default:
       return state;

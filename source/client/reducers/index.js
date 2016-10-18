@@ -8,7 +8,7 @@ import adminReducers from './adminReducers';
 const reducers = {
   rsvp : rsvpReducers,
   rsvpSearch : rsvpSearchReducers,
-  newInvitation : invitationReducers,
+  invitation : invitationReducers,
   venueMap: venueMapReducers,
   guideMap: guideMapReducers,
   admin: adminReducers
