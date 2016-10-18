@@ -31,6 +31,7 @@ export default ({ invitation }) => {
       <td>{returnedCheck(invitation)}</td>
       <td>{attending}</td>
       <td><GuestList guests={invitation.guests} /></td>
+      <td>{invitation.shortName}</td>
       <td>{invitation.plus.allowed}</td>
       <td>{invitation.plus.bringing}</td>
       <td><Link to={`/admin/invitations/edit/${invitation.id}`}>Edit</Link></td>

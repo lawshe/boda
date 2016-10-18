@@ -30,6 +30,7 @@ const InvitationList = (props) => (
                 <th>Returned RSVP?</th>
                 <th>Total Attending</th>
                 <th>Guests</th>
+                <th>Short Name</th>
                 <th>Plus Allowed</th>
                 <th>Plus Bringing</th>
                 <th>Admin</th>
