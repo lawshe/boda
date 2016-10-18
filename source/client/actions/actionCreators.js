@@ -13,7 +13,8 @@ import {
   UPDATE_VENUE_MARKERS,
   UPDATE_GUIDE_MARKERS,
   SHOW_GUIDE_MAP_INFO,
-  AUTHORIZE_ADMIN
+  AUTHORIZE_ADMIN,
+  SET_INVITATION
 } from '../actions/actionTypes';
 
 module.exports = {
@@ -109,5 +110,11 @@ module.exports = {
       type: AUTHORIZE_ADMIN,
       secret
     };
+  },
+  setInvitation(invitation) {
+    return {
+      type: SET_INVITATION,
+      invitation
+    }
   }
 };

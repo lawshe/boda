@@ -1,26 +1,8 @@
 import React from 'react';
 import { subscribe } from 'horizon-react';
-// import { createDoc } from 'horizon-react/lib/utils';
-import { Row, Col, Form, ListGroup, ListGroupItem, Button, Well } from 'react-bootstrap';
-
-import {
-  updateGuestName,
-  updateGuestEmail,
-  addGuest,
-  updateShortName,
-  updatePlusAllowed
-} from '../../../actions/actionCreators';
-
-import SubmitBtn from '../../shared/submit-btn';
-
-import AddPersonNameFirst from './_partials/add-person-name-first';
-import AddPersonNameLast from './_partials/add-person-name-last';
-import AddPersonEmail from './_partials/add-person-email';
-import ShortName from './_partials/short-name';
-import PlusGuests from './_partials/plus-guests';
+import { Row, Col, Form, Well } from 'react-bootstrap';
 import SavedModal from '../../shared/saved-modal';
-
-import glob from 'styles/app';
+import InvitationForm from './_partials/invitation-form';
 
 /**
   *
@@ -35,7 +17,7 @@ import glob from 'styles/app';
 
 const mapStateToProps = (state) => {
   return {
-    newInvitation: state.newInvitation
+    invitation: state.invitation
   };
 };
 
@@ -47,7 +29,6 @@ class AddInvitation extends React.Component {
 
   render() {
     const savedMessage = 'Invitation Added';
-    const { newInvitation } = this.props;
     return (
       <div>
         <h1>Add Invitation</h1>
@@ -61,53 +42,7 @@ class AddInvitation extends React.Component {
           <Col sm={12}>
             <Well>
               <Form onSubmit={this.addInvitation.bind(this)}>
-                <Row>
-                  <Col sm={12}>
-                    <Button
-                      className={`${glob.button} ${glob.marginBtmLg}`}
-                      onClick={this.addGuest.bind(this)}
-                    ><i className="fa fa-plus"></i> Another Guest</Button>
-                  </Col>
-                </Row>
-                <ListGroup>
-                  {newInvitation.guests.map(
-                    (guest, index) => (
-                      <ListGroupItem key={index}>
-                        <AddPersonNameFirst
-                          name={guest.name}
-                          index={index}
-                          onChange={this.changeNameFirst.bind(this)}
-                        />
-                        <AddPersonNameLast
-                          name={guest.name}
-                          index={index}
-                          onChange={this.changeNameLast.bind(this)}
-                        />
-                        <AddPersonEmail
-                          guest={guest.email}
-                          index={index}
-                          onChange={this.changeEmail.bind(this)}
-                        />
-                      </ListGroupItem>
-                    )
-                  )}
-                </ListGroup>
-
-                <ShortName
-                  shortName={newInvitation.shortName}
-                  onChange={this.changeShortName.bind(this)}
-                />
-
-                <PlusGuests
-                  plus={newInvitation.plus.allowed}
-                  onChange={this.changePlus.bind(this)}
-                />
-
-                <Row>
-                  <Col sm={12}>
-                    <SubmitBtn displayText="Add Invitation" />
-                  </Col>
-                </Row>
+                <InvitationForm />
               </Form>
             </Well>
           </Col>
@@ -120,7 +55,7 @@ class AddInvitation extends React.Component {
   addInvitation(event) {
     event.preventDefault();
     const invitations = this.props.horizon('invitations');
-    invitations.insert(this.props.newInvitation).subscribe(
+    invitations.insert(this.props.invitation).subscribe(
       (res) => {
         this.showSavedModal()
       },
@@ -135,34 +70,6 @@ class AddInvitation extends React.Component {
 
   closeSavedModal() {
     this.setState({ showSavedModal: false });
-  }
-
-  // Guest Name and Email
-  changeNameFirst(nameFirst, index) {
-    this.props.dispatch(updateGuestName('first', nameFirst, index));
-  }
-
-  changeNameLast(nameLast, index) {
-    this.props.dispatch(updateGuestName('last', nameLast, index));
-  }
-
-  changeEmail(email, index) {
-    this.props.dispatch(updateGuestEmail(email, index));
-  }
-
-  // Add Another Guest
-  addGuest() {
-    this.props.dispatch(addGuest());
-  }
-
-  // Invitation Short Name
-  changeShortName(event) {
-    this.props.dispatch(updateShortName(event.target.value));
-  }
-
-  // plus
-  changePlus(event) {
-    this.props.dispatch(updatePlusAllowed(event.target.value));
   }
 }
 
