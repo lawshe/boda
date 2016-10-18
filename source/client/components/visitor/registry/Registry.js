@@ -130,7 +130,7 @@ class Registry extends React.Component {
           </Row>
         </div>
 
-        <div className={`${glob.section} ${glob.sectionWhiteMed}`}>
+        <div className={`${glob.section}`}>
           <h3>We also have<br />a registry at:</h3>
           {registryLinks}
         </div>
