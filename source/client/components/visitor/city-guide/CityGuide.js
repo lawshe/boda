@@ -10,7 +10,7 @@ import Button from 'react-bootstrap/lib/Button';
 import PageHeader from '../../_partials/page-header';
 import prettyAddress from '../../_partials/pretty-address';
 import Map from '../../_partials/map/map';
-import showGuideMapInfo from '../../../actions/actionCreators';
+import { showGuideMapInfo } from '../../../actions/actionCreators';
 import greetings from '../../../../../static/images/greetings.png';
 import Scroll from 'react-scroll';
 

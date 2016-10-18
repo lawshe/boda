@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 import Form from 'react-bootstrap/lib/Form';
 import Well from 'react-bootstrap/lib/Well';
-import setInvitation from '../../../actions/actionCreators';
+import { setInvitation } from '../../../actions/actionCreators';
 import InvitationForm from './_partials/invitation-form';
 import SavedModal from '../../shared/saved-modal';
 
@@ -34,7 +34,6 @@ const mapDataToProps = {
   }
 };
 
-//
 const mapStateToProps = (state) => {
   return {
     invitation: state.invitation
@@ -77,19 +76,10 @@ class EditInvitation extends React.Component {
     );
   }
 
-// TODO:
-// Test if processed maintained
-
   // insert into DB
   editInvitation(event) {
     event.preventDefault();
     const invitations = this.props.horizon('invitations');
-    // invitations.find(this.props.invitation.id).update(this.props.invitation).subscribe(
-    //   (res) => {
-    //     this.showSavedModal()
-    //   },
-    //   (err) => console.error(err)
-    // );
     invitations.update(this.props.invitation).subscribe(
       () => {
         this.showSavedModal();
