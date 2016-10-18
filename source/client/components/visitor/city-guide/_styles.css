@@ -1,3 +1,8 @@
+.greetings{
+  max-width: 1000px;
+  width: 100%;
+}
+
 .guideLink{
   border : 0px!important;
   margin-top: 15px!important;
