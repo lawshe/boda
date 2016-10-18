@@ -117,5 +117,22 @@ module.exports = {
   elementBottom(element) {
     const rect = element.getBoundingClientRect();
     return rect.bottom;
+  },
+  personFullName(person) {
+    let fullName = '';
+
+    if (person.name.first) {
+      fullName += person.name.first;
+    }
+
+    if (person.name.first && person.name.last) {
+      fullName += ' ';
+    }
+
+    if (person.name.last) {
+      fullName += person.name.last;
+    }
+
+    return fullName;
   }
 };

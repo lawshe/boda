@@ -1,5 +1,6 @@
 import React from 'react';
-import PersonName from '../../_partials/person-name';
+// import PersonName from '../../_partials/person-name';
+import fxns from '../../../../utils/fxns';
 
 /**
   *
@@ -13,11 +14,14 @@ import PersonName from '../../_partials/person-name';
 const GuestList = (props) => (
   <ul>
     {props.guests.map(
-      (guest, i) => (
-        <li key={i}>
-          <PersonName guest={guest} />
-        </li>
-      )
+      (guest, i) => {
+        const personName = fxns.personFullName(guest);
+        return (
+          <li key={i}>
+            {personName}
+          </li>
+        );
+      }
     )}
   </ul>
 );
