@@ -31,7 +31,7 @@ class Layout extends React.Component {
     const view = this._authorized(this.props);
     return (
       <div>
-        <h1>Admin</h1>
+        <h3 style={{ marginTop: '30px' }}>Admin</h3>
         {view}
       </div>
     );
