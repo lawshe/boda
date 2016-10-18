@@ -160,7 +160,7 @@ module.exports = {
       'iPod'
     ];
 
-    if (navigator && !!navigator.platform) {
+    if (!!navigator.platform) {
       while (iDevices.length) {
         if (navigator.platform === iDevices.pop()) { return true; }
       }
