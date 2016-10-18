@@ -32,6 +32,12 @@ const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December'
 ];
 
+const getGetOrdinal = (n) => {
+  const s = ['th', 'st', 'nd', 'rd'];
+  const v = n % 100;
+  return n + (s[(v-20) % 10] || s[v] || s[0]);
+};
+
 module.exports = {
   prettyGroupNames,
   rsvpProcessData(rsvp) {
@@ -113,6 +119,15 @@ module.exports = {
     const weddingMonth = parseInt(weddingDate.getMonth() + 1, 10);
     const weddingYear = weddingDate.getFullYear().toString().slice(-2);
     return `${weddingMonth}${String.fromCharCode(183)}${weddingDay}${String.fromCharCode(183)}${weddingYear}`;
+  },
+  dateWithSuffix(date) {
+    const dateDate = new Date(date);
+    const dateDateDay = getGetOrdinal(dateDate.getDate());
+    const dateDateMonth = monthNames[dateDate.getMonth()];
+    const dateDateYear = dateDate.getFullYear().toString();
+
+    const prettyDate = `${dateDateMonth} ${dateDateDay} ${dateDateYear}`;
+    return prettyDate;
   },
   elementBottom(element) {
     const rect = element.getBoundingClientRect();

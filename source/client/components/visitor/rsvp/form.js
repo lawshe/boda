@@ -7,7 +7,7 @@ import local from './_styles';
 import PerGuestRsvp from './form-pieces/per-guest-rsvp';
 import PlusGuests from './form-pieces/plus-guests';
 import SubmitBtn from '../../shared/submit-btn';
-import PrettyDate from '../../_partials/pretty-date';
+import fxns from '../../../../utils/fxns';
 
 
 /**
@@ -23,6 +23,8 @@ export default (props) => {
   let { rsvp } = props;
 
   let attending = 0;
+
+  const rsvpDate = fxns.dateWithSuffix(wedding.rsvp.date);
 
   // count of invited attending
   if (rsvp.guests) {
@@ -50,7 +52,7 @@ export default (props) => {
 
   const RsvpFormForm = () => (
     <Col xs={10} xsOffset={1} style={{ textAlign: 'center' }}>
-      <h3 style={{ marginTop: '0px' }}>Please submit by<br /><PrettyDate date={wedding.rsvp.date} /></h3>
+      <h3 style={{ marginTop: '0px' }}>Please submit by<br />{rsvpDate}</h3>
       <div className={`${glob.card} ${local.rsvpForm}`}>
         <form onSubmit={props._sendRsvp} style={{ margin: '0px auto' }}>
           <PerGuestRsvp rsvp={rsvp} _changeRsvp={props._changeRsvp} />
