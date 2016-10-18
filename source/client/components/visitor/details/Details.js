@@ -8,7 +8,7 @@ import Map from '../../_partials/map/map';
 import PageHeader from '../../_partials/page-header';
 import EucThree from '../../svg/euc-3';
 import EucFour from '../../svg/euc-4';
-import VenueAddress from '../../_partials/venue-address';
+import PrettyAddress from '../../_partials/pretty-address';
 import fxns from '../../../../utils/fxns';
 import Scroll from 'react-scroll';
 
@@ -52,6 +52,8 @@ class Details extends React.Component {
     );
 
     const weddingDate = fxns.weddingDotDate();
+
+    const venueAddress = PrettyAddress(wedding.venue.address);
 
     return (
       <div className={glob.pageDetails}>
@@ -114,7 +116,7 @@ class Details extends React.Component {
           <Row>
             <Col xs={10} sm={4} className={glob.verticalCol}>
               <h4 style={{ marginTop: '0px', textAlign: 'right' }}>Ceremony & Reception at</h4>
-              <h5 style={{ marginTop: '0px', textAlign: 'right' }}><VenueAddress /></h5>
+              <h5 style={{ marginTop: '0px', textAlign: 'right' }}>{venueAddress}</h5>
               <ul className={local.directions}>{directions}</ul>
             </Col>
             <Col xs={10} sm={4} className={glob.verticalCol}>
