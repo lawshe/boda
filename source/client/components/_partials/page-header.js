@@ -1,6 +1,5 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-
 import local from './_styles';
 import EucOne from '../svg/euc-1';
 import EucFive from '../svg/euc-5';

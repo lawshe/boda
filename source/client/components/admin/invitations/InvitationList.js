@@ -1,8 +1,6 @@
 import React from 'react';
 import { subscribe } from 'horizon-react';
 import { Row, Col, Table, Well } from 'react-bootstrap';
-
-// import PageHeader from '../../_partials/page-header';
 import InvitationItem from './InvitationItem';
 
 /**

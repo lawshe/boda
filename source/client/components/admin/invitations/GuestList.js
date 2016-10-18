@@ -1,5 +1,4 @@
 import React from 'react';
-
 import PersonName from '../../_partials/person-name';
 
 /**

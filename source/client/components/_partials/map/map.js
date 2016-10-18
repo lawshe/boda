@@ -1,7 +1,8 @@
 import React from 'react';
 import { subscribe } from 'horizon-react';
 import { GoogleMapLoader, GoogleMap, InfoWindow, Marker } from 'react-google-maps';
-import { updateVenueMarkers, updateGuideMarkers } from '../../../actions/actionCreators';
+import updateVenueMarkers from '../../../actions/actionCreators';
+import updateGuideMarkers from '../../../actions/actionCreators';
 import wedding from '../../../../../config/wedding.js';
 import variables from '../../../../../config/variables.js';
 import mapStyle from './map-style';

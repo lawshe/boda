@@ -1,7 +1,4 @@
 import React from 'react';
-//
-// import wedding from '../../../../config/wedding.js';
-
 /**
   *
   * Partial - Pretty date

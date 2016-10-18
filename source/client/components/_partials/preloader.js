@@ -1,7 +1,5 @@
 import React from 'react';
-// import wedding from '../../../../config/wedding.js';
 import local from './_styles';
-
 
 /**
   *
