@@ -133,7 +133,7 @@ class Details extends React.Component {
         <div className={`${glob.section} ${glob.sectionWhiteMed}`}>
           <h2 className={`${glob.headerLines}`}><span>Attire</span></h2>
           <Row>
-            <Col xs={8} xsOffset={2} sm={4} smOffset={4}>
+            <Col xs={10} xsOffset={1} sm={4} smOffset={4}>
               <h3>{wedding.attire.dressCode}</h3>
               <p style={{ margin: '0px' }}>{attire}</p>
             </Col>
@@ -159,7 +159,7 @@ class Details extends React.Component {
             </Col>
           </Row>
           <Row style={{ marginTop: '30px' }}>
-            <Col xs={8} xsOffset={2} sm={4} smOffset={4}>
+            <Col xs={10} xsOffset={1} sm={4} smOffset={4}>
               {reception}
             </Col>
           </Row>
