@@ -10,6 +10,7 @@ import store from './store';
 import MainLayout from './components/visitor/layout/layout';
 import HomeLayout from './components/visitor/layout/home-layout';
 import AdminLayout from './components/admin/layout/layout';
+import NotFound from './components/shared/NotFound';
 
 // Visitor
 import Home from './components/visitor/home/Home';
@@ -48,6 +49,7 @@ export default (
       <Route path="the-wedding" component={Details} />
       <Route path="city-guide" component={CityGuide} />
       <Route path="registry" component={Registry} />
+      <Route path='*' component={NotFound} />
     </Route>
     <Route path="/admin" component={AdminLayout}>
       <Route path="invitations" component={InvitationList} />
