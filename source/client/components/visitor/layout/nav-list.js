@@ -1,6 +1,6 @@
 import React from 'react';
-import { Nav } from 'react-bootstrap';
-import { Link } from 'react-router';
+import Nav from 'react-bootstrap/lib/Nav';
+import Link from 'react-router/lib/Link';
 import variables from '../../../../../config/variables.js';
 
 import local from './_styles';

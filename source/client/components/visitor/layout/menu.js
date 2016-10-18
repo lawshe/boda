@@ -1,6 +1,6 @@
 import React from 'react';
-import { Navbar } from 'react-bootstrap';
-import { Link } from 'react-router';
+import Navbar from 'react-bootstrap/lib/Navbar';
+import Link from 'react-router/lib/Link';
 import wedding from '../../../../../config/wedding.js';
 import glob from 'styles/app';
 import local from './_styles';

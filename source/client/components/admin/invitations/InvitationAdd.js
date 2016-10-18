@@ -1,6 +1,9 @@
 import React from 'react';
-import { subscribe } from 'horizon-react';
-import { Row, Col, Form, Well } from 'react-bootstrap';
+import subscribe from 'horizon-react/lib/components/subscribe';
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
+import Form from 'react-bootstrap/lib/Form';
+import Well from 'react-bootstrap/lib/Well';
 import SavedModal from '../../shared/saved-modal';
 import InvitationForm from './_partials/invitation-form';
 

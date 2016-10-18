@@ -1,9 +1,7 @@
 import React from 'react';
-import { Grid } from 'react-bootstrap';
-
+import Grid from 'react-bootstrap/lib/Grid';
 import glob from 'styles/app';
 import local from './_styles';
-
 import Footer from './footer';
 import Menu from './menu';
 

@@ -1,6 +1,10 @@
 import React from 'react';
-import { subscribe } from 'horizon-react';
-import { Row, Col, Form, FormGroup, Button } from 'react-bootstrap';
+import subscribe from 'horizon-react/lib/components/subscribe';
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
+import Form from 'react-bootstrap/lib/Form';
+import FormGroup from 'react-bootstrap/lib/FormGroup';
+import Button from 'react-bootstrap/lib/Button';
 import { updateRsvpQuery, updateRsvpResult } from '../../../actions/actionCreators';
 import PageHeader from '../../_partials/page-header';
 import InviteNotFound from '../rsvp/not-found';

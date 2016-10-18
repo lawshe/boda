@@ -1,6 +1,9 @@
 import React from 'react';
-import { subscribe } from 'horizon-react';
-import { GoogleMapLoader, GoogleMap, InfoWindow, Marker } from 'react-google-maps';
+import subscribe from 'horizon-react/lib/components/subscribe';
+import GoogleMapLoader from 'react-google-maps/lib/GoogleMapLoader';
+import GoogleMap from 'react-google-maps/lib/GoogleMap';
+import InfoWindow from 'react-google-maps/lib/InfoWindow';
+import Marker from 'react-google-maps/lib/Marker';
 import updateVenueMarkers from '../../../actions/actionCreators';
 import updateGuideMarkers from '../../../actions/actionCreators';
 import wedding from '../../../../../config/wedding.js';

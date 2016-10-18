@@ -1,14 +1,16 @@
 import React from 'react';
-import { subscribe } from 'horizon-react';
+import subscribe from 'horizon-react/lib/components/subscribe';
 import wedding from '../../../../../config/wedding.js';
 import variables from '../../../../../config/variables.js';
 import glob from 'styles/app';
 import local from './_styles';
-import { Row, Col, Button } from 'react-bootstrap';
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
+import Button from 'react-bootstrap/lib/Button';
 import PageHeader from '../../_partials/page-header';
 import prettyAddress from '../../_partials/pretty-address';
 import Map from '../../_partials/map/map';
-import { showGuideMapInfo } from '../../../actions/actionCreators';
+import showGuideMapInfo from '../../../actions/actionCreators';
 import greetings from '../../../../../static/images/greetings.png';
 import Scroll from 'react-scroll';
 

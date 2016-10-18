@@ -1,6 +1,6 @@
 import React from 'react';
 import glob from 'styles/app';
-import { Col } from 'react-bootstrap';
+import Col from 'react-bootstrap/lib/Col';
 import wedding from '../../../../../config/wedding';
 
 /**

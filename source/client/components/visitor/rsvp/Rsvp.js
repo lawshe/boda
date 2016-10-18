@@ -1,6 +1,6 @@
 import React from 'react';
-import { subscribe } from 'horizon-react';
-import { Row } from 'react-bootstrap';
+import subscribe from 'horizon-react/lib/components/subscribe';
+import Row from 'react-bootstrap/lib/Row';
 import http from 'http';
 import querystring from 'querystring';
 import { setRsvp, updateRsvp, updatePlus } from '../../../actions/actionCreators';

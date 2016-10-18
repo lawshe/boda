@@ -1,5 +1,6 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
 import wedding from '../../../../../config/wedding.js';
 import PageHeader from '../../_partials/page-header';
 import glob from '../../../styles/app';

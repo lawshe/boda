@@ -1,7 +1,7 @@
 import React from 'react';
-// import { Link, History } from 'react-router';
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
-
+import Navbar from 'react-bootstrap/lib/Navbar';
+import Nav from 'react-bootstrap/lib/Nav';
+import NavItem from 'react-bootstrap/lib/NavItem';
 import wedding from '../../../../../config/wedding.js';
 
 /**

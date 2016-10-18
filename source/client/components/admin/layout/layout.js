@@ -1,7 +1,9 @@
 import React from 'react';
-import { subscribe } from 'horizon-react';
-import { Grid, Row, Col, Well } from 'react-bootstrap';
-
+import subscribe from 'horizon-react/lib/components/subscribe';
+import Grid from 'react-bootstrap/lib/Grid';
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
+import Well from 'react-bootstrap/lib/Well';
 import Menu from './menu';
 
 import {
