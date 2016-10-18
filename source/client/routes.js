@@ -49,12 +49,12 @@ export default (
       <Route path="the-wedding" component={Details} />
       <Route path="city-guide" component={CityGuide} />
       <Route path="registry" component={Registry} />
-      <Route path='*' component={NotFound} />
     </Route>
     <Route path="/admin" component={AdminLayout}>
       <Route path="invitations" component={InvitationList} />
       <Route path="invitations/add" component={InvitationAdd} />
       <Route path="invitations/edit/:id" component={InvitationEdit} />
     </Route>
+    <Route path='*' component={NotFound} />
   </Router>
 );
