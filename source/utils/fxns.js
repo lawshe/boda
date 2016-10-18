@@ -107,6 +107,13 @@ module.exports = {
     const weddingYear = weddingDate.getFullYear();
     return `${weddingMonth} ${weddingDaySuffix}, ${weddingYear}`;
   },
+  weddingDotDate() {
+    const weddingDate = new Date(wedding.date);
+    const weddingDay = weddingDate.getDate();
+    const weddingMonth = parseInt(weddingDate.getMonth() + 1, 10);
+    const weddingYear = weddingDate.getFullYear().toString().slice(-2);
+    return `${weddingMonth}${String.fromCharCode(183)}${weddingDay}${String.fromCharCode(183)}${weddingYear}`;
+  },
   elementBottom(element) {
     const rect = element.getBoundingClientRect();
     return rect.bottom;

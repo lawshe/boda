@@ -6,7 +6,6 @@ import glob from 'styles/app';
 import local from './_styles';
 import Map from '../../_partials/map/map';
 import PageHeader from '../../_partials/page-header';
-import WeddingDate from '../../_partials/pretty-wedding-date';
 import EucThree from '../../svg/euc-3';
 import EucFour from '../../svg/euc-4';
 import VenueAddress from '../../_partials/venue-address';
@@ -52,6 +51,8 @@ class Details extends React.Component {
       <p className={local.reception}>{msg}</p>
     );
 
+    const weddingDate = fxns.weddingDotDate();
+
     return (
       <div className={glob.pageDetails}>
         <PageHeader page="The Wedding" />
@@ -63,7 +64,7 @@ class Details extends React.Component {
                 <EucFour color="$green" />
               </div>
               <h2 className={`${local.date}`}>
-                <WeddingDate />
+                {weddingDate}
               </h2>
               <div className={`${local.eucDate} ${local.eucBorderBtm}`}>
                 <EucThree color="$green" />

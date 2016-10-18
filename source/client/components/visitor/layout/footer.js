@@ -4,10 +4,10 @@ import Col from 'react-bootstrap/lib/Col';
 import wedding from '../../../../../config/wedding.js';
 import glob from 'styles/app';
 import local from './_styles';
-import WeddingDate from '../../_partials/pretty-wedding-date';
 import NavList from './nav-list';
 import EucThree from '../../svg/euc-3';
 import EucFour from '../../svg/euc-4';
+import fxns from '../../../../utils/fxns';
 
 /**
   *
@@ -36,6 +36,7 @@ if (today.toDateString() === bigDay.toDateString()) {
   countdown = `Just ${numberOfDaysUntil()} More Days!`;
 }
 
+const weddingDate = fxns.weddingDotDate();
 
 export default () => (
   <div className={`${local.footer} ${glob.verticalContainer}`}>
@@ -44,7 +45,7 @@ export default () => (
           <div className={`${local.footerEuc} ${local.footerEucOne}`}><EucThree color="$green" /></div>
         </Col>
         <Col xs={12} sm={6} md={6} lg={4} className={glob.verticalCol}>
-          <h3><WeddingDate /></h3>
+          <h3>{weddingDate}</h3>
           <h5>{countdown}</h5>
           <NavList navId="footerMenu" />
         </Col>
