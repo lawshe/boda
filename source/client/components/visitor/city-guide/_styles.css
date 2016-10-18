@@ -1,30 +1,35 @@
-.icon{
-  margin-top: 15px;
-}
 .guideLink{
   border : 0px!important;
   margin-top: 15px!important;
 }
-
 .hotel{
   float: none;
 }
-
 .hotelAbout{
   h2, h3, h4, p{
     text-align: center;
   }
 }
-
+.icon{
+  margin-top: 15px;
+}
 .thingsToDo{
   height: $mapHeight;
   overflow: scroll;
 }
-.todoListHeader{
+.todo{
+  display: flex;
+  margin: 0;
+
   h3{
-    color: $white;
-    margin: 0;
+    color: $whiteMed!important;
+    text-align: right;
+    padding-right: 15px;
   }
+}
+.todoCat{
+  display: inline-block;
+  width: 100%;
 }
 .todoCatList{
   list-style: none;
@@ -32,21 +37,6 @@
   padding: 0;
   text-align: center;
 }
-.todoCat{
-  display: inline-block;
-  width: 100%;
-}
-.transportation{
-  list-style: none;
-  margin: 0px;
-  padding: 0px;
-
-  li{
-    display: inline-block;
-    padding: 0 15px 15px 15px;
-  }
-}
-
 .todoListCol{
   display: flex;
   flex-direction: column;
@@ -87,14 +77,20 @@
     }
   }
 }
-.todo{
-  display: flex;
-  margin: 0;
-
+.todoListHeader{
   h3{
-    color: $whiteMed!important;
-    text-align: right;
-    padding-right: 15px;
+    color: $white;
+    margin: 0;
+  }
+}
+.transportation{
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+
+  li{
+    display: inline-block;
+    padding: 0 15px 15px 15px;
   }
 }
 
@@ -107,11 +103,11 @@
       text-align: left;
     }
   }
-  .todoCatList{
-    text-align: left;
-  }
   .todoCat{
     width: auto;
+  }
+  .todoCatList{
+    text-align: left;
   }
   .todoListCol{
     flex-direction: row;
