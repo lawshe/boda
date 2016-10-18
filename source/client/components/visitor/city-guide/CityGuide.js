@@ -28,8 +28,6 @@ const Events = Scroll.Events;
 const scroll = Scroll.animateScroll;
 const scrollSpy = Scroll.scrollSpy;
 
-const images = process.env.NODE_ENV === 'production' ? 'static/images' : `http://127.0.0.1:9095/static/images`;
-
 const mapStateToProps = (state) => ({
   guideMap: state.guideMap
 });
