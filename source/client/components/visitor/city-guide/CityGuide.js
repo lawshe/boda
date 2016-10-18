@@ -50,6 +50,10 @@ class CityGuide extends React.Component {
     this.props.dispatch(showGuideMapInfo(markers));
   }
 
+  componentDidMount () {
+    window.scrollTo(0, 0);
+  }
+
   render(){
     const accommodationsAddress = prettyAddress(wedding.accommodations.hotel.address);
 

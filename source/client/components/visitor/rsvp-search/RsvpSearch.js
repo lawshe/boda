@@ -65,6 +65,10 @@ class Rsvp extends React.Component {
     this.state = { submitted: false };
   }
 
+  componentDidMount () {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     const query = this.props.rsvpSearch.query;
 

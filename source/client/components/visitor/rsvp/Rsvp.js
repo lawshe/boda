@@ -46,6 +46,10 @@ class Rsvp extends React.Component {
     databaseInvite(props);
   }
 
+  componentDidMount () {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     const savedMessage = 'Thank you for RSVPing! You should receive an email confirmation soon.';
     const { rsvp } = this.props;
