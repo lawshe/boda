@@ -14,7 +14,7 @@ const greenLight = '#4d9471';
 const greenMuted = '#99c1ad';
 const pink = '#9b073e';
 const white = '#f8f5f2';
-const whiteAlt = '#f6f1ef';
+const whiteAlt = '#fcfbf9';
 const whiteMed = '#efe7e2';
 const whiteDark = '#ddccc1';
 
@@ -60,6 +60,7 @@ module.exports = {
       shop: blackLight
     }
   },
+  $screensMobileEnd: '767px',
   $screensTabletStart: '768px',
   $screensDesktopStart: '1200px'
 };
