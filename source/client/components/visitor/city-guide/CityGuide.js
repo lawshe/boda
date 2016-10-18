@@ -12,6 +12,7 @@ import prettyAddress from '../../_partials/pretty-address';
 import Map from '../../_partials/map/map';
 import { showGuideMapInfo } from '../../../actions/actionCreators';
 import greetings from '../../../../../static/images/greetings.png';
+import greetingsSm from '../../../../../static/images/greetings_sm.png';
 import Scroll from 'react-scroll';
 
 /**
@@ -27,7 +28,7 @@ const Events = Scroll.Events;
 const scroll = Scroll.animateScroll;
 const scrollSpy = Scroll.scrollSpy;
 
-const images = process.env.NODE_ENV === 'production' ? 'images' : `http://127.0.0.1:9095/static/images`;
+const images = process.env.NODE_ENV === 'production' ? 'static/images' : `http://127.0.0.1:9095/static/images`;
 
 const mapStateToProps = (state) => ({
   guideMap: state.guideMap
@@ -139,6 +140,8 @@ class CityGuide extends React.Component {
       </ul>
     );
 
+    const greetingsImg = window.innerWidth > 500 ? greetings : greetingsSm ;
+
     return (
       <div className={glob.pageDetails}>
         <PageHeader page="City Guide" />
@@ -151,7 +154,7 @@ class CityGuide extends React.Component {
         <div className={`${glob.section} ${glob.sectionBlue}`} style={{  }}>
           <Row>
             <Col xs={11} sm={6} md={4} className={glob.verticalCol}>
-              <img src={greetings} className={local.greetings} />
+              {<img src={greetingsImg} className={local.greetings} />}
             </Col>
           </Row>
         </div>
