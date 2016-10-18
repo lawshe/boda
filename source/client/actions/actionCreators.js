@@ -115,6 +115,6 @@ module.exports = {
     return {
       type: SET_INVITATION,
       invitation
-    }
+    };
   }
 };
