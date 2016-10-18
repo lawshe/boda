@@ -49,6 +49,29 @@ Via config files
 ### Invitations
 Via RethinkDB
 
+#### Schema
+```javascript
+{
+  "id": "",
+  "guests": [
+    {
+      "email": "",
+      "name": {
+        "first": "",
+        "last": ""
+      },
+      "rsvp": false
+    }
+  ],
+  "plus": {
+    "allowed": 0,
+    "bringing": 0
+  },
+  "shortName": "",
+  "returned": "false"  
+}
+```
+
 ## Routes
 ### Visitor
 *   Home
@@ -57,10 +80,12 @@ Via RethinkDB
 *   RSVP search
  *   Search for RSVP via guest email
 *   Registry
+*   City Guide
 
 ### Admin
 *   Home
 *   Add Invitation
+*   Edit Invitation
 *   Invitations
 
 ## License
