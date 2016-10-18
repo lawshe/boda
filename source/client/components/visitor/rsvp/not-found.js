@@ -12,7 +12,12 @@ import wedding from '../../../../../config/wedding';
   * @return {ReactComponent}
   */
 
-const supportEmail = <a href={`mailto:${wedding.email}?Subject=RSVP Not found`}>{wedding.email}</a>;
+
+const supportEmail = (
+  <a href={`mailto:${wedding.email}?Subject=RSVP not found`} className={glob.email}>
+    {wedding.email}
+  </a>
+);
 
 const notFound = () => (
   <Col xs={12}>

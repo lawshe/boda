@@ -1,5 +1,6 @@
 import React from 'react';
 import wedding from '../../../../config/wedding';
+import glob from 'styles/app';
 
 /**
   *
@@ -10,7 +11,11 @@ import wedding from '../../../../config/wedding';
   * @return {ReactComponent}
   */
 
-const supportEmail = <a href={`mailto:${wedding.email}?Subject=Page not found`}>{wedding.email}</a>;
+const supportEmail = (
+  <a href={`mailto:${wedding.email}?Subject=Page not found`} className={glob.email}>
+    {wedding.email}
+  </a>
+);
 
 export default () => (
   <div>
