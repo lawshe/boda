@@ -83,10 +83,10 @@
     float: right;
     width: 100%;
     li{
-      border-top: 1px solid $whiteDark;
+      border-bottom: 1px solid $grayLightest;
       text-align: right;
-      &:first-child{
-        border-top: 0px;
+      &:last-child{
+        border-bottom: 0px;
       }
     }
   }
@@ -138,6 +138,17 @@
     }
   }
 
+
+@media (max-width : $screensMobileEnd){
+  #mainMenu{
+    li{
+      clear: both;
+      float: right;
+      display: inline;
+      width: auto;
+    }
+  }
+}
 
 @media (min-width : $screensTabletStart){
   #mainMenu{
