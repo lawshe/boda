@@ -1,20 +1,16 @@
 @font-face {
-    font-family: 'GreatVibes';
-    src: url('../../../static/vendor/great-vibes/GreatVibes-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'GreatVibes';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../../static/vendor/great-vibes/great-vibes-v4-latin-regular.eot');
+  src: local('GreatVibes'), local('GreatVibes-Regular'),
+       url('../../../static/vendor/great-vibes/great-vibes-v4-latin-regular.eot?#iefix') format('embedded-opentype'),
+       url('../../../static/vendor/great-vibes/great-vibes-v4-latin-regular.woff2') format('woff2'),
+       url('../../../static/vendor/great-vibes/great-vibes-v4-latin-regular.woff') format('woff'),
+       url('../../../static/vendor/great-vibes/great-vibes-v4-latin-regular.ttf') format('truetype'),
+       url('../../../static/vendor/great-vibes/great-vibes-v4-latin-regular.svg#GreatVibes') format('svg');
 }
-@font-face {
-    font-family: 'DeutschGothic';
-    src: url('../../../static/vendor/rothenburgdecorative_regular_macroman/rothenbg-webfont.eot');
-    src: url('../../../static/vendor/rothenburgdecorative_regular_macroman/rothenbg-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../../../static/vendor/rothenburgdecorative_regular_macroman/rothenbg-webfont.woff') format('woff'),
-         url('../../../static/vendor/rothenburgdecorative_regular_macroman/rothenbg-webfont.ttf') format('truetype'),
-         url('../../../static/vendor/rothenburgdecorative_regular_macroman/rothenbg-webfont.svg#webfontregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
 
-}
 @font-face {
     font-family: 'fontleroybrownregular';
     src: url('../../../static/vendor/fontleroybrown/FontleroyBrown-webfont.eot');
@@ -27,13 +23,6 @@
 
 }
 
-
-
-
-
-.gothic{
-  font-family: 'DeutschGothic', sans-serif;
-}
 .cursive{
   font-family: 'GreatVibes', sans-serif;
 }
