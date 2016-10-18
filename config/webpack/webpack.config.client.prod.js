@@ -3,7 +3,7 @@ const config = require('./webpack.config.client');
 const _ = require('lodash');
 
 module.exports = _.assign(_.clone(config), {
-  devtool: 'eval',
+  devtool: 'source-map',
   plugins: (config.plugins || []).concat([
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
