@@ -1,7 +1,3 @@
-import addons from 'react-addons';
-import update from 'react-addons-update';
-
-
 import { UPDATE_RSVP_QUERY, UPDATE_RSVP_RESULT } from '../actions/actionTypes';
 
 const initialState = { query: '', result: null };
