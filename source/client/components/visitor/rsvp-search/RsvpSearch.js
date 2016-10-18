@@ -50,7 +50,7 @@ const mapDataToProps = {
           invitations.forEach(
             invitation => {
               emailInInvitation(invitation, props, (found) => {
-                if (found) {
+                if (found && !props.rsvpSearch.result) {
                   props.dispatch(updateRsvpResult(invitation));
                 }
               });
