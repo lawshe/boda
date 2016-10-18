@@ -11,6 +11,7 @@ import RsvpFormReceived from './rsvp-form-received';
 import RsvpForm from './form';
 import RsvpNotFound from './not-found';
 import SavedModal from '../../shared/saved-modal';
+import Scroll from 'react-scroll';
 
 /**
   *
@@ -22,6 +23,10 @@ import SavedModal from '../../shared/saved-modal';
   *
   * @return {ReactComponent}
   */
+
+const Events = Scroll.Events;
+const scroll = Scroll.animateScroll;
+const scrollSpy = Scroll.scrollSpy;
 
 const port = page.port;
 
@@ -47,7 +52,13 @@ class Rsvp extends React.Component {
   }
 
   componentDidMount () {
-    window.scrollTo(0, 0);
+    scrollSpy.update();
+    scroll.scrollToTop();
+  }
+
+  componentWillUnmount() {
+    Events.scrollEvent.remove('begin');
+    Events.scrollEvent.remove('end');
   }
 
   render() {

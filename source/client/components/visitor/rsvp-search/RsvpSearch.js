@@ -7,6 +7,7 @@ import InviteNotFound from '../rsvp/not-found';
 import SubmitBtn from '../../shared/submit-btn';
 import glob from 'styles/app';
 import effects from 'styles/effects';
+import Scroll from 'react-scroll';
 
 /**
   *
@@ -18,6 +19,10 @@ import effects from 'styles/effects';
   *
   * @return {ReactComponent}
   */
+
+const Events = Scroll.Events;
+const scroll = Scroll.animateScroll;
+const scrollSpy = Scroll.scrollSpy;
 
 const emailInInvitation = (invitation, props, cb) => {
   let found = false;
@@ -66,7 +71,13 @@ class Rsvp extends React.Component {
   }
 
   componentDidMount () {
-    window.scrollTo(0, 0);
+    scrollSpy.update();
+    scroll.scrollToTop();
+  }
+
+  componentWillUnmount() {
+    Events.scrollEvent.remove('begin');
+    Events.scrollEvent.remove('end');
   }
 
   render() {

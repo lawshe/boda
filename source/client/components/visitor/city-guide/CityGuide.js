@@ -10,6 +10,7 @@ import prettyAddress from '../../_partials/pretty-address';
 import Map from '../../_partials/map/map';
 import { showGuideMapInfo } from '../../../actions/actionCreators';
 import greetings from '../../../../../static/images/greetings.png';
+import Scroll from 'react-scroll';
 
 /**
   *
@@ -19,6 +20,10 @@ import greetings from '../../../../../static/images/greetings.png';
   *
   * @return {ReactComponent}
   */
+
+const Events = Scroll.Events;
+const scroll = Scroll.animateScroll;
+const scrollSpy = Scroll.scrollSpy;
 
 const images = process.env.NODE_ENV === 'production' ? 'images' : `http://127.0.0.1:9095/static/images`;
 
@@ -51,7 +56,13 @@ class CityGuide extends React.Component {
   }
 
   componentDidMount () {
-    window.scrollTo(0, 0);
+    scrollSpy.update();
+    scroll.scrollToTop();
+  }
+
+  componentWillUnmount() {
+    Events.scrollEvent.remove('begin');
+    Events.scrollEvent.remove('end');
   }
 
   render(){

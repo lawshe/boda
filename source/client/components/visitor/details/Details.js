@@ -10,6 +10,7 @@ import EucThree from '../../svg/euc-3';
 import EucFour from '../../svg/euc-4';
 import VenueAddress from '../../_partials/venue-address';
 import fxns from '../../../../utils/fxns';
+import Scroll from 'react-scroll';
 
 /**
   *
@@ -20,11 +21,21 @@ import fxns from '../../../../utils/fxns';
   * @return {ReactComponent}
   */
 
+const Events = Scroll.Events;
+const scroll = Scroll.animateScroll;
+const scrollSpy = Scroll.scrollSpy;
+
 const wordDate = fxns.weddingWordDate();
 
 class Details extends React.Component {
   componentDidMount () {
-    window.scrollTo(0, 0);
+    scrollSpy.update();
+    scroll.scrollToTop();
+  }
+
+  componentWillUnmount() {
+    Events.scrollEvent.remove('begin');
+    Events.scrollEvent.remove('end');
   }
 
   render() {
