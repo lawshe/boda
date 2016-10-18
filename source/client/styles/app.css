@@ -259,6 +259,9 @@ h2.headerLines{
     background-position: center center;
     background-attachment: fixed;
   }
+  .iosBgImg{
+    background-attachment: scroll!important;
+  }
   .sectionBlue{
     composes: sectionDark;
 
@@ -295,9 +298,9 @@ h2.headerLines{
     }
   }
   h1, h2, h3, h4, h5{
-    -webkit-hyphens: none;
-       -moz-hyphens: none;
-            hyphens: none;
+    -webkit-hyphens: none!important;
+       -moz-hyphens: none!important;
+            hyphens: none!important;
   }
   h1 {
     font-family: 'fontleroybrownregular', sans-serif;
