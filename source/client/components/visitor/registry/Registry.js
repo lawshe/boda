@@ -4,8 +4,8 @@ import wedding from '../../../../../config/wedding.js';
 import PageHeader from '../../_partials/page-header';
 import glob from '../../../styles/app';
 import local from './_styles';
-// import fxns from '../../../../utils/fxns';
-
+import fxns from '../../../../utils/fxns';
+import Scroll from 'react-scroll';
 
 /**
   *
@@ -16,6 +16,10 @@ import local from './_styles';
   * @return {ReactComponent}
   */
 
+const Events = Scroll.Events;
+const scroll = Scroll.animateScroll;
+const scrollSpy = Scroll.scrollSpy;
+
 const registryLinks = wedding.registry.where.map(
   (reg, index) => (
     <h4 style={{ marginBottom: '0px' }} key={`registry_${index}`}>
@@ -23,7 +27,6 @@ const registryLinks = wedding.registry.where.map(
     </h4>
   )
 );
-
 
 class Registry extends React.Component {
   constructor() {
@@ -33,10 +36,20 @@ class Registry extends React.Component {
     };
   }
 
+  componentDidMount () {
+    scrollSpy.update();
+    scroll.scrollToTop();
+  }
+
+  componentWillUnmount() {
+    Events.scrollEvent.remove('begin');
+    Events.scrollEvent.remove('end');
+  }
+
   render() {
     const showLinks = this.state.honeymoonLinksShow ? '' : glob.hidden;
 
-    const toggleHoneymoonLinks = this.state.honeymoonLinksShow ?  (
+    const toggleHoneymoonLinks = this.state.honeymoonLinksShow ? (
       <a href="" onClick={this.handleClick.bind(this)}>
         Click to Hide <i className="material-icons">expand_less</i>
       </a>
@@ -58,7 +71,7 @@ class Registry extends React.Component {
           </Row>
         </div>
 
-        <div className={`${glob.section} ${glob.sectionBlue}`}>
+        <div className={`${glob.section} ${glob.sectionBlue}`} id="honeymoon">
           <Row>
             <Col xs={10} xsOffset={1} sm={6} smOffset={3} md={4} mdOffset={4}>
               <h3>
@@ -118,7 +131,7 @@ class Registry extends React.Component {
         </div>
 
         <div className={`${glob.section} ${glob.sectionWhiteMed}`}>
-          <h3>We also have a registry at:</h3>
+          <h3>We also have<br />a registry at:</h3>
           {registryLinks}
         </div>
       </div>
@@ -127,10 +140,13 @@ class Registry extends React.Component {
 
   handleClick(event) {
     event.preventDefault();
-    this.setState({ honeymoonLinksShow : !this.state.honeymoonLinksShow });
 
-    // const element = document.getElementById('honeymoon-links');
-  
+    if (!this.state.honeymoonLinksShow) {
+      const element = document.getElementById('honeymoon');
+      scroll.scrollTo(fxns.elementBottom(element));
+    }
+
+    this.setState({ honeymoonLinksShow : !this.state.honeymoonLinksShow });
   }
 }
 

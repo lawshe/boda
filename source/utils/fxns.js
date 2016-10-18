@@ -106,5 +106,9 @@ module.exports = {
     const weddingMonth = monthNames[weddingDate.getMonth()];
     const weddingYear = weddingDate.getFullYear();
     return `${weddingMonth} ${weddingDaySuffix}, ${weddingYear}`;
+  },
+  elementBottom(element) {
+    const rect = element.getBoundingClientRect();
+    return rect.bottom;
   }
 };
