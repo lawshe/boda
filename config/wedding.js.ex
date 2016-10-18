@@ -1,4 +1,5 @@
 module.exports = {
+  favicon: 'full url',
   adminSecret: 'this is a pw',
   accommodations: {
     name: 'Hyatt Regency Austin',

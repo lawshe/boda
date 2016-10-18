@@ -25,7 +25,8 @@ app.use('/static', express.static(path.join(process.cwd(), '.build')));
 const host = process.env.NODE_ENV === 'production' ? '' : `http://127.0.0.1:${devProps.webpackPort}`;
 const bundle = `${host}/static/client.bundle.js`;
 const styles = `${host}/static/styles.css`;
-const images = `${host}/static/images/`;
+// const images = `${host}/static/images/`;
+const faviconUrl = wedding.favicon;
 
 const coupleOne = wedding.couple[0].name.first;
 const coupleTwo = wedding.couple[1].name.first;
@@ -122,7 +123,7 @@ app.use('/', (req, res) => {
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="${styles}" />
-        <link rel="icon" href="${images}favicon.ico">
+        <link rel="icon" href="${faviconUrl}">
         <script type="text/javascript"
           src="https://maps.googleapis.com/maps/api/js?key=${googleMapsApi}&libraries=geometry,places,visualization">
         </script>
