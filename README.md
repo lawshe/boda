@@ -68,7 +68,7 @@ Via RethinkDB
     "bringing": 0
   },
   "shortName": "",
-  "returned": "false"  
+  "returned": false  
 }
 ```
 
