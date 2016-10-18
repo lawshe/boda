@@ -40,7 +40,7 @@ class Details extends React.Component {
 
   render() {
     const directions = wedding.venue.directions.map((direction) =>
-      <li><p style={{ margin: '0' }}>{direction}</p></li>
+      <li><p>{direction}</p></li>
     );
 
     const attire = wedding.attire.message.map((msg) =>
@@ -115,8 +115,8 @@ class Details extends React.Component {
         <div className={`${glob.section}`}>
           <Row>
             <Col xs={10} sm={4} className={glob.verticalCol}>
-              <h4 style={{ marginTop: '0px', textAlign: 'right' }}>Ceremony & Reception at</h4>
-              <h5 style={{ marginTop: '0px', textAlign: 'right' }}>{venueAddress}</h5>
+              <h4 className={local.directionsHeader}>Ceremony & Reception at</h4>
+              <h5 className={local.directionsHeader}>{venueAddress}</h5>
               <ul className={local.directions}>{directions}</ul>
             </Col>
             <Col xs={10} sm={4} className={glob.verticalCol}>

@@ -47,10 +47,11 @@
 .directions{
   list-style: none;
   margin: 0;
+  padding: 0;
   li{
     margin-top: 5px;
     p{
-      text-align: right;
+      margin: 0;
     }
   }
 }
@@ -111,22 +112,32 @@
 
 
 /* media queries */
-
-/*@media (min-width : $screensTabletStart){
-  .timeline{
-    float: right;
-  }
-}*/
-@media (max-width: 768px){
+@media (max-width: $screensMobileEnd){
   .location{
     h2, h3, h4, h5, p{
       text-align: center;
     }
   }
-}
-
-@media (max-width : 767px){
   .venueMap{
     margin-top: 30px;
+  }
+}
+
+/*@media (max-width : 767px){
+  .venueMap{
+    margin-top: 30px;
+  }
+}*/
+
+
+@media (min-width: $screensTabletStart){
+  .directions{
+    p{
+      text-align: right;
+    }
+  }
+  .directionsHeader{
+    margin-top: 0px;
+    text-align: right;
   }
 }
