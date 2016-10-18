@@ -396,6 +396,7 @@ h2.headerLines{
     float: none;
   }
   .submitCol{
+    margin-top: 15px;
     text-align: left;
   }
 /* menu */
@@ -447,14 +448,13 @@ h2.headerLines{
     font-size: 1.6rem;
   }
 
-  .card, .cardContent{
+  .cardContent{
     padding: 45px;
   }
   .sectionImage, .cardImage{
     background-image: url('images/bg/Haeckel_Muscinae_1300.png');
   }
   .submitCol{
-    margin-top: 15px;
     text-align: center;
   }
 }
