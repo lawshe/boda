@@ -12,6 +12,10 @@
     margin-top: 15px;
   }
 }
+.complete{
+  pointer-events: none;
+}
+
 @media (min-width : $screensTabletStart){
   .itemTitle, .itemDescription {
     text-align: right;

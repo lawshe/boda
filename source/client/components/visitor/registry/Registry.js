@@ -101,20 +101,15 @@ class Registry extends React.Component {
           <Row>
             <Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3}>
               {wedding.registry.honeymoon.map((item, index) => {
-                const rowClass = item.remaining > 0 ? '' : glob.opaqueRow;
+                const rowClass = item.remaining > 0 ? '' : `${glob.opaqueRow} ${local.complete}`;
                 return (
                   <Row className={`${local.item} ${rowClass}`} key={`${index}_item`}>
                     <Col xs={12} sm={6} className={glob.verticalCol}>
                       <h5 className={local.itemTitle}>{item.title}</h5>
                       <p className={local.itemDescription}>
                         {item.description}
-                        <br />
-                        ${item.price}
-                        <br />
-                        <span className={glob.smallType}>
-                          <i>{item.remaining} Remaining</i>
-                        </span>
                       </p>
+                      <h6 className={local.itemTitle}>${item.price}</h6>
                     </Col>
                     <Col xs={12} sm={3} className={`${glob.verticalCol} ${local.paypal} `}>
                       <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
@@ -123,6 +118,9 @@ class Registry extends React.Component {
                         <input type="image" src="https://s3-us-west-1.amazonaws.com/laholland/button-paypal.png" name="submit" alt="PayPal - The safer, easier way to pay online!" />
                         <img alt="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
                       </form>
+                      <span className={glob.smallType}>
+                        <i>{item.remaining} Remaining</i>
+                      </span>
                     </Col>
                   </Row>
                 );
