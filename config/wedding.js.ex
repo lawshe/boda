@@ -205,7 +205,8 @@ module.exports = {
     }
   ],
   honeymoon: {
-    city: 'Omaha'
+    city: 'Omaha',
+    country: 'USA'
   },
   attire: {
     dressCode: 'Semiformal',
