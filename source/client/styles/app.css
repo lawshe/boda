@@ -289,7 +289,7 @@ h2.headerLines{
   .serif{
     font-family: georgia, serif;
   }
-  h1, h2, h3, h4, h5, p{
+  h1, h2, h3, h4, h5, h6, p{
     text-align: center;
     font-weight: normal;
 
@@ -297,7 +297,7 @@ h2.headerLines{
       font-size: inherit!important;
     }
   }
-  h1, h2, h3, h4, h5{
+  h1, h2, h3, h4, h5, h6{
     -webkit-hyphens: none!important;
        -moz-hyphens: none!important;
             hyphens: none!important;
@@ -334,10 +334,9 @@ h2.headerLines{
     margin: 15px auto;
   }
   h6 {
-    color: $blackLight;
-    font-family: georgia, serif;
-    font-size: 1.2rem;
-    font-weight: bold;
+    color: $grayDark;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: calc($fontP * 1.1);
     margin: 15px auto;
     i {
       font-size: inherit!important;
