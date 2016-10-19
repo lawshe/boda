@@ -96,22 +96,23 @@ class CityGuide extends React.Component {
             (place, idx) => {
               return (
                 <li key={idx}>
-                  <div className={`${glob.card}`}>
+                  <div className={`${glob.card}`} style={{ borderColor: variables.$map.colors[listType] }}>
                     <h6
                       style={{
                         borderColor : variables.$map.colors[listType],
-                        color : variables.$map.colors[listType],
                         margin: '0 0 5px 0'
                       }}>
                       {place.name}
                     </h6>
                     <p>{place.description}</p>
-                    <p className={glob.smallType} style={{ marginBottom: '0px' }}>
-                      <a className={local.guideLink} href="#" style={{ color: variables.$map.colors[listType]}} onClick={this.handlePlaceNameClick.bind(this)} id={`${listType}-${idx}`}>
-                        <i className="material-icons">place</i><span> {place.address.street}</span>
+                    <p>
+                      <a className={local.guideLink} href="#" onClick={this.handlePlaceNameClick.bind(this)} id={`${listType}-${idx}`}>
+                        <i className="material-icons" style={{ color: variables.$map.colors[listType] }} >place</i><span> {place.address.street}</span>
                       </a>
-                      <a className={local.guideLink} href={place.website} style={{ color : variables.$map.colors[listType]}} target="_BLANK">
-                        <i className="material-icons">arrow_forward</i><span > Website</span>
+                    </p>
+                    <p className={glob.smallType} style={{ marginBottom: '0px' }}>
+                      <a className={local.guideLink} href={place.website} target="_BLANK">
+                        Website
                       </a>
                     </p>
                   </div>
