@@ -97,13 +97,12 @@ class CityGuide extends React.Component {
               return (
                 <li key={idx}>
                   <div className={`${glob.card}`} style={{ borderColor: variables.$map.colors[listType] }}>
-                    <h6
+                    <h5
                       style={{
-                        borderColor : variables.$map.colors[listType],
                         margin: '0 0 5px 0'
                       }}>
                       {place.name}
-                    </h6>
+                    </h5>
                     <p>{place.description}</p>
                     <p>
                       <a className={local.guideLink} href="#" onClick={this.handlePlaceNameClick.bind(this)} id={`${listType}-${idx}`}>
