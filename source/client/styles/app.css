@@ -334,7 +334,7 @@ h2.headerLines{
     margin: 15px auto;
   }
   h6 {
-    color: $grayDark;
+    color: $black;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: calc($fontP * 1.1);
     margin: 15px auto;
