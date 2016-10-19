@@ -4,5 +4,7 @@ npm-debug.log
 config/wedding.js
 config/keys.js
 config/gifnoc.js
+boda.pub
+boda
 .DS_STORE*
 .build
