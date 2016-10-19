@@ -6,6 +6,7 @@ import querystring from 'querystring';
 import { setRsvp, updateRsvp, updatePlus } from '../../../actions/actionCreators';
 import glob from 'styles/app';
 import page from '../../../../../config/page';
+import wedding from '../../../../../config/wedding';
 import PageHeader from '../../_partials/page-header';
 import RsvpFormReceived from './rsvp-form-received';
 import RsvpForm from './form';
@@ -62,7 +63,17 @@ class Rsvp extends React.Component {
   }
 
   render() {
-    const savedMessage = 'Thank you for RSVPing! You should receive an email confirmation soon.';
+    const savedMessageJsx = (
+      <span>
+        Thank you for RSVPing! You should receive an email confirmation soon.
+        <br />
+        If you do not receive an email confirmation within the hour, please contact:
+        <br />
+        <a href={`mailto:${wedding.email}`} className={glob.email}>
+          {wedding.email}
+        </a>
+      </span>
+    );
     const { rsvp } = this.props;
     let RsvpFound;
     if (rsvp.id && rsvp.returned) {
@@ -88,7 +99,7 @@ class Rsvp extends React.Component {
             <SavedModal
               id="test"
               title="RSVP Sent"
-              message={savedMessage}
+              message={savedMessageJsx}
               show={this.state.showSavedModal}
               _closeSavedModal={this._closeSavedModal.bind(this)}
             />
