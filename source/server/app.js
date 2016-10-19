@@ -79,7 +79,7 @@ app.post('/notify', (req) => {
 
           const signature = `Love,<br/>${couple}`;
 
-          const style = `color:${variables.black};font-family:Garamond,Palatino,serif; font-size: 12pt;`;
+          const style = `color:${variables.black};font-family: Helvetica, Arial, sans-serif; font-size: 12pt;`;
           // the body of the email
           const body = `
             <div style="${style}">
