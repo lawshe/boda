@@ -12,13 +12,9 @@ import PageHeader from '../../_partials/page-header';
   * @return {ReactComponent}
   */
 
-const registryLinks = wedding.registry.map(
-  reg => (<h2><a href={reg.link} target="_BLANK">{reg.name}</a></h2>)
-);
 
 export default () => (
   <div>
     <PageHeader page="Registry" />
-    {registryLinks}
   </div>
 );
