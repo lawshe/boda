@@ -2,10 +2,12 @@
   max-width: 1000px;
   width: 100%;
 }
-
 .guideLink{
   border : 0px!important;
-  margin-top: 15px!important;
+  margin: 15px 0 0 0!important;
+  span{
+    color: $blackLight;
+  }
 }
 .hotel{
   float: none;
@@ -22,38 +24,24 @@
   height: $mapHeight;
   overflow: scroll;
 }
-.todo{
-  display: flex;
-  margin: 0;
-
-  h3{
-    color: $whiteMed!important;
-    text-align: right;
-    padding-right: 15px;
-  }
-}
 .todoCat{
-  display: inline-block;
-  width: 100%;
+  margin-top: 30px;
 }
-.todoCatList{
+.todoList{
   list-style: none;
   margin: 0;
   padding: 0;
   text-align: center;
-}
-.todoListCol{
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-  margin: 15px 0 0 0;
-  padding: 0;
-  text-align: left;
   li{
     display: inline-block;
     float: none;
-    margin: 15px auto;
+    margin: 0;
     padding: 15px;
+    text-align: center;
+    width: 100%;
+    .card{
+      margin: 15px auto;
+    }
     h4, h5{
       text-align: center;
     }
@@ -83,9 +71,9 @@
   }
 }
 .todoListHeader{
+  width: 100%;
   h3{
-    color: $white;
-    margin: 0;
+    margin-bottom: 0px;
   }
 }
 .transportation{
@@ -108,30 +96,15 @@
       text-align: left;
     }
   }
-  .todoCat{
-    width: auto;
-  }
-  .todoCatList{
-    text-align: left;
-  }
-  .todoListCol{
-    flex-direction: row;
-
+  .todoList{
     li{
-      margin: 15px 15px 15px 0px;;
-    }
-  }
-  .todoListHeader{
-    h3{
-      margin: 15px 0 0 0;
-    }
-  }
-}
-
-@media (min-width : 1024px){
-  .listItem{
-    &:last-child{
-      margin-right: 0px;
+      width: 50%;
+      &:nth-child(even){
+        text-align: left;
+      }
+      &:nth-child(odd){
+        text-align: right;
+      }
     }
   }
 }
