@@ -2,7 +2,7 @@ const black = '#4b4a4b';
 const blackLight = '#636363';
 const blue = '#073e9b';
 const blueDark = '#253978';
-const blueLight = '#3864af';
+const blueLight = '#3755b2';
 const blueMuted = '#839ecd';
 const gray = '#9e9e9e';
 const grayLight = '#b0b0b0';
@@ -54,7 +54,7 @@ module.exports = {
   $map: {
     colors: {
       music: blueDark,
-      fun: blueMuted,
+      fun: blueLight,
       food: green,
       bar: greenDark,
       shop: blackLight
