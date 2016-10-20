@@ -45,8 +45,8 @@ export default () => (
           <div className={`${local.footerEuc} ${local.footerEucOne}`}><EucThree color="$green" /></div>
         </Col>
         <Col xs={12} sm={6} md={6} lg={4} className={glob.verticalCol}>
-          <h3>{weddingDate}</h3>
-          <h5>{countdown}</h5>
+          <h3 style={{ marginBottom: '5px' }}>{weddingDate}</h3>
+          <p className={glob.smallType}>{countdown}</p>
           <NavList navId="footerMenu" />
         </Col>
         <Col xs={12} sm={3} md={3} lg={4} className={`${glob.verticalCol}`}>

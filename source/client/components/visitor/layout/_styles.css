@@ -140,6 +140,7 @@
   }
 
 
+
 @media (max-width : $screensMobileEnd){
   #mainMenu{
     li{
@@ -147,8 +148,22 @@
       float: right;
       display: inline;
       width: auto;
+    }
+  }
+  #footerMenu{
+    li{
       a{
         padding: 5px;
+      }
+    }
+  }
+}
+
+@media (max-width : 311px){
+  #footerMenu{
+    li{
+      a{
+        font-size: .7rem!important;
       }
     }
   }
