@@ -160,7 +160,9 @@ class Rsvp extends React.Component {
       inviteFoundOrNotJsx = <div className={`${effects.fade}`} style={{ marginBottom: '30px' }}>
         <div className={`${effects.fade}`} style={{ marginBottom: '30px' }}>
           <Row style={{ marginBottom: '30px' }}>
-            <InviteNotFound />
+            <Col xs={10} xsOffset={1}>
+              <InviteNotFound />
+            </Col>
           </Row>
           {searchForm}
         </div>
