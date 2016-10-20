@@ -12,13 +12,16 @@ import fxns from '../../../../utils/fxns';
   */
 
 const GuestList = (props) => (
-  <ul>
+  <ul style={{ paddingLeft: '15px' }}>
     {props.guests.map(
       (guest, i) => {
         const personName = fxns.personFullName(guest);
+        const personEmail = guest.email ? guest.email : '';
         return (
           <li key={i}>
             {personName}
+            <br/>
+            {personEmail}
           </li>
         );
       }
