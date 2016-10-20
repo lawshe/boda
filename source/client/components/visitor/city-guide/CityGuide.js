@@ -3,6 +3,7 @@ import subscribe from 'horizon-react/lib/components/subscribe';
 import wedding from '../../../../../config/wedding.js';
 import variables from '../../../../../config/variables.js';
 import glob from 'styles/app';
+import effects from 'styles/effects';
 import local from './_styles';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
@@ -12,7 +13,9 @@ import prettyAddress from '../../_partials/pretty-address';
 import Map from '../../_partials/map/map';
 import { showGuideMapInfo } from '../../../actions/actionCreators';
 import greetings from '../../../../../static/images/greetings.png';
+import greetingsXs from '../../../../../static/images/greetings_xs.png';
 import greetingsSm from '../../../../../static/images/greetings_sm.png';
+import greetingsMd from '../../../../../static/images/greetings_md.png';
 import Scroll from 'react-scroll';
 
 /**
@@ -140,10 +143,12 @@ class CityGuide extends React.Component {
       </div>
     );
 
-    const greetingsImg = window.innerWidth > 500 ? greetings : greetingsSm ;
+    let greetingsImg = window.innerWidth > 900 ? greetings : greetingsMd;
+    greetingsImg = window.innerWidth > 500 ? greetingsImg : greetingsSm;
+    greetingsImg = window.innerWidth > 300 ? greetingsImg : greetingsXs;
 
     return (
-      <div className={glob.pageDetails}>
+      <div className={`{glob.pageDetails} ${effects.fade}`}>
         <PageHeader page="City Guide" />
 
         <div className={`${glob.section}`} style={{ paddingBottom: '0px' }}>
