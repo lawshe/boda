@@ -108,8 +108,8 @@ class CityGuide extends React.Component {
                     </h5>
                     <p>{place.description}</p>
                     <p>
-                      <a className={local.guideLink} href="#" onClick={this.handlePlaceNameClick.bind(this)} id={`${listType}-${idx}`}>
-                        <i className="material-icons" style={{ color: variables.$map.colors[listType] }} >place</i><span> {place.address.street}</span>
+                      <a className={local.guideLink} href="#" onClick={this.handlePlaceNameClick.bind(this)} id={`${listType}-${idx}`} style={{ color: variables.$map.colors[listType] }}>
+                        <i className="material-icons" style={{ color: variables.$map.colors[listType] }}>place</i> {place.address.street}
                       </a>
                     </p>
                     <p className={glob.smallType} style={{ marginBottom: '0px' }}>
