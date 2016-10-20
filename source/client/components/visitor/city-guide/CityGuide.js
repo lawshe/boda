@@ -167,7 +167,7 @@ class CityGuide extends React.Component {
         <div className={`${glob.section}`}>
           <h2 className={`${glob.headerLines} ${glob.black}`}><span>Accommodations</span></h2>
           <Row>
-            <Col xs={10} sm={6} className={glob.verticalCol}>
+            <Col xs={10} xsOffset={1} sm={6} smOffset={0} className={glob.verticalCol} style={{ textAlign: 'center' }}>
                 <div className={`${glob.card} ${local.hotel}`}>
                     <h3 style={{ margin: '0px' }}>
                       {wedding.accommodations.hotel.name}
@@ -180,7 +180,7 @@ class CityGuide extends React.Component {
                     </p>
                 </div>
             </Col>
-            <Col xs={8} sm={6} className={`${glob.verticalCol} ${local.hotelAbout}`}>
+            <Col xs={10} xsOffset={1} sm={6} smOffset={0} className={`${glob.verticalCol} ${local.hotelAbout}`}>
               <h2 style={{ marginBottom: '-10px' }}><i className="material-icons">hotel</i></h2>
               <h4><i>{wedding.accommodations.hotel.highlight}</i></h4>
               <p>{wedding.accommodations.hotel.message}</p>
@@ -192,7 +192,7 @@ class CityGuide extends React.Component {
           <Row>
             <Col xs={12}>
               <h2 className={`${glob.headerLines}`}><span>Transportation</span></h2>
-              <ul className={`${local.transportation}`}>
+              <ul className={`${local.transportation}`} style={{ textAlign: 'center' }}>
                   <li>
                     <Button className={`${glob.button}`} href={wedding.guide.transportation.bus.how.website} target="_BLANK">
                       <i className="material-icons">directions_bus</i>
