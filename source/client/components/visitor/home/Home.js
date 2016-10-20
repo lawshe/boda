@@ -1,6 +1,7 @@
 import React from 'react';
 import wedding from '../../../../../config/wedding.js';
 import glob from 'styles/app';
+import effects from 'styles/effects';
 import local from './_styles';
 import EucThree from '../../svg/euc-3';
 import EucFour from '../../svg/euc-4';
@@ -19,7 +20,7 @@ const Home = () => {
   const coupleTwo = wedding.couple[1].name.first;
 
   return (
-    <div className={local.home}>
+    <div className={`${local.home} ${effects.fade}`}>
       <div className={`${glob.verticalContainer}`}>
         <div className={`${glob.verticallyAligned} ${local.eucContainer}`}>
           <div className={`${local.euc} ${local.eucTop}`}>

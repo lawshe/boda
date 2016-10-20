@@ -2,6 +2,7 @@ import React from 'react';
 import glob from 'styles/app';
 import Col from 'react-bootstrap/lib/Col';
 import wedding from '../../../../../config/wedding';
+import effects from 'styles/effects';
 
 /**
   *
@@ -28,7 +29,7 @@ export default (props) => {
     : '';
 
   return (
-    <Col xs={10} xsOffset={1} style={{ textAlign: 'center' }}>
+    <Col xs={10} xsOffset={1} style={{ textAlign: 'center' }} className={effects.fade}>
       <div className={`${glob.card} ${glob.cardImage}`}>
         <div className={`${glob.cardContent}`}>
           <h2 style={{ marginTop: '0px' }}>Received</h2>

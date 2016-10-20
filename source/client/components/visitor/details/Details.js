@@ -3,6 +3,7 @@ import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 import wedding from '../../../../../config/wedding.js';
 import glob from 'styles/app';
+import effects from 'styles/effects';
 import local from './_styles';
 import Map from '../../_partials/map/map';
 import PageHeader from '../../_partials/page-header';
@@ -59,7 +60,7 @@ class Details extends React.Component {
     const venueAddress = PrettyAddress(wedding.venue.address);
 
     return (
-      <div className={glob.pageDetails}>
+      <div className={`${glob.pageDetails} ${effects.fade}`}>
         <PageHeader page="The Wedding" />
 
         <div className={`${glob.section}`}>

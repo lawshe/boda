@@ -13,6 +13,7 @@ import RsvpForm from './form';
 import RsvpNotFound from './not-found';
 import SavedModal from '../../shared/saved-modal';
 import Scroll from 'react-scroll';
+import effects from 'styles/effects';
 
 /**
   *
@@ -67,7 +68,7 @@ class Rsvp extends React.Component {
       <span>
         Thank you for RSVPing! You should receive an email confirmation soon.
         <br />
-        If you do not receive an email confirmation within the hour, please contact:
+        If not, please contact:
         <br />
         <a href={`mailto:${wedding.email}`} className={glob.email}>
           {wedding.email}
@@ -92,7 +93,7 @@ class Rsvp extends React.Component {
     }
 
     return (
-      <div>
+      <div className={effects.fade}>
         <PageHeader page="RSVP" />
         <div className={glob.section}>
           <Row style={{ textAlign: 'center' }}>

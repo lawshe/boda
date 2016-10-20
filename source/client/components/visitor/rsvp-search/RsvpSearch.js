@@ -143,7 +143,7 @@ class Rsvp extends React.Component {
     );
 
     return (
-      <div>
+      <div className={effects.fade}>
         <PageHeader page="Find RSVP" />
         <div className={glob.section}>
           <Row>

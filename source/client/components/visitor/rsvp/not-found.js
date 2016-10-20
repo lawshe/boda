@@ -2,6 +2,7 @@ import React from 'react';
 import glob from 'styles/app';
 import Col from 'react-bootstrap/lib/Col';
 import wedding from '../../../../../config/wedding';
+import effects from 'styles/effects';
 
 /**
   *
@@ -20,7 +21,7 @@ const supportEmail = (
 );
 
 const notFound = () => (
-  <Col xs={12}>
+  <Col xs={12} className={effects.fade}>
     <div className={`${glob.card} ${glob.cardImage} ${glob.fourOhFour}`}>
       <div className={`${glob.cardContent}`}>
         <h2 style={{ marginTop: '0px' }}>Invitation not found</h2>
