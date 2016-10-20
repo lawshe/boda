@@ -147,6 +147,9 @@
       float: right;
       display: inline;
       width: auto;
+      a{
+        padding: 10px;
+      }
     }
   }
 }
