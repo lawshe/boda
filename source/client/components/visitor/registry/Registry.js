@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/lib/Col';
 import wedding from '../../../../../config/wedding.js';
 import PageHeader from '../../_partials/page-header';
 import glob from '../../../styles/app';
+import effects from 'styles/effects';
 import local from './_styles';
 import fxns from '../../../../utils/fxns';
 import Scroll from 'react-scroll';
@@ -61,7 +62,7 @@ class Registry extends React.Component {
     );
 
     return (
-      <div>
+      <div className={effects.fade}>
         <PageHeader page="Registry" />
         <div className={`${glob.section}`}>
           <Row>
