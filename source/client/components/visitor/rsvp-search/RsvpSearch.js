@@ -87,34 +87,12 @@ class Rsvp extends React.Component {
   render() {
     const query = this.props.rsvpSearch.query;
 
-    let inviteFoundOrNotJsx = (
-      <div className={`${effects.fade}`}>
-        <InviteNotFound />
-      </div>
-    );
-
-    if (!this.state.submitted) {
-      inviteFoundOrNotJsx = (
-        <Col xs={12} style={{ textAlign: 'center' }} className={`${effects.fade}`}>
-          <SubmitBtn displayText="Find" />
-        </Col>
-      );
-    } else if (this.props.rsvpSearch.result) {
-      // added check for when invite found, and then input changes
-      emailInInvitation(this.props.rsvpSearch.result, this.props, (found) => {
-        if (found) {
-          const shortName = this.props.rsvpSearch.result.shortName;
-          inviteFoundOrNotJsx = (
-              <Col xs={12} style={{ textAlign: 'center' }} className={`${effects.fade}`}>
-                <h3 style={{ marginTop: '15px' }}>RSVP Found</h3>
-                <Button bsSize="large" className={`${glob.button}`} href={`/rsvp/${shortName}`}>
-                  Go to RSVP
-                </Button>
-              </Col>
-          );
-        }
-      });
-    }
+    let inviteFoundOrNotJsx = '';
+    //  (
+    //   <div className={`${effects.fade}`} style={{ marginBottom: '30px' }}>
+    //     <InviteNotFound />
+    //   </div>
+    // );
 
     const inputJsx = (
       <span>
@@ -142,28 +120,59 @@ class Rsvp extends React.Component {
       </FormGroup>
     );
 
+    const searchForm = (
+      <Form
+        onSubmit={this._handleSubmit.bind(this)}
+        style={{ textAlign: 'center' }}
+      >
+        <div className={glob.card}>
+          <Row>
+            <Col xs={12}>
+              {formGroupJsx}
+            </Col>
+          </Row>
+        </div>
+
+        <div style={{ textAlign: 'center' }}>
+          <SubmitBtn displayText="Find" />
+        </div>
+      </Form>
+    );
+
+    if (!this.state.submitted) {
+      inviteFoundOrNotJsx = searchForm;
+    } else if (this.props.rsvpSearch.result) {
+      // added check for when invite found, and then input changes
+      emailInInvitation(this.props.rsvpSearch.result, this.props, (found) => {
+        if (found) {
+          const shortName = this.props.rsvpSearch.result.shortName;
+          inviteFoundOrNotJsx = (
+              <Col xs={12} style={{ textAlign: 'center' }} className={`${effects.fade}`}>
+                <h3 style={{ marginTop: '15px' }}>RSVP Found</h3>
+                <Button bsSize="large" className={`${glob.button}`} href={`/rsvp/${shortName}`}>
+                  Go to RSVP
+                </Button>
+              </Col>
+          );
+        }
+      });
+    } else {
+      inviteFoundOrNotJsx = <div className={`${effects.fade}`} style={{ marginBottom: '30px' }}>
+        <div className={`${effects.fade}`} style={{ marginBottom: '30px' }}>
+          <Row style={{ marginBottom: '30px' }}>
+            <InviteNotFound />
+          </Row>
+          {searchForm}
+        </div>
+      </div>
+    }
+
     return (
       <div className={effects.fade}>
         <PageHeader page="Find RSVP" />
         <div className={glob.section}>
-          <Row>
-            <Col xs={10} xsOffset={1} sm={6} smOffset={3}>
-              <Form
-                onSubmit={this._handleSubmit.bind(this)}
-                style={{ textAlign: 'center' }}
-              >
-                <div className={glob.card}>
-                  <Row>
-                    <Col xs={12}>
-                      {formGroupJsx}
-                    </Col>
-                  </Row>
-                </div>
-                <Row style={{ marginTop: '30px' }}>
-                  {inviteFoundOrNotJsx}
-                </Row>
-              </Form>
-            </Col>
+          <Row style={{ textAlign: 'center' }}>
+            {inviteFoundOrNotJsx}
           </Row>
         </div>
       </div>
