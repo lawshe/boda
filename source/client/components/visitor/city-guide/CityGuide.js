@@ -158,7 +158,7 @@ class CityGuide extends React.Component {
 
         <div className={`${glob.section} ${glob.sectionBlue}`} style={{  }}>
           <Row>
-            <Col xs={11} sm={6} md={4} className={glob.verticalCol}>
+            <Col xs={10} xsOffset={1} sm={6} smOffset={3} md={4} mdOffset={4} className={glob.verticalCol} style={{ textAlign: 'center' }}>
               {<img src={greetingsImg} className={local.greetings} />}
             </Col>
           </Row>
