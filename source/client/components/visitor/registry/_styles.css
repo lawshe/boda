@@ -20,9 +20,9 @@
   .itemTitle, .itemDescription {
     text-align: right;
   }
-  .paypal {
+  /*.paypal {
     input[type="image"]{
       margin-top: 0px;
     }
-  }
+  }*/
 }
