@@ -196,6 +196,9 @@ h2.headerLines{
       border-color: $greenMuted!important;
       color: $whiteDark!important;
     }
+    i{
+      font-size: inherit;
+    }
   }
   .buttonLarge{
     composes: button;
