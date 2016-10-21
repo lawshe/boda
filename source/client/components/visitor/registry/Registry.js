@@ -26,7 +26,7 @@ const scrollSpy = Scroll.scrollSpy;
 const registryLinks = wedding.registry.where.map(
   (reg, index) => (
     <h2 style={{ marginBottom: '0px' }} key={`registry_${index}`}>
-      <a href={reg.link} target="_BLANK">{reg.name}</a>
+      <a href={reg.link}>{reg.name}</a>
     </h2>
   )
 );
