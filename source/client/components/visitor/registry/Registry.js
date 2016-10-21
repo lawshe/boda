@@ -115,7 +115,7 @@ class Registry extends React.Component {
                         <input type="hidden" name="on0" value={item.inputValue} />
                       </div>
                       <div>
-                        <select name="os0">
+                        <select name="os0" className={glob.select}>
                           {item.options.map(
                             (opt, idx) => {
                               let optionDisabeled = false;
@@ -142,7 +142,7 @@ class Registry extends React.Component {
                     <img alt="paypal" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
                   </form>
                 )
-                : <h2 style={{ margin: '0px' }}>Gracias!</h2>;
+                : <h2 className={local.thanks}>Gracias!</h2>;
 
                 return (
                   <Row className={`${local.item}`} key={`${index}_item`}>

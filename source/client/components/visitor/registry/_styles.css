@@ -2,27 +2,35 @@
   border-top: 1px solid $whiteDark;
   padding: 30px 0;
 }
-.itemTitle, .itemDescription {
+.itemTitle {
   margin: 0px;
+  text-align: left;
+}
+.itemDescription {
+  margin: 0 0 15px 0;
   text-align: left;
 }
 .paypal {
   input[type="image"]{
     height: 40px!important;
-    margin-top: 15px;
+    margin: 15px 0 0 0;
   }
 }
 .complete{
   pointer-events: none;
 }
+.thanks{
+  margin: 15px 0 0 0;
+  text-align: left;
+}
 
 @media (min-width : $screensTabletStart){
   .itemTitle, .itemDescription {
+    margin: 0;
     text-align: right;
   }
-  /*.paypal {
-    input[type="image"]{
-      margin-top: 0px;
-    }
-  }*/
+  .thanks{
+    margin: 0px;
+    text-align: center;
+  }
 }
