@@ -14,7 +14,6 @@ import RsvpNotFound from './not-found';
 import SavedModal from '../../shared/saved-modal';
 import Scroll from 'react-scroll';
 import effects from 'styles/effects';
-import objectAssign from 'object-assign';
 
 /**
   *
@@ -149,7 +148,7 @@ class Rsvp extends React.Component {
 
   _sendRsvp(event) {
     event.preventDefault();
-    const rsvpData = objectAssign({}, this.props.rsvp, { returned: true });
+    const rsvpData = Object.assign({}, this.props.rsvp, { returned: true });
     const invitations = this.props.horizon('invitations');
     invitations.update(rsvpData).subscribe(
       () => {
