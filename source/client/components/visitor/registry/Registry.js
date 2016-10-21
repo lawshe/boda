@@ -1,6 +1,7 @@
 import React from 'react';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
+import Button from 'react-bootstrap/lib/Button';
 import wedding from '../../../../../config/wedding.js';
 import PageHeader from '../../_partials/page-header';
 import glob from '../../../styles/app';
@@ -24,9 +25,9 @@ const scrollSpy = Scroll.scrollSpy;
 
 const registryLinks = wedding.registry.where.map(
   (reg, index) => (
-    <h4 style={{ marginBottom: '0px' }} key={`registry_${index}`}>
+    <h2 style={{ marginBottom: '0px' }} key={`registry_${index}`}>
       <a href={reg.link} target="_BLANK">{reg.name}</a>
-    </h4>
+    </h2>
   )
 );
 
@@ -52,13 +53,13 @@ class Registry extends React.Component {
     const showLinks = this.state.honeymoonLinksShow ? '' : glob.hidden;
 
     const toggleHoneymoonLinks = this.state.honeymoonLinksShow ? (
-      <a href="" onClick={this.handleClick.bind(this)}>
+      <Button onClick={this.handleClick.bind(this)} className={glob.button}>
         Click to Hide <i className="material-icons">expand_less</i>
-      </a>
+      </Button>
     ) : (
-      <a href="" onClick={this.handleClick.bind(this)}>
+      <Button onClick={this.handleClick.bind(this)} className={glob.button}>
         Click to Contribute <i className="material-icons">expand_more</i>
-      </a>
+      </Button>
     );
 
     return (
@@ -84,7 +85,7 @@ class Registry extends React.Component {
                 to {wedding.honeymoon.city}!
               </h3>
               <p>{wedding.honeymoon.message}</p>
-              <p style={{ marginBottom: '0px' }}>{toggleHoneymoonLinks}</p>
+              <div style={{ textAlign: 'center' }}>{toggleHoneymoonLinks}</div>
             </Col>
           </Row>
         </div>
@@ -95,33 +96,67 @@ class Registry extends React.Component {
               <h5>Help make our<br />honeymoon wonderful</h5>
               <p style={{ marginBottom: '30px' }} id="honeymoon-links">
                 There are some activities which you can contribute to
-                <br />via the PayPal links below
+                <br />via the <a href="https://www.paypal.com/" target="_BLANK">PayPal</a> links below
               </p>
             </Col>
           </Row>
           <Row>
             <Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3}>
               {wedding.registry.honeymoon.map((item, index) => {
-                const rowClass = item.remaining > 0 ? '' : `${glob.opaqueRow} ${local.complete}`;
+
+                const remaining = item.requested - item.received;
+
+                const formJsx = remaining > 0
+                ? (
+                  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                    <input type="hidden" name="cmd" value="_s-xclick" />
+                    <div>
+                      <div>
+                        <input type="hidden" name="on0" value={item.inputValue} />
+                      </div>
+                      <div>
+                        <select name="os0">
+                          {item.options.map(
+                            (opt, idx) => {
+                              let optionDisabeled = false;
+                              if (item.received > 0 && idx >= remaining) {
+                                optionDisabeled = true;
+                              }
+                              return (
+                                <option
+                                  value={opt.value}
+                                  key={`${item.title} ${idx}`}
+                                  disabled={optionDisabeled}
+                                >
+                                  {opt.text}
+                                </option>
+                              );
+                            }
+                          )}
+                        </select>
+                      </div>
+                    </div>
+                    <input type="hidden" name="currency_code" value="USD" />
+                    <input type="hidden" name="encrypted" value={item.payPal} />
+                    <input type="image" src="https://s3-us-west-1.amazonaws.com/laholland/button-paypal.png" name="submit" alt="PayPal - The safer, easier way to pay online!" />
+                    <img alt="paypal" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                  </form>
+                )
+                : <h2>Gracias!</h2>;
+
                 return (
-                  <Row className={`${local.item} ${rowClass}`} key={`${index}_item`}>
+                  <Row className={`${local.item}`} key={`${index}_item`}>
                     <Col xs={12} sm={6} className={glob.verticalCol}>
                       <h5 className={local.itemTitle}>{item.title}</h5>
+                      <h6 className={local.itemDescription} style={{ marginBottom: '15px' }}>
+                        {remaining} of {item.requested} remaining
+                      </h6>
                       <p className={local.itemDescription}>
                         {item.description}
                       </p>
-                      <h6 className={local.itemTitle}>${item.price}</h6>
                     </Col>
                     <Col xs={12} sm={3} className={`${glob.verticalCol} ${local.paypal} `}>
-                      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                        <input type="hidden" name="cmd" value="_s-xclick" />
-                        <input type="hidden" name="encrypted" value={item.payPal} />
-                        <input type="image" src="https://s3-us-west-1.amazonaws.com/laholland/button-paypal.png" name="submit" alt="PayPal - The safer, easier way to pay online!" />
-                        <img alt="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-                      </form>
-                      <span className={glob.smallType}>
-                        <i>{item.remaining} Remaining</i>
-                      </span>
+                      {formJsx}
                     </Col>
                   </Row>
                 );
