@@ -142,7 +142,7 @@ class Registry extends React.Component {
                     <img alt="paypal" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
                   </form>
                 )
-                : <h2>Gracias!</h2>;
+                : <h2 style={{ margin: '0px' }}>Gracias!</h2>;
 
                 return (
                   <Row className={`${local.item}`} key={`${index}_item`}>
