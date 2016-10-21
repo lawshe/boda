@@ -1,5 +1,6 @@
 import wedding from '../../../config/wedding.js';
 import { AUTHORIZE_ADMIN } from '../actions/actionTypes';
+import objectAssign from 'object-assign';
 
 const initialState = {
   authorized: false,
@@ -13,7 +14,7 @@ export default function adminReducers(state = initialState, action) {
       if (action.secret && action.secret === wedding.adminSecret) {
         authorized = true;
       }
-      const newAdminState = Object.assign({}, state, { authorized, secret: action.secret });
+      const newAdminState = objectAssign({}, state, { authorized, secret: action.secret });
       return newAdminState;
     }
     default:

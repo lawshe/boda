@@ -1,6 +1,6 @@
 import wedding from '../../../config/wedding.js';
 import { UPDATE_VENUE_MARKERS } from '../actions/actionTypes';
-// import { GoogleMap } from 'react-google-maps';
+import objectAssign from 'object-assign';
 
 const lat = parseFloat(wedding.venue.coordinates.lat, 10);
 const lng = parseFloat(wedding.venue.coordinates.lng, 10);
@@ -27,7 +27,7 @@ const initialState = {
 export default function venueMapReducers(state = initialState, action) {
   switch (action.type) {
     case UPDATE_VENUE_MARKERS: {
-      const newVenueMarkerState = Object.assign({}, state, { markers: action.markers });
+      const newVenueMarkerState = objectAssign({}, state, { markers: action.markers });
       return newVenueMarkerState;
     }
     default:

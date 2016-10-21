@@ -1,5 +1,6 @@
 import wedding from '../../../config/wedding.js';
 import { UPDATE_GUIDE_MARKERS, SHOW_GUIDE_MAP_INFO } from '../actions/actionTypes';
+import objectAssign from 'object-assign';
 
 const lat = parseFloat(wedding.city.center.lat, 10);
 const lng = parseFloat(wedding.city.center.lng, 10);
@@ -67,11 +68,11 @@ const initialState = {
 export default function guideMapReducers(state = initialState, action) {
   switch (action.type) {
     case UPDATE_GUIDE_MARKERS: {
-      const newGuideMarkerState = Object.assign({}, state, { markers: action.markers });
+      const newGuideMarkerState = objectAssign({}, state, { markers: action.markers });
       return newGuideMarkerState;
     }
     case SHOW_GUIDE_MAP_INFO: {
-      const newGuideMarkers = Object.assign({}, state, { markers: action.markers });
+      const newGuideMarkers = objectAssign({}, state, { markers: action.markers });
       return newGuideMarkers;
     }
     default:

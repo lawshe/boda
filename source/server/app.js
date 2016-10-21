@@ -11,6 +11,7 @@ import variables from '../../config/variables';
 import apiKeys from '../../config/keys';
 import fxns from '../utils/fxns';
 import { r, r_internal } from './db';
+import objectAssign from 'object-assign';
 
 const app = express();
 
@@ -47,7 +48,7 @@ const mailOptions = {
 
 const sendErrorEmail = (reqBody) => {
   const errorMessage = `Error!<br/>Cannot send email notification.<br/>Not Found in DB<br/>${JSON.stringify(reqBody)}`;
-  const mailOptionsCloned = Object.assign(
+  const mailOptionsCloned = objectAssign(
     { to: wedding.email, html: errorMessage },
     mailOptions
   );
@@ -91,7 +92,7 @@ app.post('/notify', (req, res) => {
 
           const sendTo = process.env.NODE_ENV !== 'production' ? wedding.email : processed.toEmails;
 
-          const mailOptionsCloned = Object.assign(
+          const mailOptionsCloned = objectAssign(
             { to: sendTo, html: body },
             mailOptions
           );
