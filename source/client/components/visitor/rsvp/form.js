@@ -8,7 +8,6 @@ import PerGuestRsvp from './form-pieces/per-guest-rsvp';
 import PlusGuests from './form-pieces/plus-guests';
 import SubmitBtn from '../../shared/submit-btn';
 import fxns from '../../../../utils/fxns';
-import effects from 'styles/effects';
 
 
 /**
@@ -72,6 +71,6 @@ export default (props) => {
   const form = <RsvpFormForm />;
 
   return (
-    <div className={effects.fade}>{form}</div>
+    <div>{form}</div>
   );
 };
