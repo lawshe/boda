@@ -60,7 +60,7 @@ const sendErrorEmail = (reqBody) => {
   });
 };
 
-app.post('/notify', (req) => {
+app.post('/notify', (req, res) => {
   if (req.body && req.body.id) {
     r_internal.table('collections').get('invitations').run()
     .then(function(result) {
@@ -79,7 +79,7 @@ app.post('/notify', (req) => {
 
           const signature = `Love,<br/>${couple}`;
 
-          const style = `color:${variables.black};font-family: Helvetica, Arial, sans-serif; font-size: 12pt;`;
+          const style = `color:${variables.black};font-family: Helvetica, Arial, sans-serif;`;
           // the body of the email
           const body = `
             <div style="${style}">
@@ -101,6 +101,7 @@ app.post('/notify', (req) => {
               return console.log(error);
             }
             console.log('Message sent: ' + info.response);
+            res.send(true);
           });
         } else {
           // Send error email
