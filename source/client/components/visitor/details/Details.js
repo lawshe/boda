@@ -164,6 +164,11 @@ class Details extends React.Component {
               {reception}
             </Col>
           </Row>
+          <Row>
+            <Col xs={12}>
+              <h2 style={{ margin: '30px 0 0 0' }}>Check back for updates!</h2>
+            </Col>
+          </Row>
         </div>
       </div>
     );
