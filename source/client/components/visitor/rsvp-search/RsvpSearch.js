@@ -147,7 +147,7 @@ class Rsvp extends React.Component {
         if (found) {
           const shortName = this.props.rsvpSearch.result.shortName;
           inviteFoundOrNotJsx = (
-              <Col xs={12} style={{ textAlign: 'center' }} className={`${effects.fade}`}>
+              <Col xs={12} style={{ textAlign: 'center' }} className={`${effects.fadeFast}`}>
                 <h3 style={{ marginTop: '15px' }}>RSVP Found</h3>
                 <Button bsSize="large" className={`${glob.button}`} href={`/rsvp/${shortName}`}>
                   Go to RSVP
@@ -157,8 +157,8 @@ class Rsvp extends React.Component {
         }
       });
     } else {
-      inviteFoundOrNotJsx = <div className={`${effects.fade}`} style={{ marginBottom: '30px' }}>
-        <div className={`${effects.fade}`} style={{ marginBottom: '30px' }}>
+      inviteFoundOrNotJsx = <div className={`${effects.fadeFast}`} style={{ marginBottom: '30px' }}>
+        <div style={{ marginBottom: '30px' }}>
           <Row style={{ marginBottom: '30px' }}>
             <Col xs={10} xsOffset={1}>
               <InviteNotFound />
