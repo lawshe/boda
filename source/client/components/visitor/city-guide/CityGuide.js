@@ -176,7 +176,7 @@ class CityGuide extends React.Component {
                     </h3>
                     <h5>{accommodationsAddress}</h5>
                     <p style={{marginBottom: '0px'}}>
-                      <a href="{wedding.accommodations.hotel.discountLink}" target="_BLANK">Book Hotel at {wedding.accommodations.hotel.discountAmt}% OFF</a>
+                      <a href={wedding.accommodations.hotel.discountLink} target="_BLANK">Book Hotel at {wedding.accommodations.hotel.discountAmt}% OFF</a>
                     </p>
                 </div>
             </Col>
