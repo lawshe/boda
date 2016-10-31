@@ -142,11 +142,15 @@ class Registry extends React.Component {
                     <img alt="paypal" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
                   </form>
                 )
-                : <h2 className={local.thanks}>Gracias!</h2>;
+                : <div><h2 className={local.thanks}>¡gracias!</h2></div>;
+
+                const registryItemClass = remaining > 0
+                ? ''
+                : local.complete;
 
                 return (
                   <Row className={`${local.item}`} key={`${index}_item`}>
-                    <Col xs={12} sm={6} className={glob.verticalCol}>
+                    <Col xs={12} sm={6} className={`${glob.verticalCol} ${registryItemClass}`}>
                       <h5 className={local.itemTitle}>{item.title}</h5>
                       <h6 className={local.itemDescription} style={{ marginBottom: '15px' }}>
                         {remaining} of {item.requested} remaining
