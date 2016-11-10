@@ -175,8 +175,11 @@ class CityGuide extends React.Component {
                       {wedding.accommodations.hotel.location}
                     </h3>
                     <h5>{accommodationsAddress}</h5>
-                    <p style={{marginBottom: '0px'}}>
+                    <p>
                       <a href={wedding.accommodations.hotel.discountLink} target="_BLANK">Book Hotel at {wedding.accommodations.hotel.discountAmt}% OFF</a>
+                    </p>
+                    <p className={glob.smallType} style={{marginBottom: '0px'}}>
+                      Discount applied to refundable rate.
                     </p>
                 </div>
             </Col>
