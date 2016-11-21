@@ -24,6 +24,8 @@ const InvitationList = (props) => {
   let totalReturned = 0;
   let totalInvites = 0;
   let totalInvitedPeople = 0;
+  let allReturned = [];
+  let allNotReturned = [];
 
   if (props.invitations) {
     totalInvites = props.invitations.length;
@@ -37,6 +39,9 @@ const InvitationList = (props) => {
       // Returned RSVPs
       if (i.returned) {
         totalReturned++;
+        allReturned.push(i);
+      } else {
+        allNotReturned.push(i);
       }
 
       // Total Invited
@@ -56,12 +61,13 @@ const InvitationList = (props) => {
       <h3><u>Returned RSVPs</u>: {totalReturned} of {totalInvites}</h3>
       <h3><u>Total Attending</u>: {totalAttending} of {totalInvitedPeople}</h3>
       <Row>
+        <h4>Returned</h4>
         <Col md={12}>
-          <Well>
+          <Well style={{ overflow: 'scroll'}}>
             <Table>
               <thead>
                 <tr>
-                  <th>Returned RSVP?</th>
+                  <th>Returned</th>
                   <th>Total Attending</th>
                   <th>Guests</th>
                   <th>Short Name</th>
@@ -72,7 +78,38 @@ const InvitationList = (props) => {
                 </tr>
               </thead>
               <tbody>
-              {props.invitations.map(
+              {allReturned.map(
+                invitation => (
+                  <InvitationItem
+                    key={invitation.id}
+                    invitation={invitation}
+                  />
+                )
+              )}
+              </tbody>
+            </Table>
+          </Well>
+        </Col>
+      </Row>
+      <Row>
+        <Col md={12}>
+          <h4>Not Returned</h4>
+          <Well style={{ overflow: 'scroll'}}>
+            <Table>
+              <thead>
+                <tr>
+                  <th>Returned</th>
+                  <th>Total Attending</th>
+                  <th>Guests</th>
+                  <th>Short Name</th>
+                  <th>Plus Allowed</th>
+                  <th>Plus Bringing</th>
+                  <th>Admin</th>
+                  <th>Visitor</th>
+                </tr>
+              </thead>
+              <tbody>
+              {allNotReturned.map(
                 invitation => (
                   <InvitationItem
                     key={invitation.id}
