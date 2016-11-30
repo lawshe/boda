@@ -45,7 +45,7 @@ export default (props) => {
   }
 
   return (
-    <Row style={{ marginTop: '30px' }}>
+    <Row style={{ margin: '30px 0' }}>
       <Col xs={10} xsOffset={0} sm={4} smOffset={4}>{plusSelect}</Col>
     </Row>
   );
