@@ -30,11 +30,11 @@ const bigDay = new Date(wedding.date);
 
 let countdown = '';
 // Todo: past day
-if (today.toDateString() === bigDay.toDateString()) {
-  countdown = 'TODAY IS THE DAY!';
-} else {
-  countdown = `Just ${numberOfDaysUntil()} More Days!`;
-}
+// if (today.toDateString() === bigDay.toDateString()) {
+//   countdown = 'TODAY IS THE DAY!';
+// } else {
+//   countdown = `Just ${numberOfDaysUntil()} More Days!`;
+// }
 
 const weddingDate = fxns.weddingDotDate();
 
